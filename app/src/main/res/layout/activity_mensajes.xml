@@ -115,10 +115,13 @@
 
             <ListView
                 android:id="@+id/mi_lista"
-                android:layout_width="382dp"
-                android:layout_height="match_parent" />
+                android:layout_width="match_parent"
+                android:scrollbars="vertical"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
+
+    <!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -126,6 +129,7 @@
         android:layout_alignParentBottom="true"
         android:padding="10dp"
         android:orientation="horizontal">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -146,7 +150,7 @@
         </LinearLayout>
 
     </LinearLayout>
-
+-->
 
 </RelativeLayout>
 

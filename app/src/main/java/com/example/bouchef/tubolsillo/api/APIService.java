@@ -1,6 +1,8 @@
 package com.example.bouchef.tubolsillo.api;
 
 
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.PCDViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.PCDViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
@@ -22,6 +24,10 @@ public interface APIService {
 
     @POST("usuarios")
     Call<UsuarioViewModelResponse> getUsuario(@Body UsuarioViewModelPOST usuarioViewModel);
+
+
+    @POST("nuevaCompra")
+    Call<CompraViewModelResponse> nuevaCompra(@Body CompraViewModelPOST compra);
 }
 
 

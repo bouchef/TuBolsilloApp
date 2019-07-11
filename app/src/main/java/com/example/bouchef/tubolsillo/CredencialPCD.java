@@ -85,6 +85,30 @@ public class CredencialPCD extends AppCompatActivity {
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
+/*
+        CompraViewModelPOST compra = new CompraViewModelPOST();
+        compra.setIdUsuario(2);
+        compra.setIdComercio(1);
+        compra.setCompraReal(false);
+        api.nuevaCompra(compra).enqueue(new Callback<CompraViewModelResponse>() {
+            @Override
+            public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
+                if(response.isSuccessful()){
+                    CompraViewModelResponse res = response.body();
+                    Alerts.newToastLarge(getApplicationContext(), String.valueOf(res.getId()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
+                Alerts.newToastLarge(getApplicationContext(), "err");
+            }
+        });
+*/
+
+
+
+        //////////////////////////////////////
         api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
             @Override
             public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
