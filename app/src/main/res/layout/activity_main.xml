@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/toolbar"/>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SELECCIONE PERFIL PARA INGRESAR"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+<!--
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil PCD"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="400dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil Tutor"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="472dp" />-->
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rect"
+            android:textColor="#FFFFFF"
+            android:text="PERFIL USUARIO"
+            android:layout_marginLeft="13.3dp"
+            android:layout_marginRight="13.3dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nunito_regular"
+            android:layout_alignParentBottom="true"/>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rect"
+            android:textColor="#FFFFFF"
+            android:text="PERFIL AYUDANTE"
+            android:layout_marginLeft="13.3dp"
+            android:layout_marginRight="13.3dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nunito_regular"
+            android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

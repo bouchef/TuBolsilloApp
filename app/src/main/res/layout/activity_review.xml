@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookOrderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <include layout="@layout/toolbar"/>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="29dp"
+            android:layout_marginLeft="29dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="67.3dp"
+                android:layout_height="67.3dp"
+                android:background="@drawable/information"/>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="26dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estoy Saliendo a Comprar"
+                    android:textSize="18.7sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nunito_regular"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="16/6/2019 12:01 PM"
+                    android:textColor="#393939"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textSize="10.7sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/information"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F73A36"
+                android:fontFamily="@font/nunito_regular"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="Notificaciones"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="70dp"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="#F73A36"
+       android:layout_alignParentBottom="true"
+       android:padding="10dp"
+       android:orientation="horizontal">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:background="@drawable/background_white_rect">
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="#00000000"
+               android:drawableRight="@drawable/send"
+               android:fontFamily="@font/nunito_regular"
+               android:hint="Escribir Notificacion"
+               android:inputType="text"
+               android:padding="10dp"
+               android:textSize="11.7sp" />
+       </LinearLayout>
+
+   </LinearLayout>
+
+</RelativeLayout>
