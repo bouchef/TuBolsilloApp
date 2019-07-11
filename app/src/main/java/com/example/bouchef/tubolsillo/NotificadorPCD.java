@@ -16,10 +16,12 @@ import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
 import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.IdResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
+import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
 import java.util.ArrayList;
 
@@ -96,48 +98,76 @@ public class NotificadorPCD extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String Slecteditem= lenguajeProgramacion[+position];
 
+                MensajeViewModelPOST  m = new MensajeViewModelPOST();
+                m.setIdCompra(2);
+                m.setIdTipoEvento(4);
+                m.setDescripcion(Slecteditem);
+                m.setIdUsuario(2);
+                m.setImportancia("string");
+                api.nuevoMensaje(m).enqueue(new Callback<IdResponse>() {
+                    @Override
+                    public void onResponse(Call<IdResponse> call, Response<IdResponse> response) {
+                        if(response.isSuccessful()){
+                            procesarMensaje(Slecteditem);
+                        }else{
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+                        }
 
-                if(Slecteditem=="Necesito Ayuda"){
-                    //enviar mensaje("Necesito Ayuda")
-                    Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-                }
-                if(Slecteditem=="Salgo a Comprar"){
-                    //enviar mensaje("Salgo a Comprar")
-                    Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-                }
-                if(Slecteditem=="Esperando el trasporte"){
-                    //enviar mensaje("Esperando el trasporte")
-                    Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-                }
-                if(Slecteditem=="Llegando al Comercio"){
-                    //enviar mensaje("Llegando al Comercio")
-                    Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (view.getContext(), PagarPCD.class);
-                    startActivityForResult(intent, 0);
-                }
-                if(Slecteditem=="Ya estoy volviendo"){
-                    //enviar mensaje("Ya estoy volviendo")
-                    Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (view.getContext(), BotoneraInicialPCD.class);
-                    startActivityForResult(intent, 0);
-                }
-                if(Slecteditem=="Cancelando Compra"){
-                    //enviar mensaje("Cancelando Compra")
-                    Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (view.getContext(), BotoneraInicialPCD.class);
-                    startActivityForResult(intent, 0);
-                }
+                    }
+
+                    @Override
+                    public void onFailure(Call<IdResponse> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
+
+
 
             }
         });
+    }
 
-
-
+    private void procesarMensaje(String Slecteditem){
+        if(Slecteditem=="Necesito Ayuda"){
+            //enviar mensaje("Necesito Ayuda")
+            Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+        }
+        if(Slecteditem=="Salgo a Comprar"){
+            //enviar mensaje("Salgo a Comprar")
+            Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+        }
+        if(Slecteditem=="Esperando el trasporte"){
+            //enviar mensaje("Esperando el trasporte")
+            Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+        }
+        if(Slecteditem=="Llegando al Comercio"){
+            //enviar mensaje("Llegando al Comercio")
+            Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent (getApplicationContext(), PagarPCD.class);
+            startActivityForResult(intent, 0);
+        }
+        if(Slecteditem=="Ya estoy volviendo"){
+            //enviar mensaje("Ya estoy volviendo")
+            Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent (getApplicationContext(), BotoneraInicialPCD.class);
+            startActivityForResult(intent, 0);
+        }
+        if(Slecteditem=="Cancelando Compra"){
+            //enviar mensaje("Cancelando Compra")
+            Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent (getApplicationContext(), BotoneraInicialPCD.class);
+            startActivityForResult(intent, 0);
+        }
     }
 
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
+
+        String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
+
         descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(mensaje.getFechaAlta());
+        //fechaAlta.setText(mensaje.getFechaAlta());
+        fechaAlta.setText(t);
     }
 
 

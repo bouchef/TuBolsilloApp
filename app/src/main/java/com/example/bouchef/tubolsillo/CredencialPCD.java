@@ -24,6 +24,7 @@ import com.example.bouchef.tubolsillo.api.model.PCDViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
+import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
 import java.util.ArrayList;
 
@@ -253,7 +254,9 @@ public class CredencialPCD extends AppCompatActivity {
     }
 
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
+        String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
+
         descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(mensaje.getFechaAlta());
+        fechaAlta.setText(t);
     }
 }

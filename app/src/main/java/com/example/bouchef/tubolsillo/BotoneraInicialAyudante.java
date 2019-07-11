@@ -17,6 +17,7 @@ import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
+import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -167,8 +168,10 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
 
     }
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
+        String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
+
         descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(mensaje.getFechaAlta());
+        fechaAlta.setText(t);
     }
 
     private void cargarUsuarioGlobal(ApplicationGlobal global, UsuarioViewModelResponse usuario) {
