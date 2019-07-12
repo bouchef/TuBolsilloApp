@@ -1,7 +1,9 @@
 package com.example.bouchef.tubolsillo.api;
 
 
+import com.example.bouchef.tubolsillo.api.model.ComercioViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.IdResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
@@ -9,6 +11,11 @@ import com.example.bouchef.tubolsillo.api.model.PCDViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.PCDViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
+import com.example.bouchef.tubolsillo.api.model.ComercioViewModelPOST;
+import com.example.bouchef.tubolsillo.api.model.ComercioViewModelResponse;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -33,7 +40,11 @@ public interface APIService {
     @POST("nuevoMensaje")
     Call<IdResponse> nuevoMensaje(@Body MensajeViewModelPOST mensajeViewModelPOST);
 
+    @POST("comercios")
+    Call<List<ComercioViewModelResponse>> getComercios(@Body ComercioViewModelPOST comercioViewModelPost);
 
+    @POST("getCompras")
+    Call<List<CompraViewModelResponse>> getCompras(@Body CompraViewModelPOST compraViewModelPOST);
 }
 
 

@@ -134,7 +134,6 @@ public class CredencialPCD extends AppCompatActivity {
             @Override
             public void onResponse(Call<PCDViewModelResponse> call, Response<PCDViewModelResponse> response) {
                 if(response.isSuccessful()){
-                    Alerts.newToastLarge(mContext, "OK");
                     cargarPCD(response.body());
                 }else{
                     Alerts.newToastLarge(mContext, "ERR");
