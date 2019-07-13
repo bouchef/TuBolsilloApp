@@ -1,8 +1,8 @@
-package com.ergorenova.tasa.sgitomobilegestion.generics;
+package com.example.bouchef.tubolsillo.generics;
 
 import android.content.Context;
 
-import com.ergorenova.tasa.sgitomobilegestion.R;
+import com.example.bouchef.tubolsillo.R;
 
 import dmax.dialog.SpotsDialog;
 

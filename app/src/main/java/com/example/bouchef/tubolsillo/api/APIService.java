@@ -1,6 +1,7 @@
 package com.example.bouchef.tubolsillo.api;
 
 
+import com.example.bouchef.tubolsillo.api.model.ComercioViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.ComercioViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
@@ -11,10 +12,7 @@ import com.example.bouchef.tubolsillo.api.model.PCDViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.PCDViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
-import com.example.bouchef.tubolsillo.api.model.ComercioViewModelPOST;
-import com.example.bouchef.tubolsillo.api.model.ComercioViewModelResponse;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -45,6 +43,12 @@ public interface APIService {
 
     @POST("getCompras")
     Call<List<CompraViewModelResponse>> getCompras(@Body CompraViewModelPOST compraViewModelPOST);
+
+
+    @GET("getNuevosMensajes/{idCompra}/{idUsuario}/{idTipoEvento}")
+    Call<List<MensajeViewModelResponse>> getMensajesNuevos(@Path("idCompra") int idCompra, @Path("idUsuario") int idUsuario, @Path("idTipoEvento") int idTipoEvento);
+
+
 }
 
 

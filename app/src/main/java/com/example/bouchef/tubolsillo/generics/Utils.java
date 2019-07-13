@@ -1,29 +1,16 @@
-package com.ergorenova.tasa.sgitomobilegestion.generics;
+package com.example.bouchef.tubolsillo.generics;
 
-import android.Manifest;
 import android.app.Activity;
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NotificationCompat;
 import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
-import android.widget.Spinner;
 
-import com.ergorenova.tasa.sgitomobilegestion.R;
-import com.ergorenova.tasa.sgitomobilegestion.adapters.SpinnerArrayAdapter;
-import com.ergorenova.tasa.sgitomobilegestion.login.PreLoginActivity;
-import com.ergorenova.tasa.sgitomobilegestion.models.CodigoDescripcion;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -32,9 +19,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.List;
 
-import io.nlopez.smartlocation.SmartLocation;
 
 public class Utils {
     public static void newActivity(Activity activity, Class aClass) {
@@ -126,16 +111,7 @@ public class Utils {
         fileOrDirectory.delete();
     }
 
-    public static SpinnerArrayAdapter populateSpinnerAdapter(Context context, Spinner spinner, List<CodigoDescripcion> lista ){
-        SpinnerArrayAdapter adapter =
-                new SpinnerArrayAdapter(
-                        context,
-                        R.layout.spinner_item_ok ,
-                        lista);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        return adapter;
-    }
+
     public static String getApplicationPath(final Context context){
         return "/data/data/" + context.getPackageName() ;
     }
@@ -175,25 +151,7 @@ public class Utils {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         return intent;
     }
-    public static Notification getNotificationForOpenFile(final Context context, File file){
-        Intent intent = Utils.getIntentForOpenFile(file);
-        //////////////////////////////////////////////////////////
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
-                context,
-                Utils.getApplicationName(context))
-                .setSmallIcon(R.drawable.ic_logo_1)
-                .setContentTitle(Utils.getApplicationName(context))
-                .setContentText(file.getName())
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                // Set the intent that will fire when the user taps the notification
-                .setContentIntent(pendingIntent)
-                .setOngoing(false)
-                .setAutoCancel(true);
-
-        return mBuilder.build();
-    }
 
     public static String getApplicationName(Context context) {
         ApplicationInfo applicationInfo = context.getApplicationInfo();
@@ -296,15 +254,6 @@ public class Utils {
     }
 
 
-    public static boolean localizacionHabilitada(Context context){
-        try{
-            return SmartLocation.with(context).location().state().locationServicesEnabled() &&
-                    SmartLocation.with(context).location().state().isAnyProviderAvailable() &&
-                    SmartLocation.with(context).location().state().isGpsAvailable();
-        }catch (Exception e){
-            e.printStackTrace();
-            return false;
-        }
-    }
+
 
 }
