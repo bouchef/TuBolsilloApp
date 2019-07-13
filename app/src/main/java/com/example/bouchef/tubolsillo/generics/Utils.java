@@ -1,41 +1,39 @@
-package com.ergorenova.tasa.sgitomobilegestion.generics;
+//*
+//package com.ergorenova.tasa.sgitomobilegestion.generics;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.Notification;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NotificationCompat;
-import android.webkit.MimeTypeMap;
-import android.widget.ImageView;
-import android.widget.Spinner;
+//import android.Manifest;
+//import android.app.Activity;
+//import android.app.Notification;
+//import android.app.PendingIntent;
+//import android.content.Context;
+//import android.content.Intent;
+//import android.content.pm.ApplicationInfo;
+//import android.content.pm.PackageInfo;
+//import android.content.pm.PackageManager;
+//import android.location.Location;
+//import android.net.Uri;
+//import android.support.v4.app.ActivityCompat;
+//import android.support.v4.app.NotificationCompat;
+//import android.webkit.MimeTypeMap;
+//import android.widget.ImageView;
+//import android.widget.Spinner;
 
-import com.ergorenova.tasa.sgitomobilegestion.R;
-import com.ergorenova.tasa.sgitomobilegestion.adapters.SpinnerArrayAdapter;
-import com.ergorenova.tasa.sgitomobilegestion.login.PreLoginActivity;
-import com.ergorenova.tasa.sgitomobilegestion.models.CodigoDescripcion;
-import com.squareup.picasso.Picasso;
+//import com.ergorenova.tasa.sgitomobilegestion.R;
+//import com.ergorenova.tasa.sgitomobilegestion.adapters.SpinnerArrayAdapter;
+//import com.ergorenova.tasa.sgitomobilegestion.login.PreLoginActivity;
+//import com.ergorenova.tasa.sgitomobilegestion.models.CodigoDescripcion;
+//import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.List;
+//import java.io.File;
+//import java.io.FileInputStream;
+//import java.io.FileOutputStream;
+//import java.io.IOException;
+//import java.io.InputStream;
+//import java.io.OutputStream;
+//import java.util.List;
 
-import io.nlopez.smartlocation.SmartLocation;
-
+//import io.nlopez.smartlocation.SmartLocation;
+/*
 public class Utils {
     public static void newActivity(Activity activity, Class aClass) {
         activity.startActivity(new Intent(activity, aClass));
@@ -51,7 +49,7 @@ public class Utils {
         boolean isConnected = activeNetwork != null &&
                 activeNetwork.isConnected();
         return isConnected;
-        */
+
     }
 
     public static float sizeInMB(File f) {
@@ -81,7 +79,6 @@ public class Utils {
         String s = String.format("%.2f", d).replace(",", ".");
         return Float.parseFloat(s);
     }
-/*
 
     public static Location getGPSPosition(Context context) {
         LocationManager mLocationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
@@ -116,7 +113,6 @@ public class Utils {
 
 
     }
-*/
 
     public static void deleteRecursive(File fileOrDirectory) {
         if (fileOrDirectory.isDirectory())
@@ -308,3 +304,4 @@ public class Utils {
     }
 
 }
+*/

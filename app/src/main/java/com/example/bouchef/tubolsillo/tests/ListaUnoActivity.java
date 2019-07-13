@@ -9,6 +9,6 @@ public class ListaUnoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_uno);
+        //(R.layout.activity_lista_uno);
     }
 }
