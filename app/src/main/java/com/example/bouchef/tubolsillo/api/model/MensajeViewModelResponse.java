@@ -10,9 +10,9 @@ public class MensajeViewModelResponse {
     @SerializedName("descripcion")
     @Expose
     private String descripcion;
-    @SerializedName("importancia")
+    @SerializedName("ordenImportancia")
     @Expose
-    private String importancia;
+    private Integer ordenImportancia;
     @SerializedName("fechaAlta")
     @Expose
     private String fechaAlta;
@@ -54,12 +54,12 @@ public class MensajeViewModelResponse {
         this.descripcion = descripcion;
     }
 
-    public String getImportancia() {
-        return importancia;
+    public Integer getOrdenImportancia() {
+        return ordenImportancia;
     }
 
-    public void setImportancia(String importancia) {
-        this.importancia = importancia;
+    public void setOrdenImportancia(Integer ordenImportancia) {
+        this.ordenImportancia = ordenImportancia;
     }
 
     public String getFechaAlta() {

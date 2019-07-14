@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +43,14 @@ public class NotificadorPCD extends AppCompatActivity {
     @BindView(R.id.descripcion)
     TextView descripcion;
     @BindView(R.id.fechaAlta) TextView fechaAlta;
+
+    @BindView(R.id.autorizarButton)
+    ImageButton autorizarButton;
+
+    @BindView(R.id.info)
+    ImageView imageInfo;
+    private Integer idTipoEvento;
+
     //private RecyclerView recyclerView;
     private DashboardAdapter adapter;
     private ArrayList<dashboard> dashboardList;
@@ -103,7 +113,7 @@ public class NotificadorPCD extends AppCompatActivity {
                 m.setIdTipoEvento(4);
                 m.setDescripcion(Slecteditem);
                 m.setIdUsuario(2);
-                m.setImportancia("string");
+                m.setOrdenImportancia(1);
                 api.nuevoMensaje(m).enqueue(new Callback<IdResponse>() {
                     @Override
                     public void onResponse(Call<IdResponse> call, Response<IdResponse> response) {
@@ -124,6 +134,14 @@ public class NotificadorPCD extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        autorizarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
+                startActivityForResult(intent, 0);
             }
         });
     }
@@ -168,6 +186,13 @@ public class NotificadorPCD extends AppCompatActivity {
         descripcion.setText(mensaje.getDescripcion());
         //fechaAlta.setText(mensaje.getFechaAlta());
         fechaAlta.setText(t);
+
+        idTipoEvento = mensaje.getOrdenImportancia();
+        if(idTipoEvento.equals(3)){
+            autorizarButton.setVisibility(View.VISIBLE);
+        }else {
+            imageInfo.setVisibility(View.VISIBLE);
+        }
     }
 
 
