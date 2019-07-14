@@ -54,6 +54,9 @@ public interface APIService {
 
     @GET("compraVigente/{idUsuario}")
     Call<CompraViewModelResponse> getCompraVigente(@Path("idUsuario") int idUsuario);
+
+    @GET("usuario/{id}")
+    Call<UsuarioViewModelResponse> getUsuarioPCD(@Path("id") int id);
 }
 
 

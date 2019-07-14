@@ -47,7 +47,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
         api = Api.getAPIService(getApplicationContext());
 
         UsuarioViewModelPOST usuarioViewModelPOST = new UsuarioViewModelPOST();
-        usuarioViewModelPOST.setId(2);
+        usuarioViewModelPOST.setId(1);
         usuarioViewModelPOST.setNombre("");
         api.getUsuario(usuarioViewModelPOST).enqueue(new Callback<UsuarioViewModelResponse>() {
             @Override

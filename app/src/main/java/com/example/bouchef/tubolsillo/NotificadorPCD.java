@@ -20,6 +20,7 @@ import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.IdResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
@@ -107,7 +108,8 @@ public class NotificadorPCD extends AppCompatActivity {
                 }
                 m.setIdTipoEvento(4);
                 m.setDescripcion(Slecteditem);
-                m.setIdUsuario(applicationGlobal.getUsuario().getId());
+                Integer idUsuarioMensaje = obtenerUsuarioMensaje(applicationGlobal);
+                m.setIdUsuario(idUsuarioMensaje);
                 m.setOrdenImportancia(2);
                 api.nuevoMensaje(m).enqueue(new Callback<IdResponse>() {
                     @Override
@@ -233,5 +235,38 @@ public class NotificadorPCD extends AppCompatActivity {
         fechaAlta.setText(t);
     }
 
+    private Integer obtenerUsuarioMensaje(ApplicationGlobal global)
+    {
+        UsuarioViewModelResponse usuario = global.getUsuario();
+        UsuarioViewModelResponse usuarioTemp = new UsuarioViewModelResponse();
+
+        if (usuario.getTipoUsuario().getDescripcion().equals("Usuario"))
+        {
+            return usuario.getUsuarioPadre().getId();
+        }
+        else
+        {
+            //Obtener usuario a cargo del ayudante para enviarle el mensaje
+            api.getUsuarioPCD(usuario.getId()).enqueue(new Callback<UsuarioViewModelResponse>() {
+                @Override
+                public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
+                    if(response.isSuccessful()){
+                        usuarioTemp.setId(response.body().getId());
+                    }else{
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<UsuarioViewModelResponse> call, Throwable t) {
+                    Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                }
+            });
+
+            return usuarioTemp.getId();
+        }
+    }
 
 }
