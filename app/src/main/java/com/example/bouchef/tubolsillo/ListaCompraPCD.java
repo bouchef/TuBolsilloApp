@@ -106,6 +106,7 @@ public class ListaCompraPCD extends AppCompatActivity {
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
         descripcion.setText(mensaje.getDescripcion());
         fechaAlta.setText(mensaje.getFechaAlta());
+
     }
 
 }

@@ -36,6 +36,8 @@ public class ArmarListaTutor extends AppCompatActivity {
     TextView descripcion;
     @BindView(R.id.fechaAlta) TextView fechaAlta;
 
+
+
     //private RecyclerView recyclerView;
     private DashboardAdapter adapter;
     private ArrayList<dashboard> dashboardList;

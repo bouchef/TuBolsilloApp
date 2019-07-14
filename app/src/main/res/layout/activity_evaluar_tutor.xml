@@ -81,7 +81,16 @@
                 android:layout_height="15dp"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/information"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/autorizarButton"
+                android:layout_width="67.3dp"
+                android:layout_height="67.3dp"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                android:src="@drawable/bocadillo" />
         </LinearLayout>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
