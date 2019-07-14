@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
@@ -64,6 +65,23 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
+        api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {
+            @Override
+            public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
+                if(response.isSuccessful()){
+                    applicationGlobal.setCompra(response.body());
+                }else{
+                    Alerts.newToastLarge(getApplicationContext(), "Err");
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
+                Alerts.newToastLarge(getApplicationContext(), "Err");
+
+            }
+        });
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
         mensajeViewModelPOST.setIdUsuario(1);
@@ -92,6 +110,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
+
                 startActivityForResult(intent, 0);
             }
         });

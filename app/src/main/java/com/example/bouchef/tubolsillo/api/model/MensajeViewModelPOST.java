@@ -26,12 +26,12 @@ public class MensajeViewModelPOST {
         this.idTipoEvento = idTipoEvento;
     }
 
-    public String getImportancia() {
-        return importancia;
+    public Integer getOrdenImportancia() {
+        return ordenImportancia;
     }
 
-    public void setImportancia(String importancia) {
-        this.importancia = importancia;
+    public void setOrdenImportancia(Integer ordenImportancia) {
+        this.ordenImportancia = ordenImportancia;
     }
 
     public Integer getIdUsuario() {
@@ -45,6 +45,6 @@ public class MensajeViewModelPOST {
     private Integer idCompra;
     private String descripcion;
     private Integer idTipoEvento;
-    private String importancia;
+    private Integer ordenImportancia;
     private Integer idUsuario;
 }

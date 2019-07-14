@@ -45,6 +45,15 @@ public interface APIService {
 
     @POST("getCompras")
     Call<List<CompraViewModelResponse>> getCompras(@Body CompraViewModelPOST compraViewModelPOST);
+
+    @GET("actualizarCompra/{idCompra}/{idEstado}/{monto}")
+    Call<Boolean> actualizarCompra(@Path("idCompra") int idCompra, @Path("idEstado") int idEstado, @Path("monto") double monto);
+
+    @GET("marcarMensajeVisto/{id}")
+    Call<Boolean> marcarMensajeVisto(@Path("id") int id);
+
+    @GET("compraVigente/{idUsuario}")
+    Call<CompraViewModelResponse> getCompraVigente(@Path("idUsuario") int idUsuario);
 }
 
 

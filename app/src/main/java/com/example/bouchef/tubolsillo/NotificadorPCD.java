@@ -16,9 +16,11 @@ import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
 import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.IdResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
@@ -66,6 +68,7 @@ public class NotificadorPCD extends AppCompatActivity {
         ButterKnife.bind(this);
 
         api = Api.getAPIService(getApplicationContext());
+        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
         mensajeViewModelPOST.setIdUsuario(2);
@@ -99,11 +102,13 @@ public class NotificadorPCD extends AppCompatActivity {
                 String Slecteditem= lenguajeProgramacion[+position];
 
                 MensajeViewModelPOST  m = new MensajeViewModelPOST();
-                m.setIdCompra(2);
+                if (applicationGlobal.getCompra() != null) {
+                    m.setIdCompra(applicationGlobal.getCompra().getId());
+                }
                 m.setIdTipoEvento(4);
                 m.setDescripcion(Slecteditem);
-                m.setIdUsuario(2);
-                m.setImportancia("string");
+                m.setIdUsuario(applicationGlobal.getUsuario().getId());
+                m.setOrdenImportancia(2);
                 api.nuevoMensaje(m).enqueue(new Callback<IdResponse>() {
                     @Override
                     public void onResponse(Call<IdResponse> call, Response<IdResponse> response) {
@@ -129,6 +134,8 @@ public class NotificadorPCD extends AppCompatActivity {
     }
 
     private void procesarMensaje(String Slecteditem){
+        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
         if(Slecteditem=="Necesito Ayuda"){
             //enviar mensaje("Necesito Ayuda")
             Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
@@ -144,6 +151,25 @@ public class NotificadorPCD extends AppCompatActivity {
         if(Slecteditem=="Llegando al Comercio"){
             //enviar mensaje("Llegando al Comercio")
             Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),3,0).enqueue(new Callback<Boolean>() {
+                @Override
+                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    if(response.isSuccessful()){
+                        applicationGlobal.getCompra().setIdEstado(4);
+                    }else{
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<Boolean> call, Throwable t) {
+                    Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                }
+            });
+
             Intent intent = new Intent (getApplicationContext(), PagarPCD.class);
             startActivityForResult(intent, 0);
         }
@@ -156,6 +182,43 @@ public class NotificadorPCD extends AppCompatActivity {
         if(Slecteditem=="Cancelando Compra"){
             //enviar mensaje("Cancelando Compra")
             Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0).enqueue(new Callback<Boolean>() {
+                @Override
+                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    if(response.isSuccessful()){
+                        applicationGlobal.getCompra().setIdEstado(4);
+                    }else{
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<Boolean> call, Throwable t) {
+                    Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                }
+            });
+
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0).enqueue(new Callback<Boolean>() {
+                @Override
+                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    if(response.isSuccessful()){
+                        applicationGlobal.getCompra().setIdEstado(4);
+                    }else{
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<Boolean> call, Throwable t) {
+                    Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                }
+            });
+
             Intent intent = new Intent (getApplicationContext(), BotoneraInicialPCD.class);
             startActivityForResult(intent, 0);
         }

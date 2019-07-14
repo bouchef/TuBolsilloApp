@@ -19,6 +19,7 @@ import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 
@@ -103,6 +104,27 @@ public class AutorizarTutor extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String Slecteditem= lenguajeProgramacion[+position];
                 Toast.makeText(getApplicationContext(), "ATENCION: PAGO AUTORIZADO", Toast.LENGTH_SHORT).show();
+
+                ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),5,0).enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.getCompra().setIdEstado(5);
+                        }else{
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
+
                 Intent intent = new Intent (view.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
             }

@@ -20,6 +20,7 @@ import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 
@@ -120,9 +121,28 @@ public class PagarPCD extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
                 String Slecteditem= lenguajeProgramacion[+position];
                 //enviar mensaje("Autorizar pago Importe")
                 Toast.makeText(getApplicationContext(), "ATENCION: PAGANDO COMPRA 1 ($"+importe.getText().toString()+")", Toast.LENGTH_SHORT).show();
+
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),4,Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.getCompra().setIdEstado(4);
+                        }else{
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
 
                 Intent intent = new Intent (view.getContext(), BotoneraInicialPCD.class);
                 startActivityForResult(intent, 0);
@@ -133,8 +153,47 @@ public class PagarPCD extends AppCompatActivity {
         btnPCD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
                 //enviar mensaje("Cancelando Compra y Volviendo")
                 Toast.makeText(getApplicationContext(), "Cancelando Compra y Volviendo", Toast.LENGTH_SHORT).show();
+
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0).enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.getCompra().setIdEstado(4);
+                        }else{
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
+
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0).enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.getCompra().setIdEstado(4);
+                        }else{
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
+
                 Intent intent = new Intent (v.getContext(), BotoneraInicialPCD.class);
                 startActivityForResult(intent, 0);
             }
