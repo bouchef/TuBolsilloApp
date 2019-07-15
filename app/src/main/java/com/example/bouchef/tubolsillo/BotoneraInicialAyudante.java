@@ -81,7 +81,13 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
                 if(response.isSuccessful()){
                     applicationGlobal.setCompra(response.body());
                 }else{
-                    Alerts.newToastLarge(getApplicationContext(), "Err");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //applicationGlobal.setCompra(null);
+                    }
                 }
 
             }
@@ -105,7 +111,13 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
                     //*Alerts.newToastLarge(mContext, "OK");*/
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 

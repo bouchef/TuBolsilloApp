@@ -72,6 +72,7 @@ public class AutorizarTutor extends AppCompatActivity {
 
     private Integer idTipoEvento;
 
+    private MensajeViewModelResponse ultimoMensaje;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,9 +94,16 @@ public class AutorizarTutor extends AppCompatActivity {
             public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                 if(response.isSuccessful()){
                     //*Alerts.newToastLarge(mContext, "OK");*/
+                    ultimoMensaje = response.body();
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 
@@ -121,6 +129,24 @@ public class AutorizarTutor extends AppCompatActivity {
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
                             applicationGlobal.getCompra().setIdEstado(5);
+                            api.marcarMensajeVisto(ultimoMensaje.getId()).enqueue(new Callback<Boolean>() {
+                                @Override
+                                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                    if(response.isSuccessful()){
+
+                                    }else{
+                                        Alerts.newToastLarge(getApplicationContext(), "Err");
+                                    }
+
+                                }
+
+                                @Override
+                                public void onFailure(Call<Boolean> call, Throwable t) {
+                                    Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                                }
+                            });
+
                         }else{
                             Alerts.newToastLarge(getApplicationContext(), "Err");
                         }

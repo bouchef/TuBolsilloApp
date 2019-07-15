@@ -90,7 +90,13 @@ public class PagarPCD extends AppCompatActivity {
                     //*Alerts.newToastLarge(mContext, "OK");*/
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 
@@ -209,7 +215,31 @@ public class PagarPCD extends AppCompatActivity {
                     }else{
                         //lista.setVisibility(View.VISIBLE);
                         // enviar updateCompra()
+                        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+                        //String Slecteditem= lenguajeProgramacion[+position];
+                        //enviar mensaje("Autorizar pago Importe")
+                        Toast.makeText(getApplicationContext(), "ATENCION: PAGANDO COMPRA 1 ($"+importe.getText().toString()+")", Toast.LENGTH_SHORT).show();
 
+                        api.actualizarCompra(applicationGlobal.getCompra().getId(),4,Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
+                            @Override
+                            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                if(response.isSuccessful()){
+                                    applicationGlobal.getCompra().setIdEstado(4);
+                                }else{
+                                    Alerts.newToastLarge(getApplicationContext(), "Err");
+                                }
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Boolean> call, Throwable t) {
+                                Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                            }
+                        });
+
+                        //Intent intent = new Intent (v.getContext(), NotificadorPCD.class);
+                        //startActivityForResult(intent, 0);
                     }
                 }
             }

@@ -93,7 +93,13 @@ public class NotificadorPCD extends AppCompatActivity {
                     //*Alerts.newToastLarge(mContext, "OK");*/
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 
@@ -264,6 +270,7 @@ public class NotificadorPCD extends AppCompatActivity {
     {
         UsuarioViewModelResponse usuario = global.getUsuario();
         UsuarioViewModelResponse usuarioTemp = new UsuarioViewModelResponse();
+        api = Api.getAPIService(getApplicationContext());
 
         if (usuario.getTipoUsuario().getDescripcion().equals("Usuario"))
         {
@@ -272,25 +279,27 @@ public class NotificadorPCD extends AppCompatActivity {
         else
         {
             //Obtener usuario a cargo del ayudante para enviarle el mensaje
-            api.getUsuarioPCD(usuario.getId()).enqueue(new Callback<UsuarioViewModelResponse>() {
-                @Override
-                public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
-                    if(response.isSuccessful()){
-                        usuarioTemp.setId(response.body().getId());
-                    }else{
-                        Alerts.newToastLarge(getApplicationContext(), "Err");
-                    }
+            //NO FUNCIONA, POR ESO HARDCODEO POR EL MOMENTO
+            //api.getUsuarioPCD(usuario.getId()).enqueue(new Callback<UsuarioViewModelResponse>() {
+             //   @Override
+            //    public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
+            //        if(response.isSuccessful()){
+            //            usuarioTemp.setId(response.body().getId());
+            //        }else{
+            //            Alerts.newToastLarge(getApplicationContext(), "Err");
+            //        }
 
-                }
+            //    }
 
-                @Override
-                public void onFailure(Call<UsuarioViewModelResponse> call, Throwable t) {
-                    Alerts.newToastLarge(getApplicationContext(), "Err");
+            //    @Override
+            //    public void onFailure(Call<UsuarioViewModelResponse> call, Throwable t) {
+            //        Alerts.newToastLarge(getApplicationContext(), "Err");
 
-                }
-            });
+            //    }
+            //});
 
-            return usuarioTemp.getId();
+            return 2;
+            //return usuarioTemp.getId();
         }
     }
 

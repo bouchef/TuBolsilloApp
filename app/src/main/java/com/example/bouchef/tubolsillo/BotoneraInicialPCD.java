@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
@@ -18,6 +19,8 @@ import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
+
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +51,15 @@ public class BotoneraInicialPCD extends AppCompatActivity {
         UsuarioViewModelPOST usuarioViewModelPOST = new UsuarioViewModelPOST();
         usuarioViewModelPOST.setId(2);
         usuarioViewModelPOST.setNombre("");
+
+        //try {
+        //    Response<UsuarioViewModelResponse> usuarioResult = api.getUsuario(usuarioViewModelPOST).execute();
+        //    cargarUsuarioGlobal(applicationGlobal, usuarioResult.body());
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //}
+
+        //NO FUNCIONA
         api.getUsuario(usuarioViewModelPOST).enqueue(new Callback<UsuarioViewModelResponse>() {
             @Override
             public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
@@ -64,6 +76,31 @@ public class BotoneraInicialPCD extends AppCompatActivity {
             }
         });
 
+        //PARCHE
+        //api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {
+        api.getCompraVigente(2).enqueue(new Callback<CompraViewModelResponse>() {
+            @Override
+            public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
+                if(response.isSuccessful()){
+                    applicationGlobal.setCompra(response.body());
+                }else{
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //applicationGlobal.setCompra(null);
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
+                Alerts.newToastLarge(getApplicationContext(), "Err");
+
+            }
+        });
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
         mensajeViewModelPOST.setIdUsuario(2);
@@ -77,7 +114,13 @@ public class BotoneraInicialPCD extends AppCompatActivity {
                     //*Alerts.newToastLarge(mContext, "OK");*/
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 
@@ -135,7 +178,45 @@ public class BotoneraInicialPCD extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), ListaNegociosFavoritos.class);
+                ApplicationGlobal global = ApplicationGlobal.getInstance();
+                Intent intent;
+
+                api.getCompraVigente(2).enqueue(new Callback<CompraViewModelResponse>() {
+                    @Override
+                    public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.setCompra(response.body());
+                        }else{
+                            if (response.code() != 404) {
+                                Alerts.newToastLarge(mContext, "ERR");
+                            }
+                            else
+                            {
+                                //applicationGlobal.setCompra(null);
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
+
+                if (global.getCompra() == null) {
+                    intent = new Intent(v.getContext(), ListaNegociosFavoritos.class);
+
+                }
+                else if (global.getCompra().getEstado().getId() != 4 && global.getCompra().getEstado().getId() != 3) {
+                    intent = new Intent(v.getContext(),NotificadorPCD.class);
+                }
+                else
+                {
+                    intent = new Intent(v.getContext(),PagarPCD.class);
+                }
+
                 startActivityForResult(intent, 0);
             }
         });
