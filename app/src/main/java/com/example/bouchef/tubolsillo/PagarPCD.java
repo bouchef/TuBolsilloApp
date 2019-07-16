@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -15,11 +14,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
-import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 
@@ -91,7 +90,13 @@ public class PagarPCD extends AppCompatActivity {
                     //*Alerts.newToastLarge(mContext, "OK");*/
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 
@@ -106,7 +111,7 @@ public class PagarPCD extends AppCompatActivity {
         importe = (EditText) findViewById(R.id.importeTxt);
         String item = "PAGAR COMPRA 1 ($"+importe.getText().toString()+")";
 
-        lenguajeProgramacion= new String[]{item};
+        /*lenguajeProgramacion= new String[]{item};
         imgid= new Integer[]{R.drawable.list};
 
         LenguajeListAdapter adapter=new LenguajeListAdapter(this,lenguajeProgramacion,imgid);
@@ -120,21 +125,79 @@ public class PagarPCD extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
                 String Slecteditem= lenguajeProgramacion[+position];
                 //enviar mensaje("Autorizar pago Importe")
                 Toast.makeText(getApplicationContext(), "ATENCION: PAGANDO COMPRA 1 ($"+importe.getText().toString()+")", Toast.LENGTH_SHORT).show();
+
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),4,Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.getCompra().setIdEstado(4);
+                        }else{
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
 
                 Intent intent = new Intent (view.getContext(), BotoneraInicialPCD.class);
                 startActivityForResult(intent, 0);
             }
         });
-
+*/
         Button btnPCD = (Button) findViewById(R.id.button);
         btnPCD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
                 //enviar mensaje("Cancelando Compra y Volviendo")
                 Toast.makeText(getApplicationContext(), "Cancelando Compra y Volviendo", Toast.LENGTH_SHORT).show();
+
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0).enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.getCompra().setIdEstado(4);
+                        }else{
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
+
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0).enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.getCompra().setIdEstado(4);
+                        }else{
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                    }
+                });
+
                 Intent intent = new Intent (v.getContext(), BotoneraInicialPCD.class);
                 startActivityForResult(intent, 0);
             }
@@ -150,8 +213,33 @@ public class PagarPCD extends AppCompatActivity {
                     if(mail.getText().toString().isEmpty()){
                         Toast.makeText(getApplicationContext(), "Debe colocar un mail de vendendor", Toast.LENGTH_SHORT).show();
                     }else{
-                        lista.setVisibility(View.VISIBLE);
+                        //lista.setVisibility(View.VISIBLE);
+                        // enviar updateCompra()
+                        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+                        //String Slecteditem= lenguajeProgramacion[+position];
+                        //enviar mensaje("Autorizar pago Importe")
+                        Toast.makeText(getApplicationContext(), "ATENCION: PAGANDO COMPRA 1 ($"+importe.getText().toString()+")", Toast.LENGTH_SHORT).show();
 
+                        api.actualizarCompra(applicationGlobal.getCompra().getId(),4,Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
+                            @Override
+                            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                if(response.isSuccessful()){
+                                    applicationGlobal.getCompra().setIdEstado(4);
+                                }else{
+                                    Alerts.newToastLarge(getApplicationContext(), "Err");
+                                }
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Boolean> call, Throwable t) {
+                                Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                            }
+                        });
+
+                        //Intent intent = new Intent (v.getContext(), NotificadorPCD.class);
+                        //startActivityForResult(intent, 0);
                     }
                 }
             }

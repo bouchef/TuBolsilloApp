@@ -49,6 +49,18 @@ public interface APIService {
     Call<List<MensajeViewModelResponse>> getMensajesNuevos(@Path("idCompra") int idCompra, @Path("idUsuario") int idUsuario, @Path("idTipoEvento") int idTipoEvento);
 
 
+    @GET("actualizarCompra/{idCompra}/{idEstado}/{monto}")
+    Call<Boolean> actualizarCompra(@Path("idCompra") int idCompra, @Path("idEstado") int idEstado, @Path("monto") double monto);
+
+    @GET("marcarMensajeVisto/{id}")
+    Call<Boolean> marcarMensajeVisto(@Path("id") int id);
+
+    @GET("compraVigente/{idUsuario}")
+    Call<CompraViewModelResponse> getCompraVigente(@Path("idUsuario") int idUsuario);
+
+    @GET("usuario/{id}")
+    Call<UsuarioViewModelResponse> getUsuarioPCD(@Path("id") int id);
+
 }
 
 

@@ -33,6 +33,7 @@ public class ListaUnoActivity extends AppCompatCustomActivity implements Mensaje
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_lista_uno);
 
         ButterKnife.bind(this);
@@ -112,6 +113,7 @@ public class ListaUnoActivity extends AppCompatCustomActivity implements Mensaje
         i.setClickeado( !i.isClickeado());
 
         adapter.notifyItemChanged(position);
+
 
     }
 

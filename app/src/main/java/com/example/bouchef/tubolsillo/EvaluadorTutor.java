@@ -2,7 +2,11 @@ package com.example.bouchef.tubolsillo;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,12 +37,19 @@ public class EvaluadorTutor extends AppCompatActivity {
 
     @BindView(R.id.descripcion) TextView descripcion;
     @BindView(R.id.fechaAlta) TextView fechaAlta;
+    @BindView(R.id.autorizarButton)
+    ImageButton autorizarButton;
+
+    @BindView(R.id.info)
+    ImageView imageInfo;
 
     //private RecyclerView recyclerView;
     private DashboardAdapter adapter;
     private ArrayList<dashboard> dashboardList;
     private ArrayList<String> cars = new ArrayList<String>();
     private dashboard das;
+
+    private Integer idTipoEvento;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +72,27 @@ public class EvaluadorTutor extends AppCompatActivity {
                     //*Alerts.newToastLarge(mContext, "OK");*/
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
                 Alerts.newToastLarge(mContext, "ErrErr");
+            }
+        });
+
+        autorizarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
+                startActivityForResult(intent, 0);
             }
         });
 
@@ -78,6 +103,13 @@ public class EvaluadorTutor extends AppCompatActivity {
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
         descripcion.setText(mensaje.getDescripcion());
         fechaAlta.setText(mensaje.getFechaAlta());
+
+        idTipoEvento = mensaje.getOrdenImportancia();
+        if(idTipoEvento.equals(3)){
+            autorizarButton.setVisibility(View.VISIBLE);
+        }else {
+            imageInfo.setVisibility(View.VISIBLE);
+        }
     }
 
 

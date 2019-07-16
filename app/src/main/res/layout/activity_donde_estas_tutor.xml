@@ -49,7 +49,7 @@
                 android:id="@+id/descripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ULTIMA NOTIFICACION"
+                android:text="SIN MENSAJES"
                 android:textSize="18.7sp"
                 android:textColor="#000000"
                 android:fontFamily="@font/nunito_regular"/>
@@ -66,11 +66,21 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/info"
             android:layout_width="15dp"
             android:layout_height="15dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:src="@drawable/information"
-            android:layout_gravity="center"/>
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/autorizarButton"
+            android:layout_width="67.3dp"
+            android:layout_height="67.3dp"
+            android:scaleType="fitCenter"
+            android:visibility="invisible"
+            android:src="@drawable/bocadillo" />
 
     </LinearLayout>
     <ListView

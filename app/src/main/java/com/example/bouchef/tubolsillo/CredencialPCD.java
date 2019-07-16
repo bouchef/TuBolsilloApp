@@ -117,7 +117,13 @@ public class CredencialPCD extends AppCompatActivity {
                     //*Alerts.newToastLarge(mContext, "OK");*/
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 

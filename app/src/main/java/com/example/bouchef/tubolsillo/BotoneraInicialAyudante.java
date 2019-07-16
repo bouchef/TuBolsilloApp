@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
@@ -35,6 +38,14 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
 
     @BindView(R.id.descripcion) TextView descripcion;
     @BindView(R.id.fechaAlta) TextView fechaAlta;
+    @BindView(R.id.autorizarButton)
+    ImageButton autorizarButton;
+
+    @BindView(R.id.info)
+    ImageView imageInfo;
+
+
+    private Integer idTipoEvento;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +57,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
         api = Api.getAPIService(getApplicationContext());
 
         UsuarioViewModelPOST usuarioViewModelPOST = new UsuarioViewModelPOST();
-        usuarioViewModelPOST.setId(2);
+        usuarioViewModelPOST.setId(1);
         usuarioViewModelPOST.setNombre("");
         api.getUsuario(usuarioViewModelPOST).enqueue(new Callback<UsuarioViewModelResponse>() {
             @Override
@@ -64,6 +75,29 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
+        api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {
+            @Override
+            public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
+                if(response.isSuccessful()){
+                    applicationGlobal.setCompra(response.body());
+                }else{
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //applicationGlobal.setCompra(null);
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
+                Alerts.newToastLarge(getApplicationContext(), "Err");
+
+            }
+        });
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
         mensajeViewModelPOST.setIdUsuario(1);
@@ -77,7 +111,13 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
                     //*Alerts.newToastLarge(mContext, "OK");*/
                     cargarUltimoMensaje(response.body());
                 }else{
-                    Alerts.newToastLarge(mContext, "ERR");
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(mContext, "ERR");
+                    }
+                    else
+                    {
+                        //cargarUltimoMensaje(null);
+                    }
                 }
             }
 
@@ -92,6 +132,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
+
                 startActivityForResult(intent, 0);
             }
         });
@@ -166,12 +207,27 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
+        autorizarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
     }
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
         String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
 
         descripcion.setText(mensaje.getDescripcion());
         fechaAlta.setText(t);
+
+        idTipoEvento = mensaje.getOrdenImportancia();
+        if(idTipoEvento.equals(3)){
+            autorizarButton.setVisibility(View.VISIBLE);
+        }else {
+            imageInfo.setVisibility(View.VISIBLE);
+        }
     }
 
     private void cargarUsuarioGlobal(ApplicationGlobal global, UsuarioViewModelResponse usuario) {
