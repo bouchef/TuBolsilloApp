@@ -17,16 +17,11 @@ import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
-import com.example.bouchef.tubolsillo.generics.Utils;
-import com.example.bouchef.tubolsillo.tests.ListaUnoActivity;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
-import java.io.IOException;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,14 +36,6 @@ public class BotoneraInicialPCD extends AppCompatActivity {
 
     @BindView(R.id.descripcion) TextView descripcion;
     @BindView(R.id.fechaAlta) TextView fechaAlta;
-    @BindView(R.id.testlista) Button testlista;
-
-    @OnClick(R.id.testlista)
-    public void irATestLista(){
-        Alerts.newToastLarge(getApplicationContext(), "goToTestLista");
-
-        Utils.newActivity(this, ListaUnoActivity.class);
-    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -256,6 +243,7 @@ public class BotoneraInicialPCD extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
+                finish();
             }
         });
 

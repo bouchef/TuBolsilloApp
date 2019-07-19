@@ -19,7 +19,7 @@
             android:id="@+id/profile_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/jack_sparrow" />
+            android:src="@drawable/user" />
 
         <LinearLayout
             android:layout_weight="1"
@@ -45,6 +45,7 @@
                     android:fontFamily="@font/nunito_bold"/>
 
                 <TextView
+                    android:id="@+id/subTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"

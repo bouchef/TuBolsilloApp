@@ -127,7 +127,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
-        Button btn1 = (Button) findViewById(R.id.button1);
+        Button btn1 = (Button) findViewById(R.id.button_autorizar);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,11 +137,11 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
-        Button btn2 = (Button) findViewById(R.id.button2);
+        Button btn2 = (Button) findViewById(R.id.button_seguir_compra);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
+                Intent intent = new Intent (v.getContext(), SeguimientoCompra.class);
                 startActivityForResult(intent, 0);
             }
         });
@@ -153,7 +153,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });*/
-        Button btn6 = (Button) findViewById(R.id.button11);
+        Button btn6 = (Button) findViewById(R.id.button_bandeja_mensajes);
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,7 +162,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
-        Button btn5 = (Button) findViewById(R.id.button5);
+        Button btn5 = (Button) findViewById(R.id.button_control_de_gastos);
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,7 +171,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
-        Button btn7 = (Button) findViewById(R.id.button7);
+        Button btn7 = (Button) findViewById(R.id.button_enviar_mensajes);
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,12 +198,13 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });*/
 
-        Button btn9 = (Button) findViewById(R.id.button9);
+        Button btn9 = (Button) findViewById(R.id.button_perfil_usuario);
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), BotoneraInicialPCD.class);
                 startActivityForResult(intent, 0);
+                finish();
             }
         });
 

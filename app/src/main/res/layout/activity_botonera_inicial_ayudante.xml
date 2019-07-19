@@ -114,7 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <Button
-                    android:id="@+id/button1"
+                    android:id="@+id/button_autorizar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_rect"
@@ -126,7 +126,7 @@
                     android:fontFamily="@font/nunito_regular"
                     android:layout_alignParentBottom="true"/>
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/button_seguir_compra"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_rect"
@@ -168,7 +168,7 @@
                     android:fontFamily="@font/nunito_regular"
                     android:layout_alignParentBottom="true"/>-->
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/button_enviar_mensajes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -181,7 +181,7 @@
                     android:textColor="#FFFFFF" />
 
                 <Button
-                    android:id="@+id/button11"
+                    android:id="@+id/button_bandeja_mensajes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_rect"
@@ -199,7 +199,7 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/button_control_de_gastos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_rect"
@@ -223,7 +223,7 @@
                     android:fontFamily="@font/nunito_regular"
                     android:layout_alignParentBottom="true"/>-->
                 <Button
-                    android:id="@+id/button9"
+                    android:id="@+id/button_perfil_usuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_rect"

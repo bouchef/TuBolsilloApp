@@ -48,6 +48,8 @@ public interface APIService {
     @GET("getNuevosMensajes/{idCompra}/{idUsuario}/{idTipoEvento}")
     Call<List<MensajeViewModelResponse>> getMensajesNuevos(@Path("idCompra") int idCompra, @Path("idUsuario") int idUsuario, @Path("idTipoEvento") int idTipoEvento);
 
+    @POST("mensajes")
+    Call<List<MensajeViewModelResponse>> getHistorialMensajes(@Body MensajeViewModelPOST mensajeViewModelPOST);
 
     @GET("actualizarCompra/{idCompra}/{idEstado}/{monto}")
     Call<Boolean> actualizarCompra(@Path("idCompra") int idCompra, @Path("idEstado") int idEstado, @Path("monto") double monto);
@@ -62,13 +64,3 @@ public interface APIService {
     Call<UsuarioViewModelResponse> getUsuarioPCD(@Path("id") int id);
 
 }
-
-
-
-
-
-
-
-
-
-

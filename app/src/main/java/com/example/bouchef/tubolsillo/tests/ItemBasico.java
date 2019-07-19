@@ -5,6 +5,7 @@ public class ItemBasico {
     private int id;
     private String descripcion;
     private String tipo;
+    private String fecha;
 
     private boolean clickeado;
 
@@ -22,6 +23,14 @@ public class ItemBasico {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getFecha() {
+        return fecha;
     }
 
     public String getDescripcion() {

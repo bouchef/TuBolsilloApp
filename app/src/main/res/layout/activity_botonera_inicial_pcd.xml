@@ -201,15 +201,6 @@
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/nunito_regular"
                     android:layout_alignParentBottom="true"/>
-
-                <Button android:id="@+id/testlista"
-                    android:text="test listaok"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-                </Button>
-
             </TableRow>
 
             <TableRow
@@ -228,8 +219,6 @@
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/nunito_regular"
                     android:layout_alignParentBottom="true"/>
-
-
                 <!--<Button
                     android:id="@+id/button8"
                     android:layout_width="match_parent"
