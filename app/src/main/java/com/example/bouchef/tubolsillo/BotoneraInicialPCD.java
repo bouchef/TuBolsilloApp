@@ -5,24 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
-import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
-import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.generics.Utils;
 import com.example.bouchef.tubolsillo.tests.ListaUnoActivity;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
-import com.example.bouchef.tubolsillo.utiles.FechaUtils;
-
-import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,8 +33,6 @@ public class BotoneraInicialPCD extends AppCompatActivity {
     private Context mContext= BotoneraInicialPCD.this;
     private APIService api;
 
-    @BindView(R.id.descripcion) TextView descripcion;
-    @BindView(R.id.fechaAlta) TextView fechaAlta;
     @BindView(R.id.testlista) Button testlista;
 
     @OnClick(R.id.testlista)
@@ -110,34 +102,6 @@ public class BotoneraInicialPCD extends AppCompatActivity {
             public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
                 Alerts.newToastLarge(getApplicationContext(), "Err");
 
-            }
-        });
-
-        MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(2);
-        mensajeViewModelPOST.setIdCompra(0);
-        mensajeViewModelPOST.setIdTipoEvento(4);
-
-        api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
-            @Override
-            public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
-                if(response.isSuccessful()){
-                    //*Alerts.newToastLarge(mContext, "OK");*/
-                    cargarUltimoMensaje(response.body());
-                }else{
-                    if (response.code() != 404) {
-                        Alerts.newToastLarge(mContext, "ERR");
-                    }
-                    else
-                    {
-                        //cargarUltimoMensaje(null);
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
-                Alerts.newToastLarge(mContext, "ErrErr");
             }
         });
 
@@ -269,12 +233,6 @@ public class BotoneraInicialPCD extends AppCompatActivity {
         });
     }
 
-    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-        String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
-
-        descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(t);
-    }
 
     private void cargarUsuarioGlobal(ApplicationGlobal global, UsuarioViewModelResponse usuario) {
         global.setUsuario(usuario);

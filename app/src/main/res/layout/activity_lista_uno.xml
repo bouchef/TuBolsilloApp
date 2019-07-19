@@ -3,14 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".tests.ListaUnoActivity">
 
+<!--<include layout="@layout/notificacion_ultima"/>
+    -->
+    <fragment
+        android:id="@+id/fragment"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
+        tools:layout="@layout/fragment_ultima_notificacion" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
