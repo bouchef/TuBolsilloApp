@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -43,6 +44,9 @@ public class UltimaNotificacionFragment extends Fragment {
 
     @BindView(R.id.fechaAlta)
     TextView fechaAlta;
+
+    @BindView(R.id.fragment_main)
+    LinearLayout fragment_main;
 
 
     @Override
@@ -130,8 +134,10 @@ public class UltimaNotificacionFragment extends Fragment {
                 descripcion.setText(mensaje.getDescripcion());
                 fechaAlta.setText(t);
                 Alerts.newToastLarge(getContext(), "Check msg OK");
+                fragment_main.setVisibility(View.VISIBLE);
             }else{
-                Alerts.newToastLarge(getContext(), "Check msg OK");
+                Alerts.newToastLarge(getContext(), "Check msg NO OK");
+                fragment_main.setVisibility(View.GONE);
             }
 
         }catch (Exception e){

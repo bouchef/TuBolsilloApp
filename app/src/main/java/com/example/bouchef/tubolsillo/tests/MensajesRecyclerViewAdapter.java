@@ -4,14 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bouchef.tubolsillo.R;
-import com.example.bouchef.tubolsillo.utiles.Alerts;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -35,7 +32,7 @@ public class MensajesRecyclerViewAdapter extends RecyclerView.Adapter<MensajesRe
 
     @Override
     public MensajesRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.rv_row_dato_basico, parent, false);
+        View view = mInflater.inflate(R.layout.mensaje_compra_item_list, parent, false);
         context = parent.getContext();
         return new MensajesRecyclerViewAdapter.ViewHolder(view);
     }
@@ -44,14 +41,15 @@ public class MensajesRecyclerViewAdapter extends RecyclerView.Adapter<MensajesRe
     @Override
     public void onBindViewHolder(MensajesRecyclerViewAdapter.ViewHolder holder, final int position) {
         final ItemBasico c = items.get(position);
-        holder.texto.setText(c.getDescripcion());
+        holder.text_descripcion.setText(c.getDescripcion());
+        holder.text_mensaje_date.setText(c.getFecha());
 
 
-        if(c.isClickeado()){
+        /*if(c.isClickeado()){
             Picasso.get().load(android.R.drawable.star_big_on).into(holder.estrella);
         }else{
             Picasso.get().load(android.R.drawable.star_big_off).into(holder.estrella);
-        }
+        }*/
         //holder.sincronizar_cantidad.setText(String.valueOf(c.getCantidadPendienteDeSync()));
         ///////////////////////////////////////////////////////////////
 /*
@@ -75,8 +73,9 @@ public class MensajesRecyclerViewAdapter extends RecyclerView.Adapter<MensajesRe
 
     public class ViewHolder extends RecyclerView.ViewHolder  {
 
-        @BindView(R.id.texto) TextView texto;
-        @BindView(R.id.estrella) ImageView estrella;
+        @BindView(R.id.text_descripcion) TextView text_descripcion;
+        @BindView(R.id.text_mensaje_date) TextView text_mensaje_date;
+        //@BindView(R.id.like) ImageView estrella;
 
         //@BindView(R.id.layout_ok) LinearLayout layout_ok;
 
@@ -92,7 +91,7 @@ public class MensajesRecyclerViewAdapter extends RecyclerView.Adapter<MensajesRe
                 }
             });*/
 
-            estrella.setOnClickListener(new View.OnClickListener() {
+            /*estrella.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if(mClickListener !=null)
@@ -101,7 +100,7 @@ public class MensajesRecyclerViewAdapter extends RecyclerView.Adapter<MensajesRe
                         Alerts.newToastLarge(context, "Falta implementar click");
                     }
                 }
-            });
+            });*/
 
         }
     }

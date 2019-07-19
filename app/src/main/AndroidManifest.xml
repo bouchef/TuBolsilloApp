@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bouchef.tubolsillo">
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tests.ListaUnoActivity"></activity>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +25,12 @@
          You need a different API key for each encryption key, including the release key that is used to
          sign the APK for publishing.
          You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
+    -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" /> <!-- <activity android:name=".HomeActivity" /> -->
+            android:value="@string/google_maps_key" />
+
+        <!--<activity android:name=".HomeActivity" />-->
         <activity android:name=".AquiEstoyPCD" />
         <activity android:name=".ArmarListaTutor" />
         <activity android:name=".AutorizarTutor" />
@@ -43,12 +44,14 @@
         <activity android:name=".MiListaTutor" />
         <activity android:name=".InicioPCD" />
         <activity android:name=".InicioTutor" />
-        <activity android:name=".NotificadorPCD" /> <!-- <activity android:name=".Prueba" /> -->
+        <activity android:name=".NotificadorPCD" />
+        <activity android:name=".SeguimientoCompra" />
         <activity android:name=".ListaNegociosFavoritos" />
         <activity android:name=".ListaControlGastos" />
         <activity android:name=".BotoneraInicialPCD" />
         <activity android:name=".BotoneraInicialAyudante" />
         <activity android:name=".HomeActivityTutor" />
+
     </application>
 
 </manifest>

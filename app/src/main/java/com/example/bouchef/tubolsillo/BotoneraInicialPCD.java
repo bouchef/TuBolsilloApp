@@ -33,14 +33,16 @@ public class BotoneraInicialPCD extends AppCompatActivity {
     private Context mContext= BotoneraInicialPCD.this;
     private APIService api;
 
+
+    /*
     @BindView(R.id.testlista) Button testlista;
 
     @OnClick(R.id.testlista)
     public void irATestLista(){
         Alerts.newToastLarge(getApplicationContext(), "goToTestLista");
-
         Utils.newActivity(this, ListaUnoActivity.class);
     }
+*/
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -220,6 +222,7 @@ public class BotoneraInicialPCD extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
+                finish();
             }
         });
 

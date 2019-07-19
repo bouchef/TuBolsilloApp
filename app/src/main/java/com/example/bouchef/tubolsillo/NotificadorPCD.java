@@ -18,7 +18,6 @@ import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
 import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
-import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.IdResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
@@ -39,6 +38,7 @@ import retrofit2.Response;
 import static com.example.bouchef.tubolsillo.R.layout.activity_mensajes;
 
 public class NotificadorPCD extends AppCompatActivity {
+
     private Context mContext= NotificadorPCD.this;
 
     private APIService api;

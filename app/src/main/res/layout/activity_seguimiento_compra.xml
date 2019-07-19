@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/toolbar"/>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="29dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="67.3dp"
+                android:layout_height="67.3dp"
+                android:background="@drawable/information" />
+
+            <LinearLayout
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="29dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginRight="29dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="18.7sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nunito_regular"/>
+
+                <TextView
+                    android:id="@+id/fechaAlta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text=""
+                    android:textColor="#393939"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textSize="10.7sp"/>
+                <!--android:background="@drawable/restaurant"/>-->
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/info"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/information"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/autorizarButton"
+                android:layout_width="67.3dp"
+                android:layout_height="67.3dp"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/bocadillo" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F73A36"
+                android:fontFamily="@font/nunito_regular"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="SEGUIMIENTO DE COMPRA"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <include
+            layout="@layout/mensajes_compra"/>
+
+        <!--<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="379dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="29dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/mi_lista"
+                android:layout_width="match_parent"
+                android:scrollbars="vertical"
+                android:layout_height="wrap_content" />
+        </LinearLayout>-->
+        <!--<android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:tint="@android:color/white"
+            app:srcCompat="@drawable/plus" />-->
+    </LinearLayout>
+
+</RelativeLayout>
+

@@ -9,6 +9,7 @@
     android:paddingBottom="3dp"
     android:paddingRight="5dp"
     android:orientation="vertical"
+    android:id="@+id/fragment_main"
     tools:context=".tests.UltimaNotificacionFragment">
 
     <LinearLayout
