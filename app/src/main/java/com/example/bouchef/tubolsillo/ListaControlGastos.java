@@ -38,14 +38,14 @@ public class ListaControlGastos extends AppCompatActivity {
 
     private APIService api;
 
-    @BindView(R.id.descripcion)
+/*    @BindView(R.id.descripcion)
     TextView descripcion;
     @BindView(R.id.fechaAlta) TextView fechaAlta;
     @BindView(R.id.autorizarButton)
     ImageButton autorizarButton;
 
     @BindView(R.id.info)
-    ImageView imageInfo;
+    ImageView imageInfo;*/
 
     //private RecyclerView recyclerView;
     private DashboardAdapter adapter;
@@ -83,7 +83,7 @@ public class ListaControlGastos extends AppCompatActivity {
             public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                 if(response.isSuccessful()){
                     //*Alerts.newToastLarge(mContext, "OK");*/
-                    cargarUltimoMensaje(response.body());
+                    //cargarUltimoMensaje(response.body());
                     if (response.code() != 404) {
                         Alerts.newToastLarge(mContext, "ERR");
                     }
@@ -111,18 +111,18 @@ public class ListaControlGastos extends AppCompatActivity {
             }
         });
 
-        autorizarButton.setOnClickListener(new View.OnClickListener() {
+        /*autorizarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
                 startActivityForResult(intent, 0);
             }
-        });
+        });*/
 
     }
 
 
-    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
+/*    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
         descripcion.setText(mensaje.getDescripcion());
         fechaAlta.setText(mensaje.getFechaAlta());
 
@@ -132,6 +132,6 @@ public class ListaControlGastos extends AppCompatActivity {
         }else {
             imageInfo.setVisibility(View.VISIBLE);
         }
-    }
+    }*/
 
 }

@@ -52,6 +52,7 @@ public class UltimaNotificacionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             //info = (ContratistaObservadoChart)getArguments().getSerializable(ARG_INFO);
             //color = getArguments().getInt(ARG_COLOR);
@@ -77,7 +78,7 @@ public class UltimaNotificacionFragment extends Fragment {
 
         loadMensaje();
 
-        comenzar_check();
+        //comenzar_check();
         return view;
     }
 
@@ -110,22 +111,22 @@ public class UltimaNotificacionFragment extends Fragment {
         });
     }
 
-    public void comenzar_check(){
-        final int DELAY_SECS = 0;
-        final int DELAY_BETWEEN_INTENT_SECS = 5;
-        timer = new Timer();
-
-        timer.schedule(new TimerTask()
-        {
-            @Override
-            public void run()
-            {
-                loadMensaje();
-                //Alerts.newToastLarge(getContext(), "NINI");
-            }
-        }, DELAY_SECS*1000, DELAY_BETWEEN_INTENT_SECS*1000);
-
-    }
+//    public void comenzar_check(){
+//        final int DELAY_SECS = 0;
+//        final int DELAY_BETWEEN_INTENT_SECS = 5;
+//        timer = new Timer();
+//
+//        timer.schedule(new TimerTask()
+//        {
+//            @Override
+//            public void run()
+//            {
+//                loadMensaje();
+//                //Alerts.newToastLarge(getContext(), "NINI");
+//            }
+//        }, DELAY_SECS*1000, DELAY_BETWEEN_INTENT_SECS*1000);
+//
+//    }
 
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
         try{

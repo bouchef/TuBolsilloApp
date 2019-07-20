@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center|top"
     android:background="@android:color/transparent"
-    android:paddingTop="3dp"
-    android:paddingBottom="3dp"
-    android:paddingRight="5dp"
     android:orientation="vertical"
-    android:id="@+id/fragment_main"
-    tools:context=".tests.UltimaNotificacionFragment">
+    android:paddingTop="3dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="3dp"
+    tools:context=".tests.UltimaNotificacionFragment"
+    tools:visibility="gone">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,20 +40,20 @@
                 android:id="@+id/descripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
                 android:text="SIN MENSAJES"
-                android:textSize="18.7sp"
                 android:textColor="#000000"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="18.7sp" />
 
             <TextView
                 android:id="@+id/fechaAlta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/nunito_regular"
                 android:text="fecha"
                 android:textColor="#393939"
-                android:fontFamily="@font/nunito_regular"
-                android:textSize="10.7sp"/>
+                android:textSize="10.7sp" />
         </LinearLayout>
 
         <ImageView
@@ -63,7 +64,6 @@
             android:src="@drawable/information" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>

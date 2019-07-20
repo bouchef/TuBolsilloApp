@@ -17,6 +17,7 @@ import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.AppCompatCustomActivity;
 import com.example.bouchef.tubolsillo.generics.Progress;
+import com.example.bouchef.tubolsillo.tests.HistorialMensajesRecyclerViewAdapter;
 import com.example.bouchef.tubolsillo.tests.ItemBasico;
 import com.example.bouchef.tubolsillo.tests.MensajesRecyclerViewAdapter;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
@@ -30,10 +31,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Response;
 
-public class HistorialTutor extends AppCompatCustomActivity implements MensajesRecyclerViewAdapter.DatoBasicoItemClickListener {
-    @BindView(R.id.list_mensajes_compra)
+public class HistorialTutor extends AppCompatCustomActivity implements HistorialMensajesRecyclerViewAdapter.DatoBasicoItemClickListener {
+    @BindView(R.id.list_mensajes)
     RecyclerView list;
-    MensajesRecyclerViewAdapter adapter;
+    HistorialMensajesRecyclerViewAdapter adapter;
     List<ItemBasico> items;
     //@BindView(R.id.titulo) TextView titulo;
     @BindView(R.id.empty_state_container) LinearLayout lista_vacia;
@@ -69,8 +70,8 @@ public class HistorialTutor extends AppCompatCustomActivity implements MensajesR
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(activity_historial_tutor);
-        setContentView(R.layout.mensajes_compra);
+        setContentView(R.layout.activity_historial_tutor);
+        //setContentView(R.layout.mensajes_compra);
         //titulo.setText("HISTORIAL DE MENSAJES");
         ButterKnife.bind(this);
 
@@ -202,7 +203,7 @@ public class HistorialTutor extends AppCompatCustomActivity implements MensajesR
     private void populateList(Context context){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         list.setLayoutManager(linearLayoutManager);
-        adapter = new MensajesRecyclerViewAdapter(context, items);
+        adapter = new HistorialMensajesRecyclerViewAdapter(context, items);
 
         // oculto segun resultado de la lista
         if(items.isEmpty()){

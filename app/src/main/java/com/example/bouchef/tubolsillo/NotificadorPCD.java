@@ -43,7 +43,7 @@ public class NotificadorPCD extends AppCompatActivity {
 
     private APIService api;
 
-    @BindView(R.id.descripcion)
+/*    @BindView(R.id.descripcion)
     TextView descripcion;
     @BindView(R.id.fechaAlta) TextView fechaAlta;
 
@@ -51,7 +51,7 @@ public class NotificadorPCD extends AppCompatActivity {
     ImageButton autorizarButton;
 
     @BindView(R.id.info)
-    ImageView imageInfo;
+    ImageView imageInfo;*/
     private Integer idTipoEvento;
 
     //private RecyclerView recyclerView;
@@ -91,7 +91,7 @@ public class NotificadorPCD extends AppCompatActivity {
             public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                 if(response.isSuccessful()){
                     //*Alerts.newToastLarge(mContext, "OK");*/
-                    cargarUltimoMensaje(response.body());
+                    //cargarUltimoMensaje(response.body());
                 }else{
                     if (response.code() != 404) {
                         Alerts.newToastLarge(mContext, "ERR");
@@ -150,13 +150,13 @@ public class NotificadorPCD extends AppCompatActivity {
             }
         });
 
-        autorizarButton.setOnClickListener(new View.OnClickListener() {
+        /*autorizarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
                 startActivityForResult(intent, 0);
             }
-        });
+        });*/
     }
 
     private void procesarMensaje(String Slecteditem){
@@ -250,7 +250,7 @@ public class NotificadorPCD extends AppCompatActivity {
         }
     }
 
-    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
+    /*private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
 
         String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
 
@@ -264,7 +264,7 @@ public class NotificadorPCD extends AppCompatActivity {
         }else {
             imageInfo.setVisibility(View.VISIBLE);
         }
-    }
+    }*/
 
     private Integer obtenerUsuarioMensaje(ApplicationGlobal global)
     {

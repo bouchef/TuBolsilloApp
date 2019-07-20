@@ -38,9 +38,9 @@ public class PagarPCD extends AppCompatActivity {
 
     private APIService api;
 
-    @BindView(R.id.descripcion)
+   /* @BindView(R.id.descripcion)
     TextView descripcion;
-    @BindView(R.id.fechaAlta) TextView fechaAlta;
+    @BindView(R.id.fechaAlta) TextView fechaAlta;*/
 
     //private RecyclerView recyclerView;
     private DashboardAdapter adapter;
@@ -88,7 +88,7 @@ public class PagarPCD extends AppCompatActivity {
             public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                 if(response.isSuccessful()){
                     //*Alerts.newToastLarge(mContext, "OK");*/
-                    cargarUltimoMensaje(response.body());
+                    //cargarUltimoMensaje(response.body());
                 }else{
                     if (response.code() != 404) {
                         Alerts.newToastLarge(mContext, "ERR");
@@ -248,9 +248,9 @@ public class PagarPCD extends AppCompatActivity {
     }
 
 
-    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
+    /*private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
         descripcion.setText(mensaje.getDescripcion());
         fechaAlta.setText(mensaje.getFechaAlta());
-    }
+    }*/
 
 }

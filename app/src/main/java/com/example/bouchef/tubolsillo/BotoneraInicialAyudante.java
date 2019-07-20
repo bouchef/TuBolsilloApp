@@ -36,13 +36,13 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
     private Context mContext= BotoneraInicialAyudante.this;
     private APIService api;
 
-    @BindView(R.id.descripcion) TextView descripcion;
-    @BindView(R.id.fechaAlta) TextView fechaAlta;
-    @BindView(R.id.autorizarButton)
-    ImageButton autorizarButton;
-
-    @BindView(R.id.info)
-    ImageView imageInfo;
+//    @BindView(R.id.descripcion) TextView descripcion;
+//    @BindView(R.id.fechaAlta) TextView fechaAlta;
+//    @BindView(R.id.autorizarButton)
+//    ImageButton autorizarButton;
+//
+//    @BindView(R.id.info)
+//    ImageView imageInfo;
 
 
     private Integer idTipoEvento;
@@ -109,7 +109,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                 if(response.isSuccessful()){
                     //*Alerts.newToastLarge(mContext, "OK");*/
-                    cargarUltimoMensaje(response.body());
+                    //cargarUltimoMensaje(response.body());
                 }else{
                     if (response.code() != 404) {
                         Alerts.newToastLarge(mContext, "ERR");
@@ -208,28 +208,28 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
-        autorizarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
-                startActivityForResult(intent, 0);
-            }
-        });
+//        autorizarButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
+//                startActivityForResult(intent, 0);
+//            }
+//        });
 
     }
-    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-        String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
-
-        descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(t);
-
-        idTipoEvento = mensaje.getOrdenImportancia();
-        if(idTipoEvento.equals(3)){
-            autorizarButton.setVisibility(View.VISIBLE);
-        }else {
-            imageInfo.setVisibility(View.VISIBLE);
-        }
-    }
+//    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
+//        String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
+//
+//        descripcion.setText(mensaje.getDescripcion());
+//        fechaAlta.setText(t);
+//
+//        idTipoEvento = mensaje.getOrdenImportancia();
+//        if(idTipoEvento.equals(3)){
+//            autorizarButton.setVisibility(View.VISIBLE);
+//        }else {
+//            imageInfo.setVisibility(View.VISIBLE);
+//        }
+//    }
 
     private void cargarUsuarioGlobal(ApplicationGlobal global, UsuarioViewModelResponse usuario) {
         global.setUsuario(usuario);

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!--<LinearLayout
@@ -33,7 +34,7 @@
             <include layout="@layout/toolbar"/>
         </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="91dp"
             android:layout_marginLeft="29dp"
@@ -74,7 +75,7 @@
                     android:textColor="#393939"
                     android:fontFamily="@font/nunito_regular"
                     android:textSize="10.7sp"/>
-                <!--android:background="@drawable/restaurant"/>-->
+                &lt;!&ndash;android:background="@drawable/restaurant"/>&ndash;&gt;
             </LinearLayout>
 
             <ImageView
@@ -94,8 +95,13 @@
                 android:visibility="invisible"
                 android:src="@drawable/bocadillo" />
 
-        </LinearLayout>
-
+        </LinearLayout>-->
+        <fragment
+            android:id="@+id/fragment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
+            tools:layout="@layout/fragment_ultima_notificacion" />
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -116,7 +122,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="379dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="29dp"
             android:layout_marginTop="17dp"
             android:layout_marginRight="29dp"
@@ -126,8 +132,8 @@
             <ListView
                 android:id="@+id/mi_lista"
                 android:layout_width="match_parent"
-                android:scrollbars="vertical"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
         </LinearLayout>
     </LinearLayout>
 

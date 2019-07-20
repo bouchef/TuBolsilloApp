@@ -12,13 +12,86 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <include layout="@layout/toolbar"/>
-        </androidx.cardview.widget.CardView>
-
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/toolbar" />
+            </androidx.cardview.widget.CardView>
+
+            <fragment
+                android:id="@+id/fragment"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
+                tools:layout="@layout/fragment_ultima_notificacion" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/titulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F73A36"
+                    android:fontFamily="@font/nunito_regular"
+                    android:gravity="center"
+                    android:padding="13dp"
+                    android:text="MENSAJES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/empty_state_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_empty_state"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:tint="#9E9E9E"
+                        app:srcCompat="@drawable/conversation"
+                        tools:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/text_empty_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="No hay mensajes de Compra"
+                        tools:visibility="gone" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_mensajes_compra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/mensaje_compra_item_list" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="29dp"
@@ -27,12 +100,12 @@
             android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
-            <!--android:background="@drawable/restaurant"/>-->
+            &lt;!&ndash;android:background="@drawable/restaurant"/>&ndash;&gt;
 
-            <ImageView
+&lt;!&ndash;            <ImageView
                 android:layout_width="67.3dp"
                 android:layout_height="67.3dp"
-                android:background="@drawable/information" />
+                android:background="@drawable/information" />&ndash;&gt;
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -79,57 +152,8 @@
                 android:visibility="invisible"
                 android:src="@drawable/bocadillo" />
 
-        </LinearLayout>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp">
-
-            <TextView
-                android:id="@+id/titulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#F73A36"
-                android:fontFamily="@font/nunito_regular"
-                android:gravity="center"
-                android:padding="13dp"
-                android:text="MENSAJES"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
-
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>-->
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_mensajes_compra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="LinearLayoutManager"
-            tools:listitem="@layout/mensaje_compra_item_list" />
-
-        <LinearLayout
-            android:id="@+id/empty_state_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/image_empty_state"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:tint="#9E9E9E"
-                app:srcCompat="@drawable/conversation"
-                tools:visibility="gone" />
-
-            <TextView
-                android:id="@+id/text_empty_state"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="No hay mensajes de Compra"
-                tools:visibility="gone" />
-        </LinearLayout>
     </RelativeLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
