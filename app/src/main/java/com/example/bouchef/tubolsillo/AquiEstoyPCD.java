@@ -74,30 +74,6 @@ public class AquiEstoyPCD extends AppCompatActivity {
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
-        api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
-            @Override
-            public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
-                if(response.isSuccessful()){
-                    //*Alerts.newToastLarge(mContext, "OK");*/
-                    cargarUltimoMensaje(response.body());
-                }else{
-                    if (response.code() != 404) {
-                        Alerts.newToastLarge(mContext, "ERR");
-                    }
-                    else
-                    {
-                        //cargarUltimoMensaje(null);
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
-                Alerts.newToastLarge(mContext, "ErrErr");
-            }
-        });
-
-
         LenguajeListAdapter adapter=new LenguajeListAdapter(this,lenguajeProgramacion,imgid);
         lista=(ListView)findViewById(R.id.mi_lista);
         lista.setAdapter(adapter);

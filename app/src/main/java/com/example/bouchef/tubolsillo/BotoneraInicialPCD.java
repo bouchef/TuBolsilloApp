@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
+import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
+import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
@@ -33,6 +36,10 @@ public class BotoneraInicialPCD extends AppCompatActivity {
     private Context mContext= BotoneraInicialPCD.this;
     private APIService api;
 
+    @BindView(R.id.descripcion)
+    TextView descripcion;
+    @BindView(R.id.fechaAlta)
+    TextView fechaAlta;
 
     /*
     @BindView(R.id.testlista) Button testlista;
@@ -70,6 +77,58 @@ public class BotoneraInicialPCD extends AppCompatActivity {
             public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
                 if(response.isSuccessful()){
                     cargarUsuarioGlobal(applicationGlobal, response.body());
+
+                    //PARCHE
+                    api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {
+                        //api.getCompraVigente(2).enqueue(new Callback<CompraViewModelResponse>() {
+                        @Override
+                        public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
+                            if(response.isSuccessful()){
+                                applicationGlobal.setCompra(response.body());
+
+
+                                MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
+                                mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
+                                mensajeViewModelPOST.setIdCompra(0);
+                                mensajeViewModelPOST.setIdTipoEvento(0);
+
+                                api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+                                    @Override
+                                    public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
+                                        if (response.isSuccessful()) {
+                                            cargarUltimoMensaje(response.body());
+                                        } else {
+                                            if (response.code() != 404) {
+                                                Alerts.newToastLarge(mContext, "ERR");
+                                            } else {
+                                                cargarUltimoMensaje(null);
+                                            }
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
+                                        Alerts.newToastLarge(mContext, "ErrErr");
+                                    }
+                                });
+                            }else{
+                                if (response.code() != 404) {
+                                    Alerts.newToastLarge(mContext, "ERR");
+                                }
+                                else
+                                {
+                                    //applicationGlobal.setCompra(null);
+                                }
+                            }
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
+                            Alerts.newToastLarge(getApplicationContext(), "Err");
+
+                        }
+                    });
                 }else{
                     Alerts.newToastLarge(mContext, "ERR");
                 }
@@ -80,33 +139,6 @@ public class BotoneraInicialPCD extends AppCompatActivity {
                 Alerts.newToastLarge(mContext, "ErrErr");
             }
         });
-
-        //PARCHE
-        //api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {
-        api.getCompraVigente(2).enqueue(new Callback<CompraViewModelResponse>() {
-            @Override
-            public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
-                if(response.isSuccessful()){
-                    applicationGlobal.setCompra(response.body());
-                }else{
-                    if (response.code() != 404) {
-                        Alerts.newToastLarge(mContext, "ERR");
-                    }
-                    else
-                    {
-                        //applicationGlobal.setCompra(null);
-                    }
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
-                Alerts.newToastLarge(getApplicationContext(), "Err");
-
-            }
-        });
-
 
         Button btn1 = (Button) findViewById(R.id.button1);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -239,5 +271,11 @@ public class BotoneraInicialPCD extends AppCompatActivity {
 
     private void cargarUsuarioGlobal(ApplicationGlobal global, UsuarioViewModelResponse usuario) {
         global.setUsuario(usuario);
+    }
+
+    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
+        descripcion.setText(mensaje.getDescripcion());
+        fechaAlta.setText(mensaje.getFechaAlta());
+
     }
 }

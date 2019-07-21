@@ -107,32 +107,6 @@ public class CredencialPCD extends AppCompatActivity {
         });
 */
 
-
-
-        //////////////////////////////////////
-        api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
-            @Override
-            public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
-                if(response.isSuccessful()){
-                    //*Alerts.newToastLarge(mContext, "OK");*/
-                    cargarUltimoMensaje(response.body());
-                }else{
-                    if (response.code() != 404) {
-                        Alerts.newToastLarge(mContext, "ERR");
-                    }
-                    else
-                    {
-                        //cargarUltimoMensaje(null);
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
-                Alerts.newToastLarge(mContext, "ErrErr");
-            }
-        });
-
         PCDViewModelPOST pcdViewModelPOST = new PCDViewModelPOST();
         pcdViewModelPOST.setNroCertificado("01145456783");
         pcdViewModelPOST.setIdUsuario(2);

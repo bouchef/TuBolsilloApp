@@ -15,6 +15,7 @@ import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
@@ -83,32 +84,34 @@ public class UltimaNotificacionFragment extends Fragment {
     }
 
     private void loadMensaje(){
-        MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(1);
-        mensajeViewModelPOST.setIdCompra(0);
-        mensajeViewModelPOST.setIdTipoEvento(0);
+        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
-        api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
-            @Override
-            public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
-                if(response.isSuccessful()){
-                    cargarUltimoMensaje(response.body());
-                }else{
-                    if (response.code() != 404) {
-                        Alerts.newToastLarge(getContext(), "ERR");
-                    }
-                    else
-                    {
-                        cargarUltimoMensaje(null);
+        if (applicationGlobal.getUsuario() != null) {
+            MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
+            mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
+            mensajeViewModelPOST.setIdCompra(0);
+            mensajeViewModelPOST.setIdTipoEvento(0);
+
+            api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+                @Override
+                public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
+                    if (response.isSuccessful()) {
+                        cargarUltimoMensaje(response.body());
+                    } else {
+                        if (response.code() != 404) {
+                            Alerts.newToastLarge(getContext(), "ERR");
+                        } else {
+                            cargarUltimoMensaje(null);
+                        }
                     }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
-                Alerts.newToastLarge(getContext(), "ErrErr");
-            }
-        });
+                @Override
+                public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
+                    Alerts.newToastLarge(getContext(), "ErrErr");
+                }
+            });
+        }
     }
 
 //    public void comenzar_check(){
