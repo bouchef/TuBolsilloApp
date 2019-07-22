@@ -3,6 +3,7 @@ package com.example.bouchef.tubolsillo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,9 +50,12 @@ public class NotificadorPCD extends AppCompatActivity {
 
     @BindView(R.id.autorizarButton)
     ImageButton autorizarButton;
+*/
+    @BindView(R.id.accion)
+    ImageView btn_accion;
 
-    @BindView(R.id.info)
-    ImageView imageInfo;*/
+
+
     private Integer idTipoEvento;
 
     //private RecyclerView recyclerView;
@@ -149,6 +153,25 @@ public class NotificadorPCD extends AppCompatActivity {
 
             }
         });
+
+        btn_accion =  findViewById(R.id.accion);
+        //Drawable.ConstantState cs1 = btn_accion.getDrawable().getConstantState();
+        String imageId = (String) btn_accion.getTag();
+
+//        btn_accion.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ApplicationGlobal global = new ApplicationGlobal();
+//
+//                    if(global.getUsuario().getIdTipoUsuario().equals(1)) {
+//                        if(imageId.equals("Informacion")) {
+//                            Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+//                            startActivityForResult(intent, 0);
+//                        }
+//                    }
+
+//            }
+//        });
 
         /*autorizarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -302,5 +325,6 @@ public class NotificadorPCD extends AppCompatActivity {
             //return usuarioTemp.getId();
         }
     }
+
 
 }
