@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.bouchef.tubolsillo.R.drawable.bocadillo;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -45,6 +48,9 @@ public class UltimaNotificacionFragment extends Fragment {
 
     @BindView(R.id.fechaAlta)
     TextView fechaAlta;
+
+    @BindView(R.id.accion)
+    ImageView btn_accion;
 
     @BindView(R.id.fragment_main)
     LinearLayout fragment_main;
@@ -137,6 +143,9 @@ public class UltimaNotificacionFragment extends Fragment {
                 String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
                 descripcion.setText(mensaje.getDescripcion());
                 fechaAlta.setText(t);
+
+                if(mensaje.getOrdenImportancia().equals(3)) btn_accion.setImageDrawable(this.getResources().getDrawable(bocadillo));
+
                 Alerts.newToastLarge(getContext(), "Check msg OK");
                 fragment_main.setVisibility(View.VISIBLE);
             }else{
