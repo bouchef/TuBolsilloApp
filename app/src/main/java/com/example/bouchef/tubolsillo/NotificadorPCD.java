@@ -1,6 +1,5 @@
 package com.example.bouchef.tubolsillo;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +26,7 @@ import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -117,36 +117,7 @@ public class NotificadorPCD extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String Slecteditem= lenguajeProgramacion[+position];
-
-                MensajeViewModelPOST  m = new MensajeViewModelPOST();
-                if (applicationGlobal.getCompra() != null) {
-                    m.setIdCompra(applicationGlobal.getCompra().getId());
-                }
-                m.setIdTipoEvento(4);
-                m.setDescripcion(Slecteditem);
-                Integer idUsuarioMensaje = obtenerUsuarioMensaje(applicationGlobal);
-                m.setIdUsuario(idUsuarioMensaje);
-                m.setOrdenImportancia(2);
-                api.nuevoMensaje(m).enqueue(new Callback<IdResponse>() {
-                    @Override
-                    public void onResponse(Call<IdResponse> call, Response<IdResponse> response) {
-                        if(response.isSuccessful()){
-                            procesarMensaje(Slecteditem);
-                        }else{
-                            Alerts.newToastLarge(getApplicationContext(), "Err");
-                        }
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<IdResponse> call, Throwable t) {
-                        Alerts.newToastLarge(getApplicationContext(), "Err");
-
-                    }
-                });
-
-
-
+                obtenerUsuarioMensaje(applicationGlobal,Slecteditem);
             }
         });
 
@@ -266,41 +237,72 @@ public class NotificadorPCD extends AppCompatActivity {
         }
     }*/
 
-    private Integer obtenerUsuarioMensaje(ApplicationGlobal global)
+    private void obtenerUsuarioMensaje(ApplicationGlobal global,String Slecteditem)
     {
-        UsuarioViewModelResponse usuario = global.getUsuario();
-        UsuarioViewModelResponse usuarioTemp = new UsuarioViewModelResponse();
         api = Api.getAPIService(getApplicationContext());
+
+        MensajeViewModelPOST  m = new MensajeViewModelPOST();
+        if (global.getCompra() != null) {
+            m.setIdCompra(global.getCompra().getId());
+        }
+        m.setIdTipoEvento(4);
+        m.setDescripcion(Slecteditem);
+        m.setOrdenImportancia(2);
+
+        UsuarioViewModelResponse usuario = global.getUsuario();
 
         if (usuario.getTipoUsuario().getDescripcion().equals("Usuario"))
         {
-            return usuario.getUsuarioPadre().getId();
+            m.setIdUsuario(usuario.getUsuarioPadre().getId());
+            enviarNuevoMensaje(m,Slecteditem);
         }
         else
         {
             //Obtener usuario a cargo del ayudante para enviarle el mensaje
-            //NO FUNCIONA, POR ESO HARDCODEO POR EL MOMENTO
-            //api.getUsuarioPCD(usuario.getId()).enqueue(new Callback<UsuarioViewModelResponse>() {
-             //   @Override
-            //    public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
-            //        if(response.isSuccessful()){
-            //            usuarioTemp.setId(response.body().getId());
-            //        }else{
-            //            Alerts.newToastLarge(getApplicationContext(), "Err");
-            //        }
+            api.getUsuarioPCD(usuario.getId()).enqueue(new Callback<UsuarioViewModelResponse>() {
+                @Override
+                public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
+                    if(response.isSuccessful()){
+                        usuario.setId(response.body().getId());
+                        m.setIdUsuario(usuario.getId());
+                        enviarNuevoMensaje(m,Slecteditem);
+                    }else{
+                        Alerts.newToastLarge(getApplicationContext(), "Err");
+                    }
 
-            //    }
+                }
 
-            //    @Override
-            //    public void onFailure(Call<UsuarioViewModelResponse> call, Throwable t) {
-            //        Alerts.newToastLarge(getApplicationContext(), "Err");
+                @Override
+                public void onFailure(Call<UsuarioViewModelResponse> call, Throwable t) {
+                    Alerts.newToastLarge(getApplicationContext(), "Err");
 
-            //    }
-            //});
+                }
+            });
 
-            return 2;
-            //return usuarioTemp.getId();
         }
     }
 
+    private void enviarNuevoMensaje(MensajeViewModelPOST m, String Slecteditem) {
+
+        api.nuevoMensaje(m).enqueue(new Callback<IdResponse>() {
+            @Override
+            public void onResponse(Call<IdResponse> call, Response<IdResponse> response) {
+                if(response.isSuccessful()){
+                    procesarMensaje(Slecteditem);
+                }else{
+                    Alerts.newToastLarge(getApplicationContext(), "Err");
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<IdResponse> call, Throwable t) {
+                Alerts.newToastLarge(getApplicationContext(), "Err");
+
+            }
+        });
+
+
+
+    }
 }
