@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:id="@+id/content_appointments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/toolbar" />
+            </androidx.cardview.widget.CardView>
+
+            <fragment
+                android:id="@+id/fragment"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
+                tools:layout="@layout/fragment_ultima_notificacion" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/titulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F73A36"
+                    android:fontFamily="@font/nunito_regular"
+                    android:gravity="center"
+                    android:padding="13dp"
+                    android:text="MENSAJES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/empty_state_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_empty_state"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:tint="#9E9E9E"
+                        app:srcCompat="@drawable/conversation"
+                        tools:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/text_empty_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="No hay mensajes de Compra"
+                        tools:visibility="gone" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_mensajes_compra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/mensaje_compra_item_list" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="29dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            &lt;!&ndash;android:background="@drawable/restaurant"/>&ndash;&gt;
+
+&lt;!&ndash;            <ImageView
+                android:layout_width="67.3dp"
+                android:layout_height="67.3dp"
+                android:background="@drawable/information" />&ndash;&gt;
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="26dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIN MENSAJES"
+                    android:textSize="18.7sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nunito_regular"/>
+
+                <TextView
+                    android:id="@+id/fechaAlta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="fecha"
+                    android:textColor="#393939"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textSize="10.7sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/info"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/information"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/autorizarButton"
+                android:layout_width="67.3dp"
+                android:layout_height="67.3dp"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                android:src="@drawable/bocadillo" />
+
+        </LinearLayout>-->
+
+
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

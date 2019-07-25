@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        &lt;!&ndash;<androidx.core.widget.NestedScrollView
+            android:id="@+id/recycler_viewPrueba"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </androidx.core.widget.NestedScrollView>&ndash;&gt;
+    </LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/toolbar" />
+        </androidx.cardview.widget.CardView>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="29dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            &lt;!&ndash;android:background="@drawable/restaurant"/>&ndash;&gt;
+
+            <ImageView
+                android:layout_width="67.3dp"
+                android:layout_height="67.3dp"
+                android:background="@drawable/information" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="26dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIN MENSAJES"
+                    android:textSize="18.7sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nunito_regular"/>
+
+                <TextView
+                    android:id="@+id/fechaAlta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="fecha"
+                    android:textColor="#393939"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textSize="10.7sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/information" />
+
+        </LinearLayout>-->
+        <fragment
+            android:id="@+id/fragment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
+            tools:layout="@layout/fragment_ultima_notificacion" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F73A36"
+            android:fontFamily="@font/nunito_regular"
+            android:gravity="center"
+            android:padding="13dp"
+            android:text="COMPRAR"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="126dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="MAIL DEL VENDEDOR"
+                android:textColor="#393939"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/mailTxt"
+                android:layout_width="397dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="MAIL" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="$ "
+                    android:textColor="#393939"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/importeTxt"
+                    android:layout_width="117dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="0"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/background_rect"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@android:string/ok"
+                    android:textColor="#FFFFFF"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/background_rect"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="CANCELAR"
+                    android:textColor="#FFFFFF"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="437dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/mi_lista"
+                android:layout_width="match_parent"
+                android:layout_height="402dp">
+
+            </ListView>
+        </LinearLayout>-->
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
