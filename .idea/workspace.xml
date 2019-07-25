@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a7862c3-c1bc-4433-8154-643639859015" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tubolsilloapp/tubolsilloapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/bouchef/tubolsillo/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/AquiEstoyPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/ArmarListaTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/AutorizarTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/BookOrderActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/BookOrderActivityTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/BotoneraInicialAyudante.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/BotoneraInicialPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/CredencialPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/DondeEstasTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/EvaluadorTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FilterActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FoodFilterActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FoodOrderListActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/HistorialTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/HomeActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/HomeActivityTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/InicioPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/InicioTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/ListaCompraPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/ListaControlGastos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/ListaNegociosFavoritos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/LocationActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/LocationActivityAmigable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/LocationActivityTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MiListaTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/NotificadorPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/PagarPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/Prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/ReviewActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/SeguimientoCompra.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/SplashScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/BookOrderAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/DashboardAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/DashboardAdapterFavoritos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/FilterRestaurantAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/FoodOrderAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/HomePopularAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/LenguajeListAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/LenguajeListAdapterFavoritos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/MensajesCompraAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/MyRecyclerViewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/adapter/ReviewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/APIService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/Api.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/RetrofitClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/Affiliate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ApiError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ApiMessageResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ApiResponseAppointments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ComercioViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ComercioViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/CompraViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/CompraViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/EstadoViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/IdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/MensajeViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/MensajeViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/MensajesCompraDisplayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/NivelViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/PCDViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/PCDViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/TipoEventoViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/TipoUsuarioViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/UsuarioViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/model/UsuarioViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/generics/AppCompatCustomActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/generics/ApplicationGlobal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/generics/Progress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/generics/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/model/BookOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/model/Food.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/model/Popular.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/model/Review.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/model/dashboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/tests/ItemBasico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/tests/ListaUnoActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/tests/MensajesRecyclerViewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/tests/UltimaNotificacionFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/utiles/Alerts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/utiles/FechaUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/slide_out_down.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/slide_up_dialog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/background_rect.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/background_white_rect.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bocadillo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/border.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bottle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/buffet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/burger.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/burgerr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/burgerrrr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/canned_food.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cereals.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cheese.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/chicken.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/chocolate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/coffee_cup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/controls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/conversation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/doughnut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/egg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/eggs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/favorito.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fish.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/food.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fries.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_favorite_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_favorite_border_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_selector_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_selector_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/information.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/jack_sparrow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/lapiz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/milk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/noodles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/paper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/phone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pizza.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pizzaa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/recyclerview_row.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/restaurant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/searchright.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/send.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/shopping.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/transaccion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tubolsillo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/watermelon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_blackitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_bolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_extrabold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_extrabolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_extralight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_extralightitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_lightitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_semibold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/nunito_semibolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_armar_lista_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_autorizar_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_book_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_botonera_inicial_ayudante.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_botonera_inicial_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_credencial_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_donde_estas_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_estoy_aqui_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_evaluar_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_filter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_food_filter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_food_order_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_historial_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_inicio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_compra_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_control_gastos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_negocios_favoritos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_uno.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_location.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_location_amigable.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_location_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mensajes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mi_lista_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_negocios_favoritos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_pagar_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prueba.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_review.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_seguimiento_compra.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash_screen.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fila_lista.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fila_lista_favorito.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/filter_popup.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/filtertoolbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ultima_notificacion.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/mensaje_compra_item_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/mensajes_compra.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/notificacion_ultima.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/raw_book_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/raw_filter_restaurant.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/raw_food_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/raw_home_popular.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/raw_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/raw_review.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recyclerview_row.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/rv_row_dato_basico.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ultimo_mensaje.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/google_maps_api.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/bouchef/tubolsillo/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp" beforeDir="false" afterPath="$PROJECT_DIR$/tubolsilloapp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tubolsilloapp/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tubolsilloapp/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/androidTest/java/com/example/bouchef/tubolsillo/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/AquiEstoyPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/ArmarListaTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/AutorizarTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/BookOrderActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/BookOrderActivityTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/BotoneraInicialAyudante.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/BotoneraInicialPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/CredencialPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/DondeEstasTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/EvaluadorTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/FilterActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/FoodFilterActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/FoodOrderListActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/HistorialTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/HomeActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/HomeActivityTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/InicioPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/InicioTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/ListaCompraPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/ListaControlGastos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/ListaNegociosFavoritos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/LocationActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/LocationActivityAmigable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/LocationActivityTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/MiListaTutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/NotificadorPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/PagarPCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/Prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/ReviewActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/SeguimientoCompra.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/SplashScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/BookOrderAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/DashboardAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/DashboardAdapterFavoritos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/FilterRestaurantAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/FoodOrderAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/HomePopularAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/LenguajeListAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/LenguajeListAdapterFavoritos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/MensajesCompraAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/MyRecyclerViewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/adapter/ReviewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/APIService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/Api.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/RetrofitClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/Affiliate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ApiError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ApiMessageResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ApiResponseAppointments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ComercioViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/ComercioViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/CompraViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/CompraViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/EstadoViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/IdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/MensajeViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/MensajeViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/MensajesCompraDisplayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/NivelViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/PCDViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/PCDViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/TipoEventoViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/TipoUsuarioViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/UsuarioViewModelPOST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/api/model/UsuarioViewModelResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/generics/AppCompatCustomActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/generics/ApplicationGlobal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/generics/Progress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/generics/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/model/BookOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/model/Food.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/model/Popular.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/model/Review.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/model/dashboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/tests/HistorialMensajesRecyclerViewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/tests/ItemBasico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/tests/ListaUnoActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/tests/MensajesRecyclerViewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/tests/UltimaNotificacionFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/utiles/Alerts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/java/com/example/bouchef/tubolsillo/utiles/FechaUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/anim/slide_out_down.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/anim/slide_up_dialog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/background_rect.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/background_white_rect.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/bocadillo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/border.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/bottle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/buffet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/burger.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/burgerr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/burgerrrr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/cake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/canned_food.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/cereals.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/cheese.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/chicken.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/chocolate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/coffee_cup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/controls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/conversation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/doughnut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/egg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/eggs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/favorito.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/fish.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/food.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/fries.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic_favorite_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic_favorite_border_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic_selector_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/ic_selector_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/information.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/jack_sparrow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/lapiz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/milk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/noodles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/paper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/phone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/pizza.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/pizzaa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/recyclerview_row.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/restaurant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/searchright.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/send.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/shopping.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/tick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/transaccion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/tubolsillo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/drawable/watermelon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_blackitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_bolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_extrabold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_extrabolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_extralight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_extralightitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_lightitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_semibold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/font/nunito_semibolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_armar_lista_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_autorizar_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_book_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_botonera_inicial_ayudante.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_botonera_inicial_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_credencial_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_donde_estas_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_estoy_aqui_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_evaluar_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_filter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_food_filter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_food_order_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_historial_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_home_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_inicio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_inicio_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_inicio_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_lista_compra_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_lista_control_gastos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_lista_negocios_favoritos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_lista_uno.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_location.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_location_amigable.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_location_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_main2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_mensajes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_mi_lista_tutor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_negocios_favoritos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_pagar_pcd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_prueba.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_review.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_seguimiento_compra.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/activity_splash_screen.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/fila_lista.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/fila_lista_favorito.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/filter_popup.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/filtertoolbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/fragment_ultima_notificacion.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/mensaje_compra_item_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/mensaje_item_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/mensajes_compra.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/notificacion_ultima.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/raw_book_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/raw_filter_restaurant.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/raw_food_order.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/raw_home_popular.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/raw_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/raw_review.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/recyclerview_row.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/rv_row_dato_basico.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/toolbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/layout/ultimo_mensaje.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/values/google_maps_api.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/app/src/test/java/com/example/bouchef/tubolsillo/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/tubolsilloapp/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tubolsilloapp/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/tubolsilloapp/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/tubolsilloapp" beforeDir="false" afterPath="$PROJECT_DIR$/tubolsilloapp/tubolsilloapp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tubolsilloapp/txtvacio.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/txtvacio.txt" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="1380" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TuBolsillo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TuBolsillo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TuBolsillo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TuBolsillo" type="462c0819:PsiDirectoryNode" />
+              <item name="tubolsilloapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TuBolsillo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TuBolsillo" type="462c0819:PsiDirectoryNode" />
+              <item name="tubolsilloapp" type="462c0819:PsiDirectoryNode" />
+              <item name="tubolsilloapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tubolsilloapp/tubolsilloapp" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a7862c3-c1bc-4433-8154-643639859015" name="Default Changelist" comment="" />
+      <created>1563764021636</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563764021636</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3296131" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Resources Explorer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+    </layout>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
