@@ -2,11 +2,13 @@ package com.example.bouchef.tubolsillo;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,22 +42,12 @@ public class CredencialPCD extends AppCompatActivity {
     private Context mContext= CredencialPCD.this;
     private APIService api;
 
-    //private RecyclerView recyclerView;
+    @BindView(R.id.accion) ImageView btn_accion;
+
     private DashboardAdapter adapter;
     private ArrayList<dashboard> dashboardList;
     private ArrayList<String> cars = new ArrayList<String>();
     private dashboard das;
-    private String lenguajeProgramacion[]=new String[]{"Alertar","Comprar","Notificar","Estoy Aqui","Credencial"};
-    private Integer[] imgid={
-            R.drawable.ic1,
-            R.drawable.ic2,
-            R.drawable.ic3,
-            R.drawable.ic4,
-            R.drawable.ic5
-    };
-
-    private ListView lista;
-
 
     @BindView(R.id.nombre) TextView nombre;
     @BindView(R.id.nroCertificado) TextView nroCertificado;
@@ -70,12 +62,18 @@ public class CredencialPCD extends AppCompatActivity {
     @BindView(R.id.descripcion) TextView descripcion;
     @BindView(R.id.fechaAlta) TextView fechaAlta;
 
+    @BindView(R.id.irHome) ImageView btn_home;
+
+    @BindView(R.id.tit_barra) TextView titulo;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_credencial_pcd);
 
+        titulo =  findViewById(R.id.tit_barra);
+        titulo.setText(R.string.tit_credencial);
+
         ButterKnife.bind(this);
-        //nombre.setText("JJJ");
 
         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
@@ -86,26 +84,6 @@ public class CredencialPCD extends AppCompatActivity {
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
-/*
-        CompraViewModelPOST compra = new CompraViewModelPOST();
-        compra.setIdUsuario(2);
-        compra.setIdComercio(1);
-        compra.setCompraReal(false);
-        api.nuevaCompra(compra).enqueue(new Callback<CompraViewModelResponse>() {
-            @Override
-            public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
-                if(response.isSuccessful()){
-                    CompraViewModelResponse res = response.body();
-                    Alerts.newToastLarge(getApplicationContext(), String.valueOf(res.getId()));
-                }
-            }
-
-            @Override
-            public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
-                Alerts.newToastLarge(getApplicationContext(), "err");
-            }
-        });
-*/
 
         PCDViewModelPOST pcdViewModelPOST = new PCDViewModelPOST();
         pcdViewModelPOST.setNroCertificado("01145456783");
@@ -128,20 +106,53 @@ public class CredencialPCD extends AppCompatActivity {
 
         cargarUsuario(applicationGlobal);
 
-        /*LenguajeListAdapter adapter=new LenguajeListAdapter(this,lenguajeProgramacion,imgid);
-        lista=(ListView)findViewById(R.id.mi_lista);
-        lista.setAdapter(adapter);
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        // ACCION DEL BOTON DE MENSAJE
+        btn_accion =  findViewById(R.id.accion);
+        String imageId = (String) btn_accion.getTag();
+
+        btn_accion.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String Slecteditem= lenguajeProgramacion[+position];
-                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if(imageId.equals("Autorizacion")) {
+                        Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+                        startActivityForResult(intent, 0);
+                    }
+                    if(imageId.equals("Informacion")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(getApplicationContext(), "Marcar Mensaje como leido");
+                    }
+                }
+
             }
-        });*/
+        });
+        // FIN ACCION DEL BOTON MENSAJE
+        // ACCION DEL BOTON DE IR A HOME
+        btn_home =  findViewById(R.id.irHome);
 
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }else {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }
+
+            }
+
+        });
+        // FIN ACCION DEL BOTON IR A HOME
 
     }
+
+
 
     private void cargarPCD(PCDViewModelResponse pcd){
         nombre.setText(pcd.getNombre() + " " + pcd.getApellido());
@@ -167,23 +178,6 @@ public class CredencialPCD extends AppCompatActivity {
         cars.add("Ford");
         cars.add("Mazda");
         dashboardList.add(das);
-        /*dashboardList.add(new dashboard(R.drawable.ic2,"Transport"));
-        dashboardList.add(new dashboard(R.drawable.ic3,"Shooping"));
-        dashboardList.add(new dashboard(R.drawable.ic4,"Bills"));
-        dashboardList.add(new dashboard(R.drawable.ic5,"Entertainment"));
-        dashboardList.add(new dashboard(R.drawable.ic6,"Grocery"));
-        dashboardList.add(new dashboard(R.drawable.ic1,"General"));
-        dashboardList.add(new dashboard(R.drawable.ic2,"Transport"));
-        dashboardList.add(new dashboard(R.drawable.ic3,"Shooping"));
-        dashboardList.add(new dashboard(R.drawable.ic4,"Bills"));
-        dashboardList.add(new dashboard(R.drawable.ic5,"Entertainment"));
-        dashboardList.add(new dashboard(R.drawable.ic6,"Grocery"));
-        dashboardList.add(new dashboard(R.drawable.ic1,"General"));
-        dashboardList.add(new dashboard(R.drawable.ic2,"Transport"));
-        dashboardList.add(new dashboard(R.drawable.ic3,"Shooping"));
-        dashboardList.add(new dashboard(R.drawable.ic4,"Bills"));
-        dashboardList.add(new dashboard(R.drawable.ic5,"Entertainment"));
-        dashboardList.add(new dashboard(R.drawable.ic6,"Grocery"));*/
 
         Toast.makeText(getApplicationContext(), "pasa", Toast.LENGTH_LONG).show();
         adapter.notifyDataSetChanged();

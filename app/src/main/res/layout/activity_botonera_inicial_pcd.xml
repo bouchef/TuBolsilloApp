@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="BotoneraInicialPCD">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <include layout="@layout/toolbar"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="29dp"
+            android:layout_marginLeft="29dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="67.3dp"
+                android:layout_height="67.3dp"
+                android:background="@drawable/information"/>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="26dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIN MENSAJES"
+                    android:textSize="18.7sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nunito_regular"/>
+
+                <TextView
+                    android:id="@+id/fechaAlta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Fecha"
+                    android:textColor="#393939"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textSize="10.7sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/information"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+-->
+
+
+
+        <fragment
+            android:id="@+id/fragment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
+            tools:layout="@layout/fragment_ultima_notificacion" />
+
+
+        <!--<androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:text="MENU USUARIO"
+            android:gravity="center"
+            android:background="#F73A36"
+            android:fontFamily="@font/nunito_black"
+            android:padding="13dp"/>
+
+        </androidx.cardview.widget.CardView>-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/toolbar_inferior"/>
+        </androidx.cardview.widget.CardView>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--<Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="ESTOY AQUI"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>-->
+                <!--<Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="INICIO"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>-->
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <!--<Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="LISTA COMPRAS"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>-->
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/background_rect"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="COMENZAR COMPRA"
+                    android:textColor="#FFFFFF" />
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="MI CREDENCIAL"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>
+
+                <!--<Button
+                    android:id="@+id/button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="NEGOCIOS"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>-->
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="ENVIAR MENSAJES"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="CONTROL DE GASTOS"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>
+                <!--<Button
+                    android:id="@+id/button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="SPLASH"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>-->
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rect"
+                    android:textColor="#FFFFFF"
+                    android:text="PERFIL DE AYUDANTE"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_alignParentBottom="true"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

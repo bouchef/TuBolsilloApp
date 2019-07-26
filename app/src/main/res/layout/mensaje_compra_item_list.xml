@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardUseCompatPadding="true">
+
+    <!-- Indicador de estado -->
+    <View
+        android:id="@+id/indicador_mensaje_status"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#E0E0E0" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/text_mensaje_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            tools:text="" />
+
+        <View
+            android:id="@+id/vertical_separator"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/text_mensaje_date"
+            android:layout_toRightOf="@+id/text_mensaje_date"
+            android:background="#E0E0E0" />
+
+        <TextView
+            android:id="@+id/text_mensaje"
+            style="@style/Base.TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/vertical_separator"
+            android:layout_toRightOf="@+id/vertical_separator"
+            tools:text="MENSAJE DE COMPRA" />
+
+        <TextView
+            android:id="@+id/text_descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/text_mensaje"
+            android:layout_alignStart="@+id/text_mensaje"
+            android:layout_below="@id/text_mensaje"
+            tools:text="Descripcion" />
+
+        <Button
+            android:id="@+id/button_leer_mensaje"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/vertical_separator"
+            android:text="Marcar como Leído"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_medical_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/button_leer_mensaje"
+            android:layout_alignLeft="@+id/text_descripcion"
+            android:layout_alignStart="@+id/text_descripcion"
+            android:layout_below="@+id/text_descripcion"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

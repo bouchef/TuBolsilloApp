@@ -96,7 +96,7 @@
             android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
             tools:layout="@layout/fragment_ultima_notificacion" />
 
-        <androidx.cardview.widget.CardView
+        <!--<androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp">
@@ -112,8 +112,12 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
+        </androidx.cardview.widget.CardView>-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/toolbar_inferior"/>
         </androidx.cardview.widget.CardView>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -223,6 +227,7 @@
 
 
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

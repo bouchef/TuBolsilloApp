@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        &lt;!&ndash;<androidx.core.widget.NestedScrollView
+            android:id="@+id/recycler_viewPrueba"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </androidx.core.widget.NestedScrollView>&ndash;&gt;
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/toolbar"/>
+        </androidx.cardview.widget.CardView>
+<!--
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F73A36"
+                android:fontFamily="@font/nunito_regular"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="NEGOCIOS FAVORITOS"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+        </androidx.cardview.widget.CardView>
+-->
+        <fragment
+            android:id="@+id/fragment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
+            tools:layout="@layout/fragment_ultima_notificacion" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/toolbar_inferior"/>
+        </androidx.cardview.widget.CardView>
+
+        <ListView
+            android:id="@+id/mi_lista"
+            android:layout_width="match_parent"
+            android:layout_height="449dp" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="13.3dp"
+            android:layout_marginRight="13.3dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_rect"
+            android:fontFamily="@font/nunito_regular"
+            android:text="IR AHORA"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -3,6 +3,15 @@
     <string name="title_activity_maps">Map</string>
     <string name="btn_info">Informacion</string>
     <string name="btn_auto">Autorizar</string>
+    <string name="tit_seguimiento">SEGUIMIENTO DE COMPRA</string>
+    <string name="tit_notificador">NOTIFICADOR</string>
+    <string name="tit_pagar_pcd">PAGAR</string>
+    <string name="tit_bandeja_mensajes">BANDEJA DE MENSAJES</string>
+    <string name="tit_control_gastos">CONTROL DE GASTOS</string>
+    <string name="tit_autorizar_compra">AUTORIZAR COMPRA</string>
+    <string name="tit_credencial">MI CREDENCIAL</string>
+    <string name="tit_inicio_pcd">INICIO USUARIO</string>
+    <string name="tit_inicio_ayudante">INICIO AYUDANTE</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

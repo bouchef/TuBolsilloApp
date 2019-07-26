@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,9 +48,9 @@ public class ListaNegociosFavoritos extends AppCompatActivity {
 
     private APIService api;
 
-   /* @BindView(R.id.descripcion)
-    TextView descripcion;
-    @BindView(R.id.fechaAlta) TextView fechaAlta;*/
+    @BindView(R.id.accion) ImageView btn_accion;
+    @BindView(R.id.irHome) ImageView btn_home;
+    @BindView(R.id.tit_barra) TextView titulo;
 
     //private RecyclerView recyclerView;
     private DashboardAdapter adapter;
@@ -73,6 +74,9 @@ public class ListaNegociosFavoritos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_negocios_favoritos);
+
+        titulo =  findViewById(R.id.tit_barra);
+        titulo.setText(R.string.tit_control_gastos);
 
         ButterKnife.bind(this);
 
@@ -168,7 +172,50 @@ public class ListaNegociosFavoritos extends AppCompatActivity {
             }
         });
 
+// ACCION DEL BOTON DE MENSAJE
+        btn_accion =  findViewById(R.id.accion);
+        String imageId = (String) btn_accion.getTag();
 
+        btn_accion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if(imageId.equals("Autorizacion")) {
+                        Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+                        startActivityForResult(intent, 0);
+                    }
+                    if(imageId.equals("Informacion")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(mContext, "Marcar Mensaje como leido");
+                    }
+                }
+
+            }
+        });
+        // FIN ACCION DEL BOTON MENSAJE
+
+        // ACCION DEL BOTON DE IR A HOME
+        btn_home =  findViewById(R.id.irHome);
+
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }else {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }
+
+            }
+
+        });
+        // FIN ACCION DEL BOTON IR A HOME
 
     }
 

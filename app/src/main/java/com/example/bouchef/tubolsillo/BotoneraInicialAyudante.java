@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +22,8 @@ import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,20 +44,19 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
     @BindView(R.id.fechaAlta)
     TextView fechaAlta;
 
-//    @BindView(R.id.descripcion) TextView descripcion;
-//    @BindView(R.id.fechaAlta) TextView fechaAlta;
-//    @BindView(R.id.autorizarButton)
-//    ImageButton autorizarButton;
-//
-//    @BindView(R.id.info)
-//    ImageView imageInfo;
+    @BindView(R.id.accion) ImageView btn_accion;
 
+    //@BindView(R.id.irHome) ImageView btn_home;
 
-    private Integer idTipoEvento;
+    @BindView(R.id.tit_barra) TextView titulo;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_botonera_inicial_ayudante);
+
+        titulo =  findViewById(R.id.tit_barra);
+        titulo.setText(R.string.tit_inicio_ayudante);
 
         ButterKnife.bind(this);
         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
@@ -212,13 +214,56 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });
 
-//        autorizarButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
-//                startActivityForResult(intent, 0);
-//            }
-//        });
+        // ACCION DEL BOTON DE MENSAJE
+        btn_accion =  findViewById(R.id.accion);
+        String imageId = (String) btn_accion.getTag();
+
+        btn_accion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if(imageId.equals("Autorizacion")) {
+                        Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+                        startActivityForResult(intent, 0);
+                    }
+                    if(imageId.equals("Informacion")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(mContext, "Marcar Mensaje como leido");
+                    }
+                }
+
+            }
+        });
+        // FIN ACCION DEL BOTON MENSAJE
+
+        // ACCION DEL BOTON DE IR A HOME
+        //FloatingActionButton my_fab = (FloatingActionButton) findViewById(R.id.my_fab);
+        /*my_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Tocaste el FAB", Toast.LENGTH_SHORT).show();
+            }
+        });*/
+/*        btn_home =  findViewById(R.id.irHome);
+
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
+                    startActivityForResult(intent, 0);
+                    }else {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
+                    startActivityForResult(intent, 0);
+                    }
+
+                }
+
+        });*/
+        // FIN ACCION DEL BOTON IR A HOME
+
 
     }
 //    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){

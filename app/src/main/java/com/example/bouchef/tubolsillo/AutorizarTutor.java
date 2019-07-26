@@ -41,31 +41,21 @@ public class AutorizarTutor extends AppCompatActivity {
 
     private APIService api;
 
-    @BindView(R.id.descripcion)
-    TextView descripcion;
-    @BindView(R.id.fechaAlta) TextView fechaAlta;
-    @BindView(R.id.autorizarButton)
-    ImageButton autorizarButton;
 
-    @BindView(R.id.info)
-    ImageView imageInfo;
+    /*@BindView(R.id.autorizarButton)
+    ImageButton autorizarButton;*/
+    @BindView(R.id.irHome) ImageView btn_home;
+    @BindView(R.id.accion) ImageView btn_accion;
+    @BindView(R.id.tit_barra) TextView titulo;
 
-    //private RecyclerView recyclerView;
+
     private DashboardAdapter adapter;
     private ArrayList<dashboard> dashboardList;
     private ArrayList<String> cars = new ArrayList<String>();
     private dashboard das;
-    /*private String lenguajeProgramacion[]=new String[]{"Compra 1","Producto 2","Producto 3","Producto 4","Producto 5"};
-    private Integer[] imgid={
-            R.drawable.eggs,
-            R.drawable.bottle,
-            R.drawable.milk,
-            R.drawable.cheese,
-            R.drawable.cereals
-    };*/
     private String lenguajeProgramacion[]=new String[]{"Compra 1 $10"};
     private Integer[] imgid={
-            R.drawable.list
+            R.drawable.bocadillo
     };
 
     private ListView lista;
@@ -78,14 +68,17 @@ public class AutorizarTutor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(activity_autorizar_tutor);
 
-
+        titulo =  findViewById(R.id.tit_barra);
+        titulo.setText(R.string.tit_autorizar_compra);
 
         ButterKnife.bind(this);
 
         api = Api.getAPIService(getApplicationContext());
 
+        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(1);
+        mensajeViewModelPOST.setIdUsuario(2);
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
@@ -138,39 +131,76 @@ public class AutorizarTutor extends AppCompatActivity {
 
                 Intent intent = new Intent (view.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
+                finish();
             }
         });
 
-        Button btnPCD = (Button) findViewById(R.id.button);
+        /*Button btnPCD = (Button) findViewById(R.id.button);
         btnPCD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
+                finish();
             }
-        });
+        });*/
 
-        autorizarButton.setOnClickListener(new View.OnClickListener() {
+        /*autorizarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "ATENCION: PAGO AUTORIZADO", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent (v.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
             }
+        });*/
+
+        // ACCION DEL BOTON DE IR A HOME
+        btn_home =  findViewById(R.id.irHome);
+
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }else {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }
+
+            }
+
         });
+        // FIN ACCION DEL BOTON IR A HOME
+
+        // ACCION DEL BOTON DE MENSAJE
+        btn_accion =  findViewById(R.id.accion);
+        String imageId = (String) btn_accion.getTag();
+
+        btn_accion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if(imageId.equals("Autorizacion")) {
+                        Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+                        startActivityForResult(intent, 0);
+                    }
+                    if(imageId.equals("Informacion")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(mContext, "Marcar Mensaje como leido");
+                    }
+                }
+
+            }
+        });
+        // FIN ACCION DEL BOTON MENSAJE
 
     }
 
-    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-        descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(mensaje.getFechaAlta());
 
-        idTipoEvento = mensaje.getOrdenImportancia();
-        if(idTipoEvento.equals(3)){
-            autorizarButton.setVisibility(View.VISIBLE);
-        }else {
-            imageInfo.setVisibility(View.VISIBLE);
-        }
-    }
 
 }

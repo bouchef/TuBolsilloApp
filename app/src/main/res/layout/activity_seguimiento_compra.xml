@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/toolbar"/>
+        </androidx.cardview.widget.CardView>
+
+        <fragment
+            android:id="@+id/fragment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:name="com.example.bouchef.tubolsillo.tests.UltimaNotificacionFragment"
+            tools:layout="@layout/fragment_ultima_notificacion" />
+
+        <!--<androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F73A36"
+                android:fontFamily="@font/nunito_regular"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="SEGUIMIENTO DE COMPRA"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+        </androidx.cardview.widget.CardView>-->
+
+        <include
+            layout="@layout/mensajes_compra"
+            android:layout_width="match_parent"
+            android:layout_height="436dp" />
+
+        <!--<android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:tint="@android:color/white"
+            app:srcCompat="@drawable/ic_home_black_48dp" />
+            &lt;!&ndash;android:layout_margin="@dimen/fab_margin"&ndash;&gt;-->
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+

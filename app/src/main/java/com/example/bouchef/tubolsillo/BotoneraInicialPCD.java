@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
+import com.example.bouchef.tubolsillo.generics.GlobalClass;
 import com.example.bouchef.tubolsillo.generics.Utils;
 import com.example.bouchef.tubolsillo.tests.ListaUnoActivity;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
@@ -40,23 +42,22 @@ public class BotoneraInicialPCD extends AppCompatActivity {
     TextView descripcion;
     @BindView(R.id.fechaAlta)
     TextView fechaAlta;
+    @BindView(R.id.accion)
+    ImageView btn_accion;
 
-    /*
-    @BindView(R.id.testlista) Button testlista;
-
-    @OnClick(R.id.testlista)
-    public void irATestLista(){
-        Alerts.newToastLarge(getApplicationContext(), "goToTestLista");
-        Utils.newActivity(this, ListaUnoActivity.class);
-    }
-*/
+    @BindView(R.id.tit_barra) TextView titulo;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_botonera_inicial_pcd);
 
+        titulo =  findViewById(R.id.tit_barra);
+        titulo.setText(R.string.tit_inicio_pcd);
+
         ButterKnife.bind(this);
         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
+
 
         api = Api.getAPIService(getApplicationContext());
 
@@ -266,6 +267,29 @@ public class BotoneraInicialPCD extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+
+        // ACCION DEL BOTON DE MENSAJE
+        btn_accion =  findViewById(R.id.accion);
+        String imageId = (String) btn_accion.getTag();
+
+        btn_accion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if(imageId.equals("Autorizacion")) {
+                        Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+                        startActivityForResult(intent, 0);
+                    }
+                    if(imageId.equals("Informacion")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(getApplicationContext(), "Marcar Mensaje como leido");
+                    }
+                }
+
+            }
+        });
+        // FIN ACCION DEL BOTON MENSAJE
     }
 
 

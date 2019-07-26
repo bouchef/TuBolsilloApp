@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bouchef.tubolsillo">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+         The API key for Google Maps-based APIs is defined as a string resource.
+         (See the file "res/values/google_maps_api.xml").
+         Note that the API key is linked to the encryption key used to sign the APK.
+         You need a different API key for each encryption key, including the release key that is used to
+         sign the APK for publishing.
+         You can define the keys for the debug and release targets in src/debug/ and src/release/.
+    -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <!--<activity android:name=".HomeActivity" />-->
+        <activity android:name=".AquiEstoyPCD" />
+        <activity android:name=".ArmarListaTutor" />
+        <activity android:name=".AutorizarTutor" />
+        <activity android:name=".PagarPCD" />
+        <activity android:name=".CredencialPCD" />
+        <activity android:name=".DondeEstasTutor" />
+        <activity android:name=".EvaluadorTutor" />
+        <activity android:name=".HistorialTutor" />
+        <activity android:name=".ListaCompraPCD" />
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".MiListaTutor" />
+        <activity android:name=".InicioPCD" />
+        <activity android:name=".InicioTutor" />
+        <activity android:name=".NotificadorPCD" />
+        <activity android:name=".SeguimientoCompra" />
+        <activity android:name=".ListaNegociosFavoritos" />
+        <activity android:name=".ListaControlGastos" />
+        <activity android:name=".BotoneraInicialPCD" />
+        <activity android:name=".BotoneraInicialAyudante" />
+        <activity android:name=".HomeActivityTutor" />
+
+    </application>
+
+</manifest>

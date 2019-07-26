@@ -23,6 +23,7 @@ import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
+import com.example.bouchef.tubolsillo.generics.GlobalClass;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
@@ -37,6 +38,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.example.bouchef.tubolsillo.R.layout.activity_mensajes;
+import static java.security.AccessController.getContext;
 
 public class NotificadorPCD extends AppCompatActivity {
 
@@ -44,21 +46,13 @@ public class NotificadorPCD extends AppCompatActivity {
 
     private APIService api;
 
-/*    @BindView(R.id.descripcion)
-    TextView descripcion;
-    @BindView(R.id.fechaAlta) TextView fechaAlta;
-
-    @BindView(R.id.autorizarButton)
-    ImageButton autorizarButton;
-*/
     @BindView(R.id.accion)
     ImageView btn_accion;
+    @BindView(R.id.irHome) ImageView btn_home;
+
+    @BindView(R.id.tit_barra) TextView titulo;
 
 
-
-    private Integer idTipoEvento;
-
-    //private RecyclerView recyclerView;
     private DashboardAdapter adapter;
     private ArrayList<dashboard> dashboardList;
     private ArrayList<String> cars = new ArrayList<String>();
@@ -79,8 +73,11 @@ public class NotificadorPCD extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_mensajes);
-
         ButterKnife.bind(this);
+
+        titulo =  findViewById(R.id.tit_barra);
+        titulo.setText(R.string.tit_notificador);
+
 
         api = Api.getAPIService(getApplicationContext());
         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
@@ -125,32 +122,56 @@ public class NotificadorPCD extends AppCompatActivity {
             }
         });
 
-        btn_accion =  findViewById(R.id.accion);
-        //Drawable.ConstantState cs1 = btn_accion.getDrawable().getConstantState();
-        String imageId = (String) btn_accion.getTag();
+        //btn_accion =  findViewById(R.id.accion);
 
-//        btn_accion.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ApplicationGlobal global = new ApplicationGlobal();
-//
-//                    if(global.getUsuario().getIdTipoUsuario().equals(1)) {
-//                        if(imageId.equals("Informacion")) {
-//                            Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
-//                            startActivityForResult(intent, 0);
-//                        }
-//                    }
+        //final String name  = globalVariable.getBtn_accion_tag();
+        GlobalClass g = GlobalClass.getInstance();
+        String imageId =  g.getBtn_accion_tag();
 
-//            }
-//        });
-
-        /*autorizarButton.setOnClickListener(new View.OnClickListener() {
+        btn_accion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
-                startActivityForResult(intent, 0);
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if(imageId.equals("Autorizacion")) {
+                        Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+                        startActivityForResult(intent, 0);
+                    }
+                    if(imageId.equals("Informacion")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(mContext, "Marcar Mensaje como leido");
+                    }
+                    if(imageId.equals("")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(mContext, "no cargo");
+                    }
+                }
+
             }
-        });*/
+        });
+
+        // ACCION DEL BOTON DE IR A HOME
+        btn_home =  findViewById(R.id.irHome);
+
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }else {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }
+
+            }
+
+        });
+        // FIN ACCION DEL BOTON IR A HOME
+
     }
 
     private void procesarMensaje(String Slecteditem){
@@ -244,21 +265,6 @@ public class NotificadorPCD extends AppCompatActivity {
         }
     }
 
-    /*private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-
-        String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
-
-        descripcion.setText(mensaje.getDescripcion());
-        //fechaAlta.setText(mensaje.getFechaAlta());
-        fechaAlta.setText(t);
-
-        idTipoEvento = mensaje.getOrdenImportancia();
-        if(idTipoEvento.equals(3)){
-            autorizarButton.setVisibility(View.VISIBLE);
-        }else {
-            imageInfo.setVisibility(View.VISIBLE);
-        }
-    }*/
 
     private void obtenerUsuarioMensaje(ApplicationGlobal global,String Slecteditem)
     {

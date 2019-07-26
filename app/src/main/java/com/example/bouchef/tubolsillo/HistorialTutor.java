@@ -3,10 +3,13 @@ package com.example.bouchef.tubolsillo;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -36,110 +39,70 @@ public class HistorialTutor extends AppCompatCustomActivity implements Historial
     RecyclerView list;
     HistorialMensajesRecyclerViewAdapter adapter;
     List<ItemBasico> items;
-    //@BindView(R.id.titulo) TextView titulo;
+    @BindView(R.id.accion) ImageView btn_accion;
     @BindView(R.id.empty_state_container) LinearLayout lista_vacia;
-
-
-//    private Context mContext= HistorialTutor.this;
-//
-//    private APIService api;
-//
-//    @BindView(R.id.descripcion) TextView descripcion;
-//    @BindView(R.id.fechaAlta) TextView fechaAlta;
-//    @BindView(R.id.autorizarButton) ImageButton autorizarButton;
-//
-//    @BindView(R.id.info)
-//    ImageView imageInfo;
-//    private Integer idTipoEvento;
-
-    //private RecyclerView recyclerView;
-    /*private DashboardAdapter adapter;
-    private ArrayList<dashboard> dashboardList;
-    private ArrayList<String> cars = new ArrayList<String>();
-    private dashboard das;
-    private String lenguajeProgramacion[]=new String[]{"Mensaje Usuario PCD","Mensaje Usuario PCD","Mensaje Usuario PCD","Mensaje Usuario PCD","Mensaje Usuario PCD"};
-    private Integer[] imgid={
-            R.drawable.user,
-            R.drawable.user,
-            R.drawable.user,
-            R.drawable.user,
-            R.drawable.user
-    };*/
-
-    //private ListView lista;
+    @BindView(R.id.irHome) ImageView btn_home;
+    @BindView(R.id.tit_barra) TextView titulo;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial_tutor);
         //setContentView(R.layout.mensajes_compra);
-        //titulo.setText("HISTORIAL DE MENSAJES");
+
+        titulo =  findViewById(R.id.tit_barra);
+        titulo.setText(R.string.tit_bandeja_mensajes);
+
         ButterKnife.bind(this);
 
 
-//        api = Api.getAPIService(getApplicationContext());
-//
-//        MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-//        mensajeViewModelPOST.setIdUsuario(1);
-//        mensajeViewModelPOST.setIdCompra(0);
-//        mensajeViewModelPOST.setIdTipoEvento(4);
-//
-//        api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
-//            @Override
-//            public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
-//                if(response.isSuccessful()){
-//                    //*Alerts.newToastLarge(mContext, "OK");*/
-//                    cargarUltimoMensaje(response.body());
-//                }else{
-//                    if (response.code() != 404) {
-//                        Alerts.newToastLarge(mContext, "ERR");
-//                    }
-//                    else
-//                    {
-//                        //cargarUltimoMensaje(null);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
-//                Alerts.newToastLarge(mContext, "ErrErr");
-//            }
-//        });
+// ACCION DEL BOTON DE MENSAJE
+        btn_accion =  findViewById(R.id.accion);
+        String imageId = (String) btn_accion.getTag();
 
-        /*LenguajeListAdapter adapter=new LenguajeListAdapter(this,lenguajeProgramacion,imgid);
-        lista=(ListView)findViewById(R.id.mi_lista);
-        lista.setAdapter(adapter);
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String Slecteditem= lenguajeProgramacion[+position];
-                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        autorizarButton.setOnClickListener(new View.OnClickListener() {
+        btn_accion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
-                startActivityForResult(intent, 0);
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if(imageId.equals("Autorizacion")) {
+                        Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+                        startActivityForResult(intent, 0);
+                    }
+                    if(imageId.equals("Informacion")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(getApplicationContext(), "Marcar Mensaje como leido");
+                    }
+                }
+
             }
-        });*/
+        });
+        // FIN ACCION DEL BOTON MENSAJE
+        // ACCION DEL BOTON DE IR A HOME
+        btn_home =  findViewById(R.id.irHome);
+
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }else {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }
+
+            }
+
+        });
+        // FIN ACCION DEL BOTON IR A HOME
 
         cargarLista();
     }
 
 
-//    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-//        descripcion.setText(mensaje.getDescripcion());
-//        fechaAlta.setText(mensaje.getFechaAlta());
-//
-//        idTipoEvento = mensaje.getOrdenImportancia();
-//        if(idTipoEvento.equals(3)){
-//            autorizarButton.setVisibility(View.VISIBLE);
-//        }else {
-//            imageInfo.setVisibility(View.VISIBLE);
-//        }
-//    }
 
     private void cargarLista(){
 

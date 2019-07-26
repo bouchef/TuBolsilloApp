@@ -17,6 +17,7 @@ import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
+import com.example.bouchef.tubolsillo.generics.GlobalClass;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
@@ -25,11 +26,13 @@ import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.internal.Internal;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.example.bouchef.tubolsillo.R.drawable.bocadillo;
+import static com.example.bouchef.tubolsillo.R.drawable.information;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,6 +41,8 @@ public class UltimaNotificacionFragment extends Fragment {
     private APIService api;
 
     Timer timer = new Timer();
+
+    ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
     public UltimaNotificacionFragment() {
         // Required empty public constructor
@@ -90,7 +95,7 @@ public class UltimaNotificacionFragment extends Fragment {
     }
 
     private void loadMensaje(){
-        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
 
         if (applicationGlobal.getUsuario() != null) {
             MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
@@ -144,7 +149,19 @@ public class UltimaNotificacionFragment extends Fragment {
                 descripcion.setText(mensaje.getDescripcion());
                 fechaAlta.setText(t);
 
-                if(mensaje.getOrdenImportancia().equals(3)) btn_accion.setImageDrawable(this.getResources().getDrawable(bocadillo));
+                GlobalClass g = GlobalClass.getInstance();
+                Integer id = applicationGlobal.getUsuario().getIdTipoUsuario();
+                if(id.equals(1)) {
+                    if (mensaje.getOrdenImportancia().equals(3)) {
+                        btn_accion.setImageDrawable(this.getResources().getDrawable(bocadillo));
+                        btn_accion.setTag("Autorizacion");
+                        g.setBtn_accion_tag("Autorizacion");
+                    } else {
+                        g.setBtn_accion_tag("Informacion");
+                    }
+                }else{
+                    btn_accion.setImageDrawable(this.getResources().getDrawable(information));
+                }
 
                 Alerts.newToastLarge(getContext(), "Check msg OK");
                 fragment_main.setVisibility(View.VISIBLE);

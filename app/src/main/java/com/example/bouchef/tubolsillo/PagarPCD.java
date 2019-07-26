@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,28 +38,17 @@ public class PagarPCD extends AppCompatActivity {
 
 
     private APIService api;
-
-   /* @BindView(R.id.descripcion)
-    TextView descripcion;
-    @BindView(R.id.fechaAlta) TextView fechaAlta;*/
+    @BindView(R.id.accion)
+    ImageView btn_accion;
+    @BindView(R.id.irHome) ImageView btn_home;
+    @BindView(R.id.tit_barra) TextView titulo;
 
     //private RecyclerView recyclerView;
     private DashboardAdapter adapter;
     private ArrayList<dashboard> dashboardList;
     private ArrayList<String> cars = new ArrayList<String>();
     private dashboard das;
-    /*private String lenguajeProgramacion[]=new String[]{"Compra 1","Producto 2","Producto 3","Producto 4","Producto 5"};
-    private Integer[] imgid={
-            R.drawable.eggs,
-            R.drawable.bottle,
-            R.drawable.milk,
-            R.drawable.cheese,
-            R.drawable.cereals
-    };*/
-    /*private String lenguajeProgramacion[]=new String[]{"PAGAR COMPRA 1"};
-    private Integer[] imgid={
-            R.drawable.list
-    };*/
+
     private String lenguajeProgramacion[]=new String[]{};
     private Integer[] imgid={};
     private ListView lista;
@@ -72,6 +62,8 @@ public class PagarPCD extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(activity_pagar_pcd);
 
+        titulo =  findViewById(R.id.tit_barra);
+        titulo.setText(R.string.tit_pagar_pcd);
 
 
         ButterKnife.bind(this);
@@ -79,7 +71,7 @@ public class PagarPCD extends AppCompatActivity {
         api = Api.getAPIService(getApplicationContext());
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(1);
+        mensajeViewModelPOST.setIdUsuario(2);
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
@@ -111,53 +103,13 @@ public class PagarPCD extends AppCompatActivity {
         importe = (EditText) findViewById(R.id.importeTxt);
         String item = "PAGAR COMPRA 1 ($"+importe.getText().toString()+")";
 
-        /*lenguajeProgramacion= new String[]{item};
-        imgid= new Integer[]{R.drawable.list};
+        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
-        LenguajeListAdapter adapter=new LenguajeListAdapter(this,lenguajeProgramacion,imgid);
-
-
-        lista=(ListView)findViewById(R.id.mi_lista);
-        lista.setAdapter(adapter);
-
-        lista.setVisibility(View.INVISIBLE);
-
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
-                String Slecteditem= lenguajeProgramacion[+position];
-                //enviar mensaje("Autorizar pago Importe")
-                Toast.makeText(getApplicationContext(), "ATENCION: PAGANDO COMPRA 1 ($"+importe.getText().toString()+")", Toast.LENGTH_SHORT).show();
-
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),4,Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
-                    @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        if(response.isSuccessful()){
-                            applicationGlobal.getCompra().setIdEstado(4);
-                        }else{
-                            Alerts.newToastLarge(getApplicationContext(), "Err");
-                        }
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
-                        Alerts.newToastLarge(getApplicationContext(), "Err");
-
-                    }
-                });
-
-                Intent intent = new Intent (view.getContext(), BotoneraInicialPCD.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-*/
         Button btnPCD = (Button) findViewById(R.id.button);
         btnPCD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
 
                 //enviar mensaje("Cancelando Compra y Volviendo")
                 Toast.makeText(getApplicationContext(), "Cancelando Compra y Volviendo", Toast.LENGTH_SHORT).show();
@@ -213,44 +165,87 @@ public class PagarPCD extends AppCompatActivity {
                     if(mail.getText().toString().isEmpty()){
                         Toast.makeText(getApplicationContext(), "Debe colocar un mail de vendendor", Toast.LENGTH_SHORT).show();
                     }else{
-                        //lista.setVisibility(View.VISIBLE);
-                        // enviar updateCompra()
                         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
-                        //String Slecteditem= lenguajeProgramacion[+position];
-                        //enviar mensaje("Autorizar pago Importe")
-                        Toast.makeText(getApplicationContext(), "ATENCION: PAGANDO COMPRA 1 ($"+importe.getText().toString()+")", Toast.LENGTH_SHORT).show();
 
-                        api.actualizarCompra(applicationGlobal.getCompra().getId(),4,Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
-                            @Override
-                            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                                if(response.isSuccessful()){
-                                    applicationGlobal.getCompra().setIdEstado(4);
-                                }else{
-                                    Alerts.newToastLarge(getApplicationContext(), "Err");
+                        if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(2)) {
+                            // TIENE PERFIL DE AYUDANTE => ES QUIEN PAGA
+                            // enviar updateCompra()
+                            Toast.makeText(getApplicationContext(), "ATENCION: PAGANDO COMPRA 1 ($" + importe.getText().toString() + ")", Toast.LENGTH_SHORT).show();
+
+                            api.actualizarCompra(applicationGlobal.getCompra().getId(), 4, Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
+                                @Override
+                                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                    if (response.isSuccessful()) {
+                                        applicationGlobal.getCompra().setIdEstado(4);
+                                    } else {
+                                        Alerts.newToastLarge(getApplicationContext(), "Err");
+                                    }
+
                                 }
 
-                            }
+                                @Override
+                                public void onFailure(Call<Boolean> call, Throwable t) {
+                                    Alerts.newToastLarge(getApplicationContext(), "Err");
 
-                            @Override
-                            public void onFailure(Call<Boolean> call, Throwable t) {
-                                Alerts.newToastLarge(getApplicationContext(), "Err");
+                                }
 
-                            }
-                        });
+                            });
+                        }else{
+                            //enviar mensaje("Autorizar pago Importe")
+                            Alerts.newToastLarge(getApplicationContext(), "OJO!!! NO ESTA ENVIANDO EL MENSAJE PARA AUTORIZAR");
+                        }
 
-                        //Intent intent = new Intent (v.getContext(), NotificadorPCD.class);
-                        //startActivityForResult(intent, 0);
                     }
                 }
             }
         });
 
+        // ACCION DEL BOTON DE MENSAJE
+        btn_accion =  findViewById(R.id.accion);
+        String imageId = (String) btn_accion.getTag();
+
+        btn_accion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if(imageId.equals("Autorizacion")) {
+                        Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
+                        startActivityForResult(intent, 0);
+                    }
+                    if(imageId.equals("Informacion")) {
+                        // Marcar mensaje como leido y actualizar
+                        Alerts.newToastLarge(mContext, "Marcar Mensaje como leido");
+                    }
+                }
+
+            }
+        });
+        // FIN ACCION DEL BOTON MENSAJE
+
+        // ACCION DEL BOTON DE IR A HOME
+        btn_home =  findViewById(R.id.irHome);
+
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }else {
+                    Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
+                    startActivityForResult(intent, 0);
+                    finish();
+                }
+
+            }
+
+        });
+        // FIN ACCION DEL BOTON IR A HOME
     }
 
 
-    /*private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-        descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(mensaje.getFechaAlta());
-    }*/
 
 }

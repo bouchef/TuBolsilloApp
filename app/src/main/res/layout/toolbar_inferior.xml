@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F73A36">
+    <ImageView
+        android:id="@+id/irHome"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="left"
+        android:layout_marginRight="20dp"
+        android:clickable="true"
+        android:src="@drawable/ic_home_black_48dp"
+        android:tint="#fff" />
+    <TextView
+        android:id="@+id/tit_barra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F73A36"
+        android:fontFamily="@font/nunito_regular"
+        android:gravity="center"
+        android:padding="13dp"
+        android:text="@string/tit_notificador"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+
+</androidx.appcompat.widget.Toolbar>
