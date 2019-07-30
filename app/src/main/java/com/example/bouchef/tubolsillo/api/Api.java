@@ -14,7 +14,7 @@ public class Api {
     public static APIService getAPIService(Context context) {
         String url = "";
         //url = context.getResources().getString(R.string.CONFIG_APIURL);
-        url = "https://appdineritoservice201906.azurewebsites.net/api/v1/";
+        url = "http://34.66.216.205/api/v1/";
         return RetrofitClient.getClient(url).create(APIService.class);
         /*if(ApplicationGlobal.getInstance().isProd())
             return RetrofitClient.getClient(BASE_URL_PROD).create(APIService.class);
