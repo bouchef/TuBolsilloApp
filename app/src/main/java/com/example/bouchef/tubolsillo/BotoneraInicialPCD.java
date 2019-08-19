@@ -3,12 +3,18 @@ package com.example.bouchef.tubolsillo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
@@ -22,6 +28,8 @@ import com.example.bouchef.tubolsillo.generics.GlobalClass;
 import com.example.bouchef.tubolsillo.generics.Utils;
 import com.example.bouchef.tubolsillo.tests.ListaUnoActivity;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
+import com.google.android.material.navigation.NavigationView;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,7 +42,7 @@ import retrofit2.Response;
  * Created by World of UI/UX on 01/04/2019.
  */
 
-public class BotoneraInicialPCD extends AppCompatActivity {
+public class BotoneraInicialPCD extends AppCompatActivity{
     private Context mContext= BotoneraInicialPCD.this;
     private APIService api;
 
@@ -51,7 +59,7 @@ public class BotoneraInicialPCD extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_botonera_inicial_pcd);
 
-        titulo =  findViewById(R.id.tit_barra);
+        /*titulo =  findViewById(R.id.tit_barra);
         titulo.setText(R.string.tit_inicio_pcd);
 
         ButterKnife.bind(this);
@@ -63,7 +71,7 @@ public class BotoneraInicialPCD extends AppCompatActivity {
 
         UsuarioViewModelPOST usuarioViewModelPOST = new UsuarioViewModelPOST();
         usuarioViewModelPOST.setId(2);
-        usuarioViewModelPOST.setNombre("");
+        usuarioViewModelPOST.setNombre("");*/
 
         //try {
         //    Response<UsuarioViewModelResponse> usuarioResult = api.getUsuario(usuarioViewModelPOST).execute();
@@ -73,7 +81,7 @@ public class BotoneraInicialPCD extends AppCompatActivity {
         //}
 
         //NO FUNCIONA
-        api.getUsuario(usuarioViewModelPOST).enqueue(new Callback<UsuarioViewModelResponse>() {
+        /*api.getUsuario(usuarioViewModelPOST).enqueue(new Callback<UsuarioViewModelResponse>() {
             @Override
             public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
                 if(response.isSuccessful()){
@@ -140,15 +148,15 @@ public class BotoneraInicialPCD extends AppCompatActivity {
                 Alerts.newToastLarge(mContext, "ErrErr");
             }
         });
-
-        Button btn1 = (Button) findViewById(R.id.button1);
+*/
+        /*Button btn1 = (Button) findViewById(R.id.button1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), CredencialPCD.class);
                 startActivityForResult(intent, 0);
             }
-        });
+        });*/
 
     /*Button btn2 = (Button) findViewById(R.id.button2);
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -175,16 +183,16 @@ public class BotoneraInicialPCD extends AppCompatActivity {
             }
         });*/
 
-        Button btn5 = (Button) findViewById(R.id.button5);
+        /*Button btn5 = (Button) findViewById(R.id.button5);
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), ListaControlGastos.class);
                 startActivityForResult(intent, 0);
             }
-        });
+        });*/
 
-        Button btn7 = (Button) findViewById(R.id.button7);
+        /*Button btn7 = (Button) findViewById(R.id.button7);
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -229,7 +237,7 @@ public class BotoneraInicialPCD extends AppCompatActivity {
 
                 startActivityForResult(intent, 0);
             }
-        });
+        });*/
 
         /*Button btn7 = (Button) findViewById(R.id.button7);
         btn7.setOnClickListener(new View.OnClickListener() {
@@ -249,13 +257,13 @@ public class BotoneraInicialPCD extends AppCompatActivity {
             }
         });*/
 
-        Button btn9 = (Button) findViewById(R.id.button9);
+        /*Button btn9 = (Button) findViewById(R.id.button9);
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
-                finish();
+              finish();
             }
         });
 
@@ -266,9 +274,9 @@ public class BotoneraInicialPCD extends AppCompatActivity {
                 Intent intent = new Intent (v.getContext(), NotificadorPCD.class);
                 startActivityForResult(intent, 0);
             }
-        });
+        });*/
 
-        // ACCION DEL BOTON DE MENSAJE
+        /*// ACCION DEL BOTON DE MENSAJE
         btn_accion =  findViewById(R.id.accion);
         String imageId = (String) btn_accion.getTag();
 
@@ -289,9 +297,12 @@ public class BotoneraInicialPCD extends AppCompatActivity {
 
             }
         });
-        // FIN ACCION DEL BOTON MENSAJE
+        // FIN ACCION DEL BOTON MENSAJE*/
     }
 
+
+
+/*
 
     private void cargarUsuarioGlobal(ApplicationGlobal global, UsuarioViewModelResponse usuario) {
         global.setUsuario(usuario);
@@ -302,4 +313,7 @@ public class BotoneraInicialPCD extends AppCompatActivity {
         fechaAlta.setText(mensaje.getFechaAlta());
 
     }
+*/
+
+
 }

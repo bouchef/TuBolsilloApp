@@ -1,8 +1,32 @@
 <resources>
-    <string name="app_name">Tu Bolsillo</string>
+    <!--<string name="app_name">Tu Bolsillo</string>-->
     <string name="title_activity_maps">Map</string>
+
+    <!--MENU-->
+    <string name="menu_cambiar_perfil">CAMBIAR PERFIL</string>
+    <string name="menu_donate">AYUDANOS</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">CONFIGURACION</string>
+
+    <string name="menu_home">INICIO</string>
+    <string name="menu_comenzar_compra">COMENZAR COMPRA</string>
+    <string name="menu_control_gasto">CONTROL DE GASTOS</string>
+    <string name="menu_notificador">NOTIFICADOR</string>
+    <string name="menu_inicio_ayudante">INICIO AYUDANTE</string>
+    <string name="menu_credencial">MI CREDENCIAL</string>
+
+    <!--TEXT BOTONES-->
     <string name="btn_info">Informacion</string>
     <string name="btn_auto">Autorizar</string>
+    <string name="txt_btn_comenzar_compra">COMENZAR COMPRA</string>
+    <string name="txt_btn_mi_credencial">MI CREDENCIAL</string>
+
+    <!--TITULOS-->
     <string name="tit_seguimiento">SEGUIMIENTO DE COMPRA</string>
     <string name="tit_notificador">NOTIFICADOR</string>
     <string name="tit_pagar_pcd">PAGAR</string>
@@ -15,4 +39,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_hay_mensajes_de_compra">No hay mensajes de Compra</string>
 </resources>

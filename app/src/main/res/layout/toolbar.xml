@@ -5,13 +5,6 @@
     android:layout_height="wrap_content"
     android:background="#F73A36">
 
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/menu"
-        android:tint="#fff"/>
-
-
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"

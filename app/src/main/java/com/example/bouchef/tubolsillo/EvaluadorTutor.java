@@ -70,6 +70,7 @@ public class EvaluadorTutor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
 

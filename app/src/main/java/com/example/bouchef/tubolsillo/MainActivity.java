@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), BotoneraInicialPCD.class);
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), InicioTutor.class);
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
     }

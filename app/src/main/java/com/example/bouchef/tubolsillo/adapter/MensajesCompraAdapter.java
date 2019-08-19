@@ -11,12 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bouchef.tubolsillo.R;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.tests.ItemBasico;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MensajesCompraAdapter extends RecyclerView.Adapter<MensajesCompraAdapter.ViewHolder> {
-    private List<MensajeViewModelResponse> mItems;
+    private List<MensajeViewModelResponse> listaItems;
 
     private Context mContext;
 
@@ -31,7 +32,7 @@ public class MensajesCompraAdapter extends RecyclerView.Adapter<MensajesCompraAd
     }
 
     public MensajesCompraAdapter(Context context, List<MensajeViewModelResponse> items) {
-        mItems = items;
+        listaItems = items;
         mContext = context;
     }
 
@@ -45,9 +46,9 @@ public class MensajesCompraAdapter extends RecyclerView.Adapter<MensajesCompraAd
 
     public void swapItems(List<MensajeViewModelResponse> appointments) {
         if (appointments == null) {
-            mItems = new ArrayList<>(0);
+            listaItems = new ArrayList<>(0);
         } else {
-            mItems = appointments;
+            listaItems = appointments;
         }
         notifyDataSetChanged();
     }
@@ -61,7 +62,7 @@ public class MensajesCompraAdapter extends RecyclerView.Adapter<MensajesCompraAd
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        MensajeViewModelResponse mensaje_compra = mItems.get(position);
+        MensajeViewModelResponse mensaje_compra = listaItems.get(position);
 
         View statusIndicator = holder.statusIndicator;
 
@@ -92,7 +93,7 @@ public class MensajesCompraAdapter extends RecyclerView.Adapter<MensajesCompraAd
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        return listaItems.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -118,7 +119,7 @@ public class MensajesCompraAdapter extends RecyclerView.Adapter<MensajesCompraAd
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
-                        mOnItemClickListener.onLeerMensaje(mItems.get(position));
+                        mOnItemClickListener.onLeerMensaje(listaItems.get(position));
                     }
                 }
             });
@@ -129,7 +130,7 @@ public class MensajesCompraAdapter extends RecyclerView.Adapter<MensajesCompraAd
         public void onClick(View v) {
             int position = getAdapterPosition();
             if (position != RecyclerView.NO_POSITION) {
-                mOnItemClickListener.onItemClick(mItems.get(position));
+                mOnItemClickListener.onItemClick(listaItems.get(position));
             }
         }
     }

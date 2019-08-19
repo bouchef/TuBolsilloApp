@@ -1,5 +1,6 @@
 package com.example.bouchef.tubolsillo;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -75,6 +76,7 @@ public class SeguimientoCompra extends AppCompatCustomActivity implements Mensaj
                     if(imageId.equals("Autorizacion")) {
                         Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
                         startActivityForResult(intent, 0);
+                      finish();
                     }
                     if(imageId.equals("Informacion")) {
                         // Marcar mensaje como leido y actualizar
@@ -95,11 +97,11 @@ public class SeguimientoCompra extends AppCompatCustomActivity implements Mensaj
                 if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }else {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }
 
             }

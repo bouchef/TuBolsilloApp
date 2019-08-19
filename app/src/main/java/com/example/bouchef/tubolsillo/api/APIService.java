@@ -22,8 +22,8 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface APIService {
-    @GET("ultimoMensaje/{idCompra}/{idUsuario}/{idTipoEvento}")
-    Call<MensajeViewModelResponse> getUltimoMensaje(@Path("idCompra") int idCompra, @Path("idUsuario") int idUsuario, @Path("idTipoEvento") int idTipoEvento);
+    @GET("ultimoMensaje/{idUsuario}/{idCompra}/{idTipoEvento}")
+    Call<MensajeViewModelResponse> getUltimoMensaje(@Path("idUsuario") int idUsuario, @Path("idCompra") int idCompra, @Path("idTipoEvento") int idTipoEvento);
 
     @POST("pcd")
     Call<PCDViewModelResponse> getPCD(@Body PCDViewModelPOST pcdViewModel);

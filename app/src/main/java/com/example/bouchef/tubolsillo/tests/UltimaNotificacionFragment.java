@@ -103,7 +103,7 @@ public class UltimaNotificacionFragment extends Fragment {
             mensajeViewModelPOST.setIdCompra(0);
             mensajeViewModelPOST.setIdTipoEvento(0);
 
-            api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+            api.getUltimoMensaje(mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
                 @Override
                 public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                     if (response.isSuccessful()) {

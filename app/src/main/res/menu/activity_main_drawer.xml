@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_comenzar_compra"
+            android:icon="@drawable/comenzar_compra"
+            android:title="@string/menu_comenzar_compra" />
+        <item
+            android:id="@+id/nav_credencial"
+            android:icon="@drawable/id_card_1o"
+            android:title="@string/menu_credencial" />
+        <item
+            android:id="@+id/nav_notificador"
+            android:icon="@drawable/enviar_mensaje"
+            android:title="@string/menu_notificador" />
+        <item
+            android:id="@+id/nav_control_gasto"
+            android:icon="@drawable/control_gasto"
+            android:title="@string/menu_control_gasto" />
+        <item
+            android:id="@+id/nav_inicio_ayudante"
+            android:title="@string/menu_inicio_ayudante" />
+    </group>
+
+    <!--<item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/menu_send" />
+        </menu>
+    </item>-->
+
+</menu>

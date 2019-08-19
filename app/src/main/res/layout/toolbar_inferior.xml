@@ -6,13 +6,12 @@
     android:background="#F73A36">
     <ImageView
         android:id="@+id/irHome"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="left"
         android:layout_marginRight="20dp"
         android:clickable="true"
-        android:src="@drawable/ic_home_black_48dp"
-        android:tint="#fff" />
+        android:src="@drawable/home"/>
     <TextView
         android:id="@+id/tit_barra"
         android:layout_width="match_parent"
@@ -21,7 +20,6 @@
         android:fontFamily="@font/nunito_regular"
         android:gravity="center"
         android:padding="13dp"
-        android:text="@string/tit_notificador"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 

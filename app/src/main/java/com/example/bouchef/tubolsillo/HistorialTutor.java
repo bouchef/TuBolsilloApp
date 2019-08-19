@@ -67,6 +67,7 @@ public class HistorialTutor extends AppCompatCustomActivity implements Historial
                     if(imageId.equals("Autorizacion")) {
                         Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
                         startActivityForResult(intent, 0);
+                      finish();
                     }
                     if(imageId.equals("Informacion")) {
                         // Marcar mensaje como leido y actualizar
@@ -87,11 +88,11 @@ public class HistorialTutor extends AppCompatCustomActivity implements Historial
                 if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }else {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }
 
             }

@@ -85,7 +85,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
                                 mensajeViewModelPOST.setIdCompra(0);
                                 mensajeViewModelPOST.setIdTipoEvento(0);
 
-                                api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+                                api.getUltimoMensaje(mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
                                     @Override
                                     public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                                         if (response.isSuccessful()) {
@@ -140,6 +140,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
                 Intent intent = new Intent (v.getContext(), AutorizarTutor.class);
 
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
 
@@ -149,6 +150,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), SeguimientoCompra.class);
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
         /*Button btn3 = (Button) findViewById(R.id.button3);
@@ -165,24 +167,27 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), HistorialTutor.class);
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
 
-        Button btn5 = (Button) findViewById(R.id.button_control_de_gastos);
+        Button btn5 = (Button) findViewById(R.id.control_gastos);
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), ListaControlGastos.class);
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
 
-        Button btn7 = (Button) findViewById(R.id.button_enviar_mensajes);
+        Button btn7 = (Button) findViewById(R.id.notificador);
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), NotificadorPCD.class);
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
 
@@ -204,15 +209,6 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
             }
         });*/
 
-        Button btn9 = (Button) findViewById(R.id.button_perfil_usuario);
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), BotoneraInicialPCD.class);
-                startActivityForResult(intent, 0);
-                finish();
-            }
-        });
 
         // ACCION DEL BOTON DE MENSAJE
         btn_accion =  findViewById(R.id.accion);
@@ -226,6 +222,7 @@ public class BotoneraInicialAyudante extends AppCompatActivity {
                     if(imageId.equals("Autorizacion")) {
                         Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
                         startActivityForResult(intent, 0);
+                      finish();
                     }
                     if(imageId.equals("Informacion")) {
                         // Marcar mensaje como leido y actualizar

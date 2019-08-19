@@ -68,21 +68,27 @@ public class FoodOrderAdapter extends RecyclerView.Adapter<FoodOrderAdapter.MyVi
                 }else if (position == 1) {
                     Intent i = new Intent(context, HomeActivity.class);
                     context.startActivity(i);
+                    ((Activity)context).finish();
                 }else if (position ==2){
                     Intent i = new Intent(context, BookOrderActivity.class);
                     context.startActivity(i);
+                    ((Activity)context).finish();
                 }else if (position ==3){
                     Intent i = new Intent(context, FilterActivity.class);
                     context.startActivity(i);
+                    ((Activity)context).finish();
                 }else if (position ==4){
                     Intent i = new Intent(context, FoodFilterActivity.class);
                     context.startActivity(i);
+                    ((Activity)context).finish();
                 }else if (position ==5){
                     Intent i = new Intent(context, ReviewActivity.class);
                     context.startActivity(i);
+                    ((Activity)context).finish();
                 }else if (position ==6){
                     Intent i = new Intent(context, LocationActivity.class);
                     context.startActivity(i);
+                    ((Activity)context).finish();
                 }
             }
 

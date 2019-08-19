@@ -131,7 +131,7 @@ public class AutorizarTutor extends AppCompatActivity {
 
                 Intent intent = new Intent (view.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
-                finish();
+              finish();
             }
         });
 
@@ -141,7 +141,7 @@ public class AutorizarTutor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), BotoneraInicialAyudante.class);
                 startActivityForResult(intent, 0);
-                finish();
+              finish();
             }
         });*/
 
@@ -164,11 +164,11 @@ public class AutorizarTutor extends AppCompatActivity {
                 if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }else {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }
 
             }
@@ -188,6 +188,7 @@ public class AutorizarTutor extends AppCompatActivity {
                     if(imageId.equals("Autorizacion")) {
                         Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
                         startActivityForResult(intent, 0);
+                      finish();
                     }
                     if(imageId.equals("Informacion")) {
                         // Marcar mensaje como leido y actualizar

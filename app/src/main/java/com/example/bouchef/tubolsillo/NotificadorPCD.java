@@ -87,7 +87,7 @@ public class NotificadorPCD extends AppCompatActivity {
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
-        api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+        api.getUltimoMensaje(mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
             @Override
             public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                 if(response.isSuccessful()){
@@ -136,6 +136,7 @@ public class NotificadorPCD extends AppCompatActivity {
                     if(imageId.equals("Autorizacion")) {
                         Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
                         startActivityForResult(intent, 0);
+                      finish();
                     }
                     if(imageId.equals("Informacion")) {
                         // Marcar mensaje como leido y actualizar
@@ -160,11 +161,11 @@ public class NotificadorPCD extends AppCompatActivity {
                 if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }else {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }
 
             }
@@ -213,12 +214,14 @@ public class NotificadorPCD extends AppCompatActivity {
 
             Intent intent = new Intent (getApplicationContext(), PagarPCD.class);
             startActivityForResult(intent, 0);
+          finish();
         }
         if(Slecteditem=="Ya estoy volviendo"){
             //enviar mensaje("Ya estoy volviendo")
             Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent (getApplicationContext(), BotoneraInicialPCD.class);
             startActivityForResult(intent, 0);
+          finish();
         }
         if(Slecteditem=="Cancelando Compra"){
             //enviar mensaje("Cancelando Compra")
@@ -262,6 +265,7 @@ public class NotificadorPCD extends AppCompatActivity {
 
             Intent intent = new Intent (getApplicationContext(), BotoneraInicialPCD.class);
             startActivityForResult(intent, 0);
+          finish();
         }
     }
 

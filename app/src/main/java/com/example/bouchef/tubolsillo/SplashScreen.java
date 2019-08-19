@@ -30,10 +30,10 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 try {
 
-                    intent = new Intent(SplashScreen.this,BotoneraInicialPCD.class);
+                    intent = new Intent(SplashScreen.this,MainActivity2.class);
                     //intent = new Intent(SplashScreen.this,BotoneraInicialAyudante.class);
                     startActivity(intent);
-                    finish();
+                  finish();
                 } catch (Exception e) {
 
                 }

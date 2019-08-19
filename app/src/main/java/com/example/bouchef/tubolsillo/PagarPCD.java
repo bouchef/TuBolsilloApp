@@ -75,7 +75,7 @@ public class PagarPCD extends AppCompatActivity {
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
-        api.getUltimoMensaje(mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+        api.getUltimoMensaje(mensajeViewModelPOST.getIdUsuario(),mensajeViewModelPOST.getIdCompra(),mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
             @Override
             public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                 if(response.isSuccessful()){
@@ -152,6 +152,7 @@ public class PagarPCD extends AppCompatActivity {
 
                 Intent intent = new Intent (v.getContext(), BotoneraInicialPCD.class);
                 startActivityForResult(intent, 0);
+              finish();
             }
         });
 
@@ -212,6 +213,7 @@ public class PagarPCD extends AppCompatActivity {
                     if(imageId.equals("Autorizacion")) {
                         Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
                         startActivityForResult(intent, 0);
+                      finish();
                     }
                     if(imageId.equals("Informacion")) {
                         // Marcar mensaje como leido y actualizar
@@ -233,11 +235,11 @@ public class PagarPCD extends AppCompatActivity {
                 if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialAyudante.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }else {
                     Intent intent = new Intent(v.getContext(), BotoneraInicialPCD.class);
                     startActivityForResult(intent, 0);
-                    finish();
+                  finish();
                 }
 
             }
