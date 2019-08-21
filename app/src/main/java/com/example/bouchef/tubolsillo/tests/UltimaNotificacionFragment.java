@@ -1,6 +1,7 @@
 package com.example.bouchef.tubolsillo.tests;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,6 +61,8 @@ public class UltimaNotificacionFragment extends Fragment {
     @BindView(R.id.fragment_main)
     LinearLayout fragment_main;
 
+    Context mContext;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,7 @@ public class UltimaNotificacionFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         api = Api.getAPIService(getContext());
+        mContext = getContext();
 
         loadMensaje();
 
@@ -171,7 +175,7 @@ public class UltimaNotificacionFragment extends Fragment {
             }
 
         }catch (Exception e){
-            Alerts.newToastLarge(getContext(), "Check msg ERRRR");
+            Alerts.newToastLarge(mContext, "Check msg ERRRR");
         }
 
     }

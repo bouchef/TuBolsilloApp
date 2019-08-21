@@ -107,7 +107,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                                                 cargarUltimoMensaje(response.body());
                                             } else {
                                                 if (response.code() != 404) {
-                                                    Alerts.newToastLarge(getContext(), "ERR");
+                                                    Alerts.newToastLarge(view.getContext(), "ERR");
                                                 } else {
                                                     cargarUltimoMensaje(null);
                                                 }
@@ -116,13 +116,13 @@ public class FragmentBotoneraInicioPCD extends Fragment {
 
                                         @Override
                                         public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
-                                            Alerts.newToastLarge(getContext(), "ErrErr");
+                                            Alerts.newToastLarge(view.getContext(), "ErrErr");
                                         }
                                     });
 
                                 }else{
                                     if (response.code() != 404) {
-                                        Alerts.newToastLarge(getContext(), "ERR");
+                                        Alerts.newToastLarge(view.getContext(), "ERR");
                                     }
                                     else
                                     {
@@ -134,18 +134,18 @@ public class FragmentBotoneraInicioPCD extends Fragment {
 
                             @Override
                             public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
-                                Alerts.newToastLarge(getContext(), "Err");
+                                Alerts.newToastLarge(view.getContext(), "Err");
 
                             }
                         });
                     }else{
-                        Alerts.newToastLarge(getContext(), "ERR");
+                        Alerts.newToastLarge(view.getContext(), "ERR");
                     }
                 }
 
                 @Override
                 public void onFailure(Call<UsuarioViewModelResponse> call, Throwable t) {
-                    Alerts.newToastLarge(getContext(), "ErrErr");
+                    Alerts.newToastLarge(view.getContext(), "ErrErr");
                 }
             });
 
@@ -202,7 +202,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                                 applicationGlobal.setCompra(response.body());
                             }else{
                                 if (response.code() != 404) {
-                                    Alerts.newToastLarge(getContext(), "ERR");
+                                    Alerts.newToastLarge(view.getContext(), "ERR");
                                 }
                                 else
                                 {
@@ -214,7 +214,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
 
                         @Override
                         public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
-                            Alerts.newToastLarge(getContext(), "Err");
+                            Alerts.newToastLarge(view.getContext(), "Err");
 
                         }
                     });
