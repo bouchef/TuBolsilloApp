@@ -61,6 +61,7 @@ public class MainActivity2 extends AppCompatActivity {
             drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 
             navView = (NavigationView)findViewById(R.id.nav_view);
+            Menu menu = navView.getMenu();
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                     this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawerLayout.addDrawerListener(toggle);
@@ -83,6 +84,14 @@ public class MainActivity2 extends AppCompatActivity {
                                 case R.id.nav_inicio_ayudante:
                                     fragment = new FragmentBotoneraInicioAyudante();
                                     fragmentTransaction = true;
+                                    menuItem.setVisible(false);
+                                    menu.findItem(R.id.nav_inicio_pcd).setVisible(true);
+                                    break;
+                                case R.id.nav_inicio_pcd:
+                                    fragment = new FragmentBotoneraInicioPCD();
+                                    fragmentTransaction = true;
+                                    menuItem.setVisible(false);
+                                    menu.findItem(R.id.nav_inicio_ayudante).setVisible(true);
                                     break;
                                 case R.id.nav_credencial:
                                     fragment = new FragmentCredencialPCD();
