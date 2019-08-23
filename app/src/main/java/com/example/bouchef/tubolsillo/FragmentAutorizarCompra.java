@@ -140,7 +140,7 @@ public class FragmentAutorizarCompra extends Fragment {
 
                 fragment = new FragmentBotoneraInicioAyudante();
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment).commit();
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             }
         });
 

@@ -155,7 +155,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                 public void onClick(View v) {
                     fragment = new FragmentCredencialPCD();
                     ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment).commit();
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
                 }
             });
 
@@ -184,7 +184,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                 public void onClick(View v) {
                     fragment = new FragmentControlGastos();
                     ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.content_frame, fragment).commit();
+                            .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
                 }
             });
 
@@ -236,7 +236,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
 
                     //startActivityForResult(intent, 0);
                     ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.content_frame, fragment).commit();
+                            .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
                 }
             });
 
@@ -259,7 +259,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                     //startActivityForResult(intent, 0);
                     fragment = new FragmentNotificador();
                     ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.content_frame, fragment).commit();
+                            .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
                 }
             });
         /* FIN BOTONERA PCD */

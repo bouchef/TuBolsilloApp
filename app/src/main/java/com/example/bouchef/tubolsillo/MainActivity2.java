@@ -114,6 +114,7 @@ public class MainActivity2 extends AppCompatActivity {
                             if(fragmentTransaction) {
                                 getSupportFragmentManager().beginTransaction()
                                         .replace(R.id.content_frame, fragment)
+                                        .addToBackStack(null)
                                         .commit();
 
                                 menuItem.setChecked(true);
@@ -154,6 +155,7 @@ public class MainActivity2 extends AppCompatActivity {
 
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.content_frame, new FragmentBotoneraInicioPCD())
+                    .addToBackStack(null)
                     .commit();
             /* fin abro FragmentBotoneraInicioPCD*/
         }

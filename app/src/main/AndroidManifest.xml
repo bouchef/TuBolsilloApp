@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".SplashScreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" android:configChanges="orientation|screenSize"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -31,27 +31,27 @@
             android:value="@string/google_maps_key" />
 
         <!--<activity android:name=".HomeActivity" />-->
-        <activity android:name=".AquiEstoyPCD" />
-        <activity android:name=".ArmarListaTutor" />
-        <activity android:name=".AutorizarTutor" />
-        <activity android:name=".PagarPCD" />
-        <activity android:name=".CredencialPCD" />
-        <activity android:name=".DondeEstasTutor" />
-        <activity android:name=".EvaluadorTutor" />
-        <activity android:name=".HistorialTutor" />
-        <activity android:name=".ListaCompraPCD" />
-        <activity android:name=".LocationActivity" />
-        <activity android:name=".MiListaTutor" />
-        <activity android:name=".InicioPCD" />
-        <activity android:name=".InicioTutor" />
-        <activity android:name=".NotificadorPCD" />
-        <activity android:name=".SeguimientoCompra" />
-        <activity android:name=".ListaNegociosFavoritos" />
-        <activity android:name=".ListaControlGastos" />
-        <activity android:name=".BotoneraInicialPCD" />
-        <activity android:name=".BotoneraInicialAyudante" />
-        <activity android:name=".HomeActivityTutor" />
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".AquiEstoyPCD" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".ArmarListaTutor" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".AutorizarTutor" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".PagarPCD" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".CredencialPCD" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".DondeEstasTutor" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".EvaluadorTutor" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".HistorialTutor" android:configChanges="orientation|screenSize" />
+        <activity android:name=".ListaCompraPCD" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".LocationActivity" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".MiListaTutor" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".InicioPCD" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".InicioTutor" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".NotificadorPCD" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".SeguimientoCompra" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".ListaNegociosFavoritos" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".ListaControlGastos" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".BotoneraInicialPCD" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".BotoneraInicialAyudante" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".HomeActivityTutor" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".MainActivity2" android:configChanges="orientation|screenSize"/>
 
     </application>
 

@@ -241,7 +241,7 @@ public class FragmentNotificador extends Fragment {
             Toast.makeText(getContext(), Slecteditem, Toast.LENGTH_SHORT).show();
             fragment = new FragmentBotoneraInicioPCD();
             ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.content_frame, fragment).commit();
+                    .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
         }
         if(Slecteditem=="Cancelando Compra"){
             //enviar mensaje("Cancelando Compra")
@@ -285,7 +285,7 @@ public class FragmentNotificador extends Fragment {
 
             fragment = new FragmentBotoneraInicioPCD();
             ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.content_frame, fragment).commit();
+                    .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 
         }
     }

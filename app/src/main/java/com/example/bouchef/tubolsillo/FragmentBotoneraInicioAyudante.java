@@ -144,7 +144,7 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
             public void onClick(View v) {
                 fragment = new FragmentAutorizarCompra();
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment).commit();
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -154,7 +154,7 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
             public void onClick(View v) {
                 fragment = new FragmentSeguimientoCompra();
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment).commit();
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             }
         });
         /*Button btn3 = (Button) findViewById(R.id.button3);
@@ -171,7 +171,7 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
             public void onClick(View v) {
                 fragment = new FragmentHistorialMensajes();
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment).commit();
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -181,7 +181,7 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
             public void onClick(View v) {
                 fragment = new FragmentControlGastos();
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment).commit();
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -191,7 +191,7 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
             public void onClick(View v) {
                 fragment = new FragmentNotificador();
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment).commit();
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -228,7 +228,7 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
                         //startActivityForResult(intent, 0);
                         fragment = new FragmentAutorizarCompra();
                         ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.content_frame, fragment).commit();
+                                .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
                     }
                     if(imageId.equals("Informacion")) {
                         // Marcar mensaje como leido y actualizar
