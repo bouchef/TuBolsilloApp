@@ -91,16 +91,16 @@
                 android:text="@string/no_hay_mensajes_de_compra"
                 tools:visibility="gone" />
         </LinearLayout>
-        <!--<ListView
+        <ListView
             android:id="@+id/mi_lista"
             android:layout_width="match_parent"
-            android:layout_height="449dp" />-->
-        <androidx.recyclerview.widget.RecyclerView
+            android:layout_height="449dp" />
+        <!--<androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mi_lista"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
-            tools:listitem="@layout/mensaje_compra_item_list" />
+            tools:listitem="@layout/mensaje_compra_item_list" />-->
 
         </LinearLayout>
     </LinearLayout>
