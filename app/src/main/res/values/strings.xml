@@ -18,6 +18,7 @@
     <string name="menu_control_gasto">CONTROL DE GASTOS</string>
     <string name="menu_notificador">NOTIFICADOR</string>
     <string name="menu_inicio_ayudante">INICIO AYUDANTE</string>
+    <string name="menu_inicio_pcd">INICIO PCD</string>
     <string name="menu_credencial">MI CREDENCIAL</string>
 
     <!--TEXT BOTONES-->

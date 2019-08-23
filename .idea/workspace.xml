@@ -10,8 +10,14 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/tests/ComerciosRecyclerViewAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/mensaje_comercio_item_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentComenzarCompra.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentComenzarCompra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_negocios_favoritos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_negocios_favoritos.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,19 +36,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentHistorialMensajes.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="150" column="51" selection-start-line="150" selection-start-column="12" selection-end-line="150" selection-end-column="51" />
+=======
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+              <folding>
+                <element signature="e#860#886#0" expanded="true" />
+                <element signature="e#1029#1057#0" expanded="true" />
+                <element signature="e#1151#1181#0" expanded="true" />
+                <element signature="e#1270#1295#0" expanded="true" />
+              </folding>
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentComenzarCompra.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="119" selection-start-line="119" selection-end-line="119" />
+=======
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,20 +78,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lista_negocios_favoritos.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="91">
               <caret line="94" column="38" lean-forward="true" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+=======
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MiListaTutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/BotoneraInicialPCD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentBotoneraInicioAyudante.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.0.0/bcd167792ec03e930d5c8345c99ae07b2627de84/fragment-1.0.0-sources.jar!/androidx/fragment/app/Fragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="410" selection-start-line="410" selection-end-line="410" />
+              <folding>
+                <element signature="e#26152#26153#0" expanded="true" />
+                <element signature="e#26216#26217#0" expanded="true" />
+              </folding>
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentAutorizarCompra.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-698">
               <caret line="39" selection-start-line="39" selection-end-line="39" />
+=======
+            <state relative-caret-position="2652">
+              <caret line="187" column="5" selection-start-line="166" selection-start-column="4" selection-end-line="187" selection-end-column="5" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
             </state>
           </provider>
         </entry>
@@ -72,8 +141,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/ListaNegociosFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="246">
               <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="83" selection-end-column="78" />
+=======
+            <state relative-caret-position="255">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-62">
+              <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -91,13 +177,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getUlti</find>
-      <find>getDescripcion()</find>
-      <find>cargarUltimoMensaje</find>
-      <find>contex</find>
-      <find>getUl</find>
-      <find>getResources</find>
-      <find>fragment</find>
       <find>Resources</find>
       <find>adap</find>
       <find>List</find>
@@ -121,6 +200,13 @@
       <find>listanegociosfavoritos</find>
       <find>finish();</find>
       <find>//finish();</find>
+      <find>ayudante</find>
+      <find>inicio ayudante</find>
+      <find>tit_inicio_ayudante</find>
+      <find>tit_inicio_pcd</find>
+      <find>menu_inicio_ayudante</find>
+      <find>nav_inicio_ayudante</find>
+      <find>menu</find>
     </findStrings>
     <replaceStrings>
       <replace>getMensajesNuevos</replace>
@@ -134,9 +220,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/Api.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/BotoneraInicialPCD.java" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/utiles/FragmentBotoneraInicioPCD.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentCredencialPCD.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FRagmentControlGastos.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_negocios_favoritos.xml" />
@@ -145,7 +235,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/Fragment1.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment1.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_credencial_pcd.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" />
@@ -181,10 +270,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/tests/UltimaNotificacionFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_historial_tutor.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentHistorialMensajes.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/res/layout/mensaje_comercio_item_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/tests/ComerciosRecyclerViewAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_negocios_favoritos.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentComenzarCompra.java" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
       </list>
     </option>
   </component>
@@ -199,8 +294,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -211,32 +306,7 @@
             <path>
               <item name="tubolsilloapp" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
-            </path>
-            <path>
-              <item name="tubolsilloapp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="tubolsilloapp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="tubolsillo" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tubolsilloapp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="tubolsillo" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tubolsilloapp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="tubolsillo" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tubolsilloapp" type="1abcf292:AndroidViewProjectNode" />
@@ -260,7 +330,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="device.picker.selection" value="YT9116FCXW" />
+    <property name="device.picker.selection" value="WCT89HLRSG4PG6P7" />
     <property name="last_opened_file_path" value="C:/mi_menu_basico" />
   </component>
   <component name="RecentsManager">
@@ -373,7 +443,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -388,7 +458,7 @@
       <window_info anchor="bottom" id="Run" order="0" />
       <window_info anchor="bottom" id="Logcat" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32993197" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3622449" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3609831" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
@@ -900,10 +970,23 @@
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentAutorizarCompra.java</url>
           <line>87</line>
           <properties />
           <option name="timeStamp" value="168" />
+=======
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="162" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -959,13 +1042,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentBotoneraInicioAyudante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/NotificadorPCD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
@@ -990,7 +1066,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-29/android.jar!/android/widget/TextView.class">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/widget/TextView.class">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -1035,7 +1111,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-29/android.jar!/android/view/ContextThemeWrapper.class">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/view/ContextThemeWrapper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
@@ -1053,7 +1129,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-29/android.jar!/android/view/LayoutInflater.class">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/view/LayoutInflater.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
@@ -1064,7 +1140,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-29/android.jar!/android/content/res/Resources.class">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/content/res/Resources.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="201" column="16" selection-start-line="201" selection-start-column="16" selection-end-line="201" selection-end-column="16" />
@@ -1074,7 +1150,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-29/android.jar!/android/view/View.class">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/view/View.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="2624" column="36" selection-start-line="2624" selection-start-column="36" selection-end-line="2624" selection-end-column="36" />
@@ -1143,7 +1219,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-29/android.jar!/android/os/Looper.class">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/os/Looper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
@@ -1162,7 +1238,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-29/android.jar!/android/app/Activity.class">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/app/Activity.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10319">
           <caret line="889" column="16" selection-start-line="889" selection-start-column="16" selection-end-line="889" selection-end-column="16" />
@@ -1180,6 +1256,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.0.0/bcd167792ec03e930d5c8345c99ae07b2627de84/fragment-1.0.0-sources.jar!/androidx/fragment/app/Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1188,6 +1265,12 @@
             <element signature="e#26152#26153#0" expanded="true" />
             <element signature="e#26216#26217#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentComenzarCompra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
         </state>
       </provider>
     </entry>
@@ -1249,23 +1332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/HistorialTutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="187" column="5" selection-start-line="166" selection-start-column="4" selection-end-line="187" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/APIService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_seguimiento_compra.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-388">
@@ -1274,21 +1340,46 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_historial_tutor.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/HistorialTutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
+        <state relative-caret-position="2652">
+          <caret line="187" column="5" selection-start-line="166" selection-start-column="4" selection-end-line="187" selection-end-column="5" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/api/APIService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment1.xml">
       <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentHistorialMensajes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentSeguimientoCompra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
+        <state relative-caret-position="269">
           <caret line="233" column="35" selection-start-line="233" selection-start-column="8" selection-end-line="233" selection-end-column="35" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentAutorizarCompra.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-698">
@@ -1314,10 +1405,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="85" column="36" lean-forward="true" selection-end-line="85" selection-end-column="36" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_historial_tutor.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/mensaje_comercio_item_list.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1373,6 +1471,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="119" selection-start-line="119" selection-end-line="119" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding>
+            <element signature="e#860#886#0" expanded="true" />
+            <element signature="e#1029#1057#0" expanded="true" />
+            <element signature="e#1151#1181#0" expanded="true" />
+            <element signature="e#1270#1295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.0.0/bcd167792ec03e930d5c8345c99ae07b2627de84/fragment-1.0.0-sources.jar!/androidx/fragment/app/Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="410" selection-start-line="410" selection-end-line="410" />
+          <folding>
+            <element signature="e#26152#26153#0" expanded="true" />
+            <element signature="e#26216#26217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/FragmentBotoneraInicioAyudante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MiListaTutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/BotoneraInicialPCD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/bouchef/tubolsillo/MainActivity2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+>>>>>>> 8d4132c4e34c695525fbe9a4d5bac77a4cba4f61
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
