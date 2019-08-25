@@ -21,6 +21,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
 import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
@@ -65,6 +67,12 @@ public class FragmentComenzarCompra extends Fragment {
 
     @BindView(R.id.mi_lista) ListView list;
     @BindView(R.id.empty_state_container) LinearLayout lista_vacia;
+
+    @BindView(R.id.accion)
+    ImageView btn_accion;
+    @BindView(R.id.irHome)
+    ImageView btn_home;
+
     RecyclerView recyclerListaMensajes;
     ComerciosRecyclerViewAdapter adapter;
     List<ItemBasico> items;
@@ -158,9 +166,11 @@ public class FragmentComenzarCompra extends Fragment {
                 });
 
                 Toast.makeText(getContext(), "ME DIRIJO A " + Slecteditem, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent (view.getContext(), NotificadorPCD.class);
-                startActivityForResult(intent, 0);
-
+                //Intent intent = new Intent (view.getContext(), FragmentNotificador.class);
+                //startActivityForResult(intent, 0);
+                fragment = new FragmentNotificador();
+                ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             }
         });
 
