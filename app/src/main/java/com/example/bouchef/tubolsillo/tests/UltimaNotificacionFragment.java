@@ -170,8 +170,8 @@ public class UltimaNotificacionFragment extends Fragment {
                 Alerts.newToastLarge(getContext(), "Check msg OK");
                 fragment_main.setVisibility(View.VISIBLE);
             }else{
-                Alerts.newToastLarge(getContext(), "Check msg NO OK");
-                fragment_main.setVisibility(View.GONE);
+                //Alerts.newToastLarge(getContext(), "Check msg NO OK");
+                //fragment_main.setVisibility(View.GONE);
             }
 
         }catch (Exception e){

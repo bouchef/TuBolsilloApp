@@ -274,9 +274,10 @@ public class FragmentBotoneraInicioPCD extends Fragment {
     }
 
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-        descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(mensaje.getFechaAlta());
-
+        if(mensaje != null) {
+            descripcion.setText(mensaje.getDescripcion());
+            fechaAlta.setText(mensaje.getFechaAlta());
+        }
     }
     /* FIN BOTONERA INICIO PCD */
 }
