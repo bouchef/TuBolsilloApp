@@ -233,8 +233,9 @@ public class FragmentNotificador extends Fragment {
                 }
             });
 
-            Intent intent = new Intent (getContext(), PagarPCD.class);
-            startActivityForResult(intent, 0);
+            fragment = new FragmentPagarCompra();
+            ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
         }
         if(Slecteditem=="Ya estoy volviendo"){
             //enviar mensaje("Ya estoy volviendo")

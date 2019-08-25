@@ -24,8 +24,10 @@ import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
+import com.example.bouchef.tubolsillo.generics.GlobalClass;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
+import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
 import java.util.ArrayList;
 
@@ -33,6 +35,9 @@ import butterknife.BindView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.example.bouchef.tubolsillo.R.drawable.bocadillo;
+import static com.example.bouchef.tubolsillo.R.drawable.information;
 
 
 public class FragmentAutorizarCompra extends Fragment {
@@ -115,7 +120,7 @@ public class FragmentAutorizarCompra extends Fragment {
                             }
                             else
                             {
-                                //applicationGlobal.setCompra(null);
+                                applicationGlobal.setCompra(null);
                             }
                         }
 
@@ -129,43 +134,82 @@ public class FragmentAutorizarCompra extends Fragment {
                 });
 // fin compra vigente
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),5,Double.parseDouble("10")).enqueue(new Callback<Boolean>() {
-                    @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        if(response.isSuccessful()){
-                            applicationGlobal.getCompra().setIdEstado(5);
-                            //TODO: falta obtener ultimoMensaje
-//                            api.marcarMensajeVisto(ultimoMensaje.getId()).enqueue(new Callback<Boolean>() {
-//                                @Override
-//                                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-//                                    if(response.isSuccessful()){
-//
-//                                    }else{
-//                                        Alerts.newToastLarge(getContext(), "Err");
-//                                    }
-//
-//                                }
-//
-//                                @Override
-//                                public void onFailure(Call<Boolean> call, Throwable t) {
-//                                    Alerts.newToastLarge(getContext(), "Err");
-//
-//                                }
-//                            });
+                if(applicationGlobal.getCompra() != null) {
+                    api.actualizarCompra(applicationGlobal.getCompra().getId(), 5, Double.parseDouble("10")).enqueue(new Callback<Boolean>() {
+                        @Override
+                        public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                            if (response.isSuccessful()) {
+                                // comento provisorio
+                                //applicationGlobal.getCompra().setIdEstado(5);
+                                //TODO: falta obtener ultimoMensaje
 
-                        }else{
-                            Alerts.newToastLarge(getContext(), "Err");
+                                if (applicationGlobal.getUsuario() != null) {
+                                    MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
+                                    mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
+                                    //mensajeViewModelPOST.setIdCompra(0);
+                                    mensajeViewModelPOST.setIdCompra(applicationGlobal.getCompra().getId());
+                                    mensajeViewModelPOST.setIdTipoEvento(4);
+
+                                    api.getUltimoMensaje(mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+                                        @Override
+                                        public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
+                                            if (response.isSuccessful()) {
+                                                MensajeViewModelResponse ultimoMensaje = response.body();
+
+                                                api.marcarMensajeVisto(ultimoMensaje.getId()).enqueue(new Callback<Boolean>() {
+                                                    @Override
+                                                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                                        if (response.isSuccessful()) {
+                                                            //UltimoMensaje marcado como visto OK;
+                                                            if(response.body().equals(true)) {
+                                                                Alerts.newToastLarge(getContext(), "Ultimo Mensaje marcado como visto");
+                                                            }else{
+                                                                Alerts.newToastLarge(getContext(), "Error: no se pudo marcar UltimoMensaje como visto");
+                                                            }
+                                                        } else {
+                                                            Alerts.newToastLarge(getContext(), "Error: no se pudo marcar UltimoMensaje como visto");
+                                                        }
+
+                                                    }
+
+                                                    @Override
+                                                    public void onFailure(Call<Boolean> call, Throwable t) {
+                                                        Alerts.newToastLarge(getContext(), "Error: llamada a servicio");
+
+                                                    }
+                                                });
+
+
+                                            } else {
+                                                if (response.code() != 404) {
+                                                    Alerts.newToastLarge(getContext(), "ERROR 404");
+                                                } else {
+                                                    //no hay mensaje
+                                                }
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
+                                            Alerts.newToastLarge(getContext(), "Error: Al consultar ultimo mensaje");
+                                        }
+                                    });
+                                }
+
+
+                            } else {
+                                Alerts.newToastLarge(getContext(), "Error: Al actualizar Compra!!");
+                            }
+
                         }
 
-                    }
+                        @Override
+                        public void onFailure(Call<Boolean> call, Throwable t) {
+                            Alerts.newToastLarge(getContext(), "Error: Al actualizar compra");
 
-                    @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
-                        Alerts.newToastLarge(getContext(), "Err");
-
-                    }
-                });
-
+                        }
+                    });
+                }
 
                 fragment = new FragmentBotoneraInicioAyudante();
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
@@ -175,4 +219,9 @@ public class FragmentAutorizarCompra extends Fragment {
 
         return vista;
     }
+
+
+
+
+
 }
