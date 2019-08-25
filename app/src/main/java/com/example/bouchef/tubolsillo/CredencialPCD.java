@@ -228,9 +228,11 @@ public class CredencialPCD extends AppCompatActivity {
     }
 
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-        String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
+        if(mensaje != null) {
+            String t = FechaUtils.fromStringToVerbose(mensaje.getFechaAlta());
 
-        descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(t);
+            descripcion.setText(mensaje.getDescripcion());
+            fechaAlta.setText(t);
+        }
     }
 }

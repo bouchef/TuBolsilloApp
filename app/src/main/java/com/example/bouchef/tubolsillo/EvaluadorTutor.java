@@ -79,14 +79,16 @@ public class EvaluadorTutor extends AppCompatActivity {
 
 
     private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-        descripcion.setText(mensaje.getDescripcion());
-        fechaAlta.setText(mensaje.getFechaAlta());
+        if(mensaje != null) {
+            descripcion.setText(mensaje.getDescripcion());
+            fechaAlta.setText(mensaje.getFechaAlta());
 
-        idTipoEvento = mensaje.getOrdenImportancia();
-        if(idTipoEvento.equals(3)){
-            autorizarButton.setVisibility(View.VISIBLE);
-        }else {
-            imageInfo.setVisibility(View.VISIBLE);
+            idTipoEvento = mensaje.getOrdenImportancia();
+            if (idTipoEvento.equals(3)) {
+                autorizarButton.setVisibility(View.VISIBLE);
+            } else {
+                imageInfo.setVisibility(View.VISIBLE);
+            }
         }
     }
 
