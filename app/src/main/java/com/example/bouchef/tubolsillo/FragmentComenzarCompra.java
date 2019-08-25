@@ -172,7 +172,7 @@ public class FragmentComenzarCompra extends Fragment {
 
                 //Intent intent = new Intent (view.getContext(), NotificadorPCD.class);
                 //startActivityForResult(intent, 0);
-                fragment = new FragmentComenzarCompra();
+                fragment = new FragmentNotificador();
                 ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 
