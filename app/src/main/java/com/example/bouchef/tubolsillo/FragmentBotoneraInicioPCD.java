@@ -104,7 +104,9 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                                         @Override
                                         public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
                                             if (response.isSuccessful()) {
-                                                cargarUltimoMensaje(response.body());
+                                                if (response.body() != null) {
+                                                    cargarUltimoMensaje(response.body());
+                                                }
                                             } else {
                                                 if (response.code() != 404) {
                                                     Alerts.newToastLarge(view.getContext(), "ERR");
