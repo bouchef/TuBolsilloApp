@@ -20,6 +20,7 @@ import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
 import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
@@ -70,6 +71,8 @@ public class FragmentAutorizarCompra extends Fragment {
     boolean fragmentTransaction = false;
     Fragment fragment = null;
 
+    ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
     public FragmentAutorizarCompra() {
         // Required empty public constructor
     }
@@ -83,7 +86,7 @@ public class FragmentAutorizarCompra extends Fragment {
 
         api = Api.getAPIService(getContext());
 
-        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
         mensajeViewModelPOST.setIdUsuario(2);
@@ -100,29 +103,55 @@ public class FragmentAutorizarCompra extends Fragment {
                 Toast.makeText(getContext(), "ATENCION: PAGO AUTORIZADO", Toast.LENGTH_SHORT).show();
 
                 ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+// inicio compra vigente
+                api.getCompraVigente(1).enqueue(new Callback<CompraViewModelResponse>() {
+                    @Override
+                    public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
+                        if(response.isSuccessful()){
+                            applicationGlobal.setCompra(response.body());
+                        }else{
+                            if (response.code() != 404) {
+                                Alerts.newToastLarge(view.getContext(), "ERR");
+                            }
+                            else
+                            {
+                                //applicationGlobal.setCompra(null);
+                            }
+                        }
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),5,0).enqueue(new Callback<Boolean>() {
+                    }
+
+                    @Override
+                    public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
+                        Alerts.newToastLarge(view.getContext(), "Err");
+
+                    }
+                });
+// fin compra vigente
+
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),5,Double.parseDouble("10")).enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
                             applicationGlobal.getCompra().setIdEstado(5);
-                            api.marcarMensajeVisto(ultimoMensaje.getId()).enqueue(new Callback<Boolean>() {
-                                @Override
-                                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                                    if(response.isSuccessful()){
-
-                                    }else{
-                                        Alerts.newToastLarge(getContext(), "Err");
-                                    }
-
-                                }
-
-                                @Override
-                                public void onFailure(Call<Boolean> call, Throwable t) {
-                                    Alerts.newToastLarge(getContext(), "Err");
-
-                                }
-                            });
+                            //TODO: falta obtener ultimoMensaje
+//                            api.marcarMensajeVisto(ultimoMensaje.getId()).enqueue(new Callback<Boolean>() {
+//                                @Override
+//                                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+//                                    if(response.isSuccessful()){
+//
+//                                    }else{
+//                                        Alerts.newToastLarge(getContext(), "Err");
+//                                    }
+//
+//                                }
+//
+//                                @Override
+//                                public void onFailure(Call<Boolean> call, Throwable t) {
+//                                    Alerts.newToastLarge(getContext(), "Err");
+//
+//                                }
+//                            });
 
                         }else{
                             Alerts.newToastLarge(getContext(), "Err");

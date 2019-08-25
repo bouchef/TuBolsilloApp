@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -117,6 +118,7 @@ public class FragmentComenzarCompra extends Fragment {
                 comercioViewModelPOST.setId(position + 1);
                 comercioViewModelPOST.setIdUsuario(0);
                 comercioViewModelPOST.setNombre("");
+                //TODO: revisar esta llamada
                 api.getComercios(comercioViewModelPOST).enqueue(new Callback<List<ComercioViewModelResponse>>() {
                     @Override
                     public void onResponse(Call<List<ComercioViewModelResponse>> call, Response<List<ComercioViewModelResponse>> response) {
@@ -137,6 +139,7 @@ public class FragmentComenzarCompra extends Fragment {
                 compraViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
                 compraViewModelPOST.setIdComercio(position + 1);
                 compraViewModelPOST.setCompraReal(false);
+                //compraViewModelPOST.setIdEstado(0); //facu
 
                 api.nuevaCompra(compraViewModelPOST).enqueue(new Callback<IdResponse>() {
                     @Override
@@ -157,8 +160,11 @@ public class FragmentComenzarCompra extends Fragment {
                 });
 
                 Toast.makeText(getContext(), "ME DIRIJO A " + Slecteditem, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent (view.getContext(), NotificadorPCD.class);
-                startActivityForResult(intent, 0);
+                //Intent intent = new Intent (view.getContext(), NotificadorPCD.class);
+                //startActivityForResult(intent, 0);
+                fragment = new FragmentComenzarCompra();
+                ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 
             }
         });

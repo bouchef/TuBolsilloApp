@@ -231,7 +231,8 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                     }
                     else
                     {
-                        intent = new Intent(v.getContext(),PagarPCD.class);
+                        //intent = new Intent(v.getContext(),PagarPCD.class);
+                        fragment = new FragmentPagarCompra();
                     }
 
                     //startActivityForResult(intent, 0);

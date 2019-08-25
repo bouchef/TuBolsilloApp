@@ -17,6 +17,13 @@ public class CompraViewModelPOST {
         this.idUsuario = idUsuario;
     }
 
+    public void setIdEstado(int idEstado) {
+        this.idEstado = idEstado;
+    }
+    public int getIdEstado() {
+        return idEstado;
+    }
+
     public int getIdComercio() {
         return idComercio;
     }
@@ -62,4 +69,5 @@ public class CompraViewModelPOST {
     private Double longitudInicio = null;
     private String tiempoEstimadoDestino = null;
     private String tiempoEstimadoRegreso = null;
+    private int idEstado = 0;   //facu
 }
