@@ -92,6 +92,7 @@ public class FragmentComenzarCompra extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View vista = inflater.inflate(R.layout.activity_lista_negocios_favoritos, container, false);
+        api = Api.getAPIService(mContext);
 
         lista_vacia = (LinearLayout) vista.findViewById(R.id.empty_state_container);
         lista_vacia.setVisibility((View.GONE));
