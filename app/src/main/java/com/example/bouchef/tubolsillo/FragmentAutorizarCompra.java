@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -67,6 +68,7 @@ public class FragmentAutorizarCompra extends Fragment {
     };
 
     private ListView lista;
+    @BindView(R.id.empty_state_container) LinearLayout lista_vacia;
 
     private Integer idTipoEvento;
 
@@ -87,7 +89,7 @@ public class FragmentAutorizarCompra extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.activity_autorizar_tutor, container, false);
-
+        lista_vacia = (LinearLayout) vista.findViewById(R.id.empty_state_container);
 
         api = Api.getAPIService(getContext());
 
@@ -98,124 +100,128 @@ public class FragmentAutorizarCompra extends Fragment {
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
-        LenguajeListAdapter adapter=new LenguajeListAdapter((Activity) getContext(),lenguajeProgramacion,imgid);
-        lista=(ListView) vista.findViewById(R.id.mi_lista);
-        lista.setAdapter(adapter);
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String Slecteditem= lenguajeProgramacion[+position];
-                Toast.makeText(getContext(), "ATENCION: PAGO AUTORIZADO", Toast.LENGTH_SHORT).show();
-
-                ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 // inicio compra vigente
-                api.getCompraVigente(1).enqueue(new Callback<CompraViewModelResponse>() {
-                    @Override
-                    public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
-                        if(response.isSuccessful()){
-                            applicationGlobal.setCompra(response.body());
-                        }else{
-                            if (response.code() != 404) {
-                                Alerts.newToastLarge(view.getContext(), "ERR");
-                            }
-                            else
-                            {
-                                applicationGlobal.setCompra(null);
-                            }
-                        }
+        api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {
+            @Override
+            public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
+                if(response.isSuccessful()){
+                    applicationGlobal.setCompra(response.body());
+                    // inicio
+                    if(applicationGlobal.getCompra() != null) {
+                        LenguajeListAdapter adapter = new LenguajeListAdapter((Activity) getContext(), lenguajeProgramacion, imgid);
+                        lista = (ListView) vista.findViewById(R.id.mi_lista);
+                        lista.setAdapter(adapter);
+                        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                String Slecteditem = lenguajeProgramacion[+position];
+                                Toast.makeText(getContext(), "ATENCION: PAGO AUTORIZADO", Toast.LENGTH_SHORT).show();
 
-                    }
 
-                    @Override
-                    public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
-                        Alerts.newToastLarge(view.getContext(), "Err");
-
-                    }
-                });
-// fin compra vigente
-
-                if(applicationGlobal.getCompra() != null) {
-                    api.actualizarCompra(applicationGlobal.getCompra().getId(), 5, Double.parseDouble("10")).enqueue(new Callback<Boolean>() {
-                        @Override
-                        public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                            if (response.isSuccessful()) {
-                                // comento provisorio
-                                //applicationGlobal.getCompra().setIdEstado(5);
-                                //TODO: falta obtener ultimoMensaje
-
-                                if (applicationGlobal.getUsuario() != null) {
-                                    MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-                                    mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
-                                    //mensajeViewModelPOST.setIdCompra(0);
-                                    mensajeViewModelPOST.setIdCompra(applicationGlobal.getCompra().getId());
-                                    mensajeViewModelPOST.setIdTipoEvento(4);
-
-                                    api.getUltimoMensaje(mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+                                if (applicationGlobal.getCompra() != null) {
+                                    api.actualizarCompra(applicationGlobal.getCompra().getId(), 5, Double.parseDouble("10")).enqueue(new Callback<Boolean>() {
                                         @Override
-                                        public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
+                                        public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                                             if (response.isSuccessful()) {
-                                                MensajeViewModelResponse ultimoMensaje = response.body();
+                                                applicationGlobal.getCompra().setIdEstado(5);
+                                                if (applicationGlobal.getUsuario() != null) {
+                                                    MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
+                                                    mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
+                                                    mensajeViewModelPOST.setIdCompra(applicationGlobal.getCompra().getId());
+                                                    mensajeViewModelPOST.setIdTipoEvento(4);    // tipoEvento = Pedir Autorizacion
 
-                                                api.marcarMensajeVisto(ultimoMensaje.getId()).enqueue(new Callback<Boolean>() {
-                                                    @Override
-                                                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                                                        if (response.isSuccessful()) {
-                                                            //UltimoMensaje marcado como visto OK;
-                                                            if(response.body().equals(true)) {
-                                                                Alerts.newToastLarge(getContext(), "Ultimo Mensaje marcado como visto");
-                                                            }else{
-                                                                Alerts.newToastLarge(getContext(), "Error: no se pudo marcar UltimoMensaje como visto");
+                                                    api.getUltimoMensaje(mensajeViewModelPOST.getIdUsuario(), mensajeViewModelPOST.getIdCompra(), mensajeViewModelPOST.getIdTipoEvento()).enqueue(new Callback<MensajeViewModelResponse>() {
+                                                        @Override
+                                                        public void onResponse(Call<MensajeViewModelResponse> call, Response<MensajeViewModelResponse> response) {
+                                                            if (response.isSuccessful()) {
+                                                                MensajeViewModelResponse ultimoMensaje = response.body();
+
+                                                                api.marcarMensajeVisto(ultimoMensaje.getId()).enqueue(new Callback<Boolean>() {
+                                                                    @Override
+                                                                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                                                        if (response.isSuccessful()) {
+                                                                            //UltimoMensaje marcado como visto OK;
+                                                                            if (response.body().equals(true)) {
+                                                                                Alerts.newToastLarge(getContext(), "Ultimo Mensaje marcado como visto");
+                                                                            } else {
+                                                                                Alerts.newToastLarge(getContext(), "Error: no se pudo marcar UltimoMensaje como visto");
+                                                                            }
+                                                                        } else {
+                                                                            Alerts.newToastLarge(getContext(), "Error: no se pudo marcar UltimoMensaje como visto");
+                                                                        }
+
+                                                                    }
+
+                                                                    @Override
+                                                                    public void onFailure(Call<Boolean> call, Throwable t) {
+                                                                        Alerts.newToastLarge(getContext(), "Error: llamada a servicio");
+
+                                                                    }
+                                                                });
+
+
+                                                            } else {
+                                                                if (response.code() != 404) {
+                                                                    Alerts.newToastLarge(getContext(), "ERROR 404");
+                                                                } else {
+                                                                    //no hay mensaje
+                                                                }
                                                             }
-                                                        } else {
-                                                            Alerts.newToastLarge(getContext(), "Error: no se pudo marcar UltimoMensaje como visto");
                                                         }
 
-                                                    }
-
-                                                    @Override
-                                                    public void onFailure(Call<Boolean> call, Throwable t) {
-                                                        Alerts.newToastLarge(getContext(), "Error: llamada a servicio");
-
-                                                    }
-                                                });
+                                                        @Override
+                                                        public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
+                                                            Alerts.newToastLarge(getContext(), "Error: Al consultar ultimo mensaje");
+                                                        }
+                                                    });
+                                                }
 
 
                                             } else {
-                                                if (response.code() != 404) {
-                                                    Alerts.newToastLarge(getContext(), "ERROR 404");
-                                                } else {
-                                                    //no hay mensaje
-                                                }
+                                                Alerts.newToastLarge(getContext(), "Error: Al actualizar Compra!!");
                                             }
+
                                         }
 
                                         @Override
-                                        public void onFailure(Call<MensajeViewModelResponse> call, Throwable t) {
-                                            Alerts.newToastLarge(getContext(), "Error: Al consultar ultimo mensaje");
+                                        public void onFailure(Call<Boolean> call, Throwable t) {
+                                            Alerts.newToastLarge(getContext(), "Error: Al actualizar compra");
+
                                         }
                                     });
                                 }
 
-
-                            } else {
-                                Alerts.newToastLarge(getContext(), "Error: Al actualizar Compra!!");
+                                fragment = new FragmentBotoneraInicioAyudante();
+                                ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
                             }
-
-                        }
-
-                        @Override
-                        public void onFailure(Call<Boolean> call, Throwable t) {
-                            Alerts.newToastLarge(getContext(), "Error: Al actualizar compra");
-
-                        }
-                    });
+                        });
+                    }else{
+                        Alerts.newToastLarge(vista.getContext(), "NO HAY COMPRAS PARA AUTORIZAR");
+                        lista_vacia.setVisibility(View.VISIBLE);
+                    }
+                    //fin
+                }else{
+                    if (response.code() != 404) {
+                        Alerts.newToastLarge(vista.getContext(), "ERR");
+                    }
+                    else
+                    {
+                        applicationGlobal.setCompra(null);
+                    }
                 }
 
-                fragment = new FragmentBotoneraInicioAyudante();
-                ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
+            }
+
+            @Override
+            public void onFailure(Call<CompraViewModelResponse> call, Throwable t) {
+                Alerts.newToastLarge(vista.getContext(), "Err");
+
             }
         });
+// fin compra vigente
+
 
         return vista;
     }
