@@ -6,6 +6,7 @@ public class ItemBasico {
     private String descripcion;
     private String tipo;
     private String fecha;
+    private double precio;
 
     private boolean clickeado;
 
@@ -49,5 +50,7 @@ public class ItemBasico {
         this.tipo = tipo;
     }
 
+    public Double getPrecio() {return precio;}
 
+    public void setPrecio(Double precio) {this.precio = precio;}
 }
