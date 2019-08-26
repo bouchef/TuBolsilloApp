@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -29,6 +30,11 @@ import com.example.bouchef.tubolsillo.generics.GlobalClass;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.example.bouchef.tubolsillo.utiles.FechaUtils;
+import com.mercadopago.core.MercadoPago;
+//import com.mercadopago.model.DecorationPreference;
+import com.mercadopago.core.MercadoPagoCheckout;
+import com.mercadopago.model.Payment;
+import com.mercadopago.util.JsonUtil;
 
 import java.util.ArrayList;
 
@@ -56,6 +62,9 @@ public class FragmentAutorizarCompra extends Fragment {
     @BindView(R.id.accion) ImageView btn_accion;
     @BindView(R.id.tit_barra)
     TextView titulo;
+
+    @BindView(R.id.mp_results) TextView mp_results;
+    @BindView(R.id.submit) Button submitButton;
 
 
     private DashboardAdapter adapter;
@@ -90,6 +99,8 @@ public class FragmentAutorizarCompra extends Fragment {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.activity_autorizar_tutor, container, false);
         lista_vacia = (LinearLayout) vista.findViewById(R.id.empty_state_container);
+
+        submitButton = (Button) vista.findViewById(R.id.submit);
 
         api = Api.getAPIService(getContext());
 
@@ -221,11 +232,55 @@ public class FragmentAutorizarCompra extends Fragment {
             }
         });
 // fin compra vigente
-
+        //boton Mercadopago
+        /*submitButton.setOnClickListener(v -> new MercadoPagoCheckout.Builder().setPublicKey("TEST-2a313672-b2b4-4ca2-a578-48b749251105")
+                .setActivity((Activity) v.getContext()));
+*/
 
         return vista;
     }
+    // Método ejecutado al hacer clic en el botón
+/*    public void submit(View view) {
+        // Iniciar el checkout de Mercado Pago
+        new MercadoPago.StartActivityBuilder()
+                .setActivity((Activity) view.getContext())
+                .setPublicKey("TEST-ad365c37-8012-4014-84f5-6c895b3f8e0a")
+                .setCheckoutPreferenceId("150216849-ceed1ee4-8ab9-4449-869f-f4a8565d386f")
+                .startCheckoutActivity();
 
+    }*/
+
+
+
+    // Espera los resultados del checkout
+    /*@Override
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent data) {
+
+        if (requestCode == MercadoPago.CHECKOUT_REQUEST_CODE) {
+            if (resultCode == RESULT_OK && data != null) {
+
+                // Listo! El pago ya fue procesado por MP.
+                Payment payment = JsonUtil.getInstance()
+                        .fromJson(data.getStringExtra("payment"), Payment.class);
+                TextView results = (TextView) view.findViewById(R.id.mp_results);
+
+                if (payment != null) {
+                    results.setText("PaymentID: " + payment.getId() +
+                            " - PaymentStatus: " + payment.getStatus());
+                } else {
+                    results.setText("El usuario no concretó el pago.");
+                }
+
+            } else {
+                if ((data != null) && (data.hasExtra("mpException"))) {
+                    MPException mpException = JsonUtil.getInstance()
+                            .fromJson(data.getStringExtra("mpException"), MPException.class);
+                    // Manejá tus errores.
+                }
+            }
+        }
+    }*/
 
 
 

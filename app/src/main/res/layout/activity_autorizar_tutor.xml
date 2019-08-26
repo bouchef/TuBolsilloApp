@@ -75,6 +75,20 @@
                     android:text="NO HAY COMPRAS PARA AUTORIZAR"
                     tools:visibility="gone" />
             </LinearLayout>
+            <Button
+                android:layout_width='match_parent'
+                android:layout_height='@dimen/mpsdk_button_height'
+                android:layout_marginTop='25dp'
+                android:gravity='center'
+                android:text='Pagar $100'
+                android:id='@+id/submit'
+                style='@style/mpsdk_button_normal'/>
+
+            <TextView
+                android:layout_width='match_parent'
+                android:layout_height='wrap_content'
+                android:id='@+id/mp_results'
+                android:paddingTop='50dp'/>
 
             <ListView
                 android:id="@+id/mi_lista"
