@@ -112,6 +112,7 @@ public class ListaNegociosFavoritos extends AppCompatActivity {
         });
 
 
+
         //LenguajeListAdapterFavoritos adapter=new LenguajeListAdapterFavoritos(this,lenguajeProgramacion,imgid,image);
         LenguajeListAdapter adapter=new LenguajeListAdapter(this,lenguajeProgramacion,imgid);
         lista=(ListView)findViewById(R.id.mi_lista);

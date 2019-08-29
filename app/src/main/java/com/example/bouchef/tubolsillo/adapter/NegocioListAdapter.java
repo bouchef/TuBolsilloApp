@@ -8,22 +8,19 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static com.example.bouchef.tubolsillo.R.id;
 import static com.example.bouchef.tubolsillo.R.layout;
 
 /**
  * Created by Cesar on 12/10/2015.
  */
-public class LenguajeListAdapter extends ArrayAdapter<String> {
+public class NegocioListAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
     private final String[] itemname;
     private final Integer[] integers;
 
-    public LenguajeListAdapter(Activity context, String[] itemname, Integer[] integers) {
+    public NegocioListAdapter(Activity context, String[] itemname, Integer[] integers) {
         super(context, layout.fila_lista, itemname);
         // TODO Auto-generated constructor stub
 
@@ -43,7 +40,7 @@ public class LenguajeListAdapter extends ArrayAdapter<String> {
 
         txtTitle.setText(itemname[posicion]);
         imageView.setImageResource(integers[posicion]);
-        etxDescripcion.setText("Description "+itemname[posicion]);
+        etxDescripcion.setText("Negocio amigable: "+itemname[posicion]);
 
         return rowView;
     }

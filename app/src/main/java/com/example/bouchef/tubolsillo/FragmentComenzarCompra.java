@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
-import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
+import com.example.bouchef.tubolsillo.adapter.NegocioListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.ComercioViewModelPOST;
@@ -66,7 +66,6 @@ public class FragmentComenzarCompra extends Fragment {
 
     ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
-    @BindView(R.id.mi_lista) ListView list;
     @BindView(R.id.empty_state_container) LinearLayout lista_vacia;
 
     @BindView(R.id.accion)
@@ -83,14 +82,8 @@ public class FragmentComenzarCompra extends Fragment {
 
     private ListView lista;
 
-    private String lenguajeProgramacion[]=new String[]{"FAVORITO 1","FAVORITO 2","FAVORITO 3","FAVORITO 4","FAVORITO 5"};
-    private Integer[] imgid={
-            R.drawable.restaurant,
-            R.drawable.restaurant,
-            R.drawable.restaurant,
-            R.drawable.restaurant,
-            R.drawable.restaurant
-    };
+    private List<String> listaNombresComercio =new ArrayList<>();
+    private List<Integer> imagenes = new ArrayList<>();
 
     public FragmentComenzarCompra() {
         // Required empty public constructor
@@ -101,7 +94,8 @@ public class FragmentComenzarCompra extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View vista = inflater.inflate(R.layout.activity_lista_negocios_favoritos, container, false);
-        api = Api.getAPIService(mContext);
+        lista=(ListView) vista.findViewById(R.id.mi_lista);
+        api = Api.getAPIService(getContext());
 
         lista_vacia = (LinearLayout) vista.findViewById(R.id.empty_state_container);
         lista_vacia.setVisibility((View.GONE));
@@ -110,16 +104,12 @@ public class FragmentComenzarCompra extends Fragment {
         //recyclerListaMensajes = (RecyclerView) vista.findViewById(R.id.mi_lista);
         //recyclerListaMensajes.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        cargarLista();
 
-
-        LenguajeListAdapter adapter=new LenguajeListAdapter((Activity) getContext(),lenguajeProgramacion,imgid);
-        lista=(ListView) vista.findViewById(R.id.mi_lista);
-
-        lista.setAdapter(adapter);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String Slecteditem= lenguajeProgramacion[+position];
+                String Slecteditem= listaNombresComercio.get(+position);
                 //enviar mensaje ("inicio de compra")
                 //enviar mensaje ("Me difirijo al comercio XXXXXX")
                 //Me guardo el Comercio para las etapas siguientes
@@ -216,6 +206,56 @@ public class FragmentComenzarCompra extends Fragment {
                 Alerts.newToastLarge(mContext, "ErrErr");
             }
         });
+    }
+
+    private void cargarLista(){
+        final Context _this = getContext();
+        new AsyncTask<Void, Long, List<ItemBasico>>(){
+            AlertDialog progressDialog;
+
+            @Override
+            protected void onPreExecute() {
+                progressDialog = Progress.getProgressBar(_this, "Cargando" );
+                progressDialog.show();
+                //super.onPreExecute();
+            }
+            @Override
+            protected List<ItemBasico> doInBackground(Void... voids) {
+                try {
+                    ComercioViewModelPOST nuevoComercio = new ComercioViewModelPOST();
+
+                    Response<List<ComercioViewModelResponse>> response ;
+                    response = api.getComercios(nuevoComercio).execute();
+                    if(response.isSuccessful()){
+                        //convertir la lista a otra lista
+                        for (ComercioViewModelResponse m: response.body() ) {
+                            listaNombresComercio.add(m.getNombre());
+                            imagenes.add(R.drawable.restaurant);
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                return new ArrayList<>();
+            }
+            @Override
+            protected void onPostExecute(List<ItemBasico> proyectos){
+                progressDialog.dismiss();
+
+                String[] arrayNegocios = listaNombresComercio.toArray(new String[listaNombresComercio.size()]);
+                Integer[] arrayImagenes = imagenes.toArray(new Integer[imagenes.size()]);
+
+                NegocioListAdapter adapter=new NegocioListAdapter((Activity) getContext(),arrayNegocios,arrayImagenes);
+
+                lista.setAdapter(adapter);
+                //super.onPostExecute(proyectos);
+                //if(proyectos!=null) {
+                //    populateList(_this);
+                //}
+            }
+
+        }.execute();
     }
 
     private void populateList(Context context){
