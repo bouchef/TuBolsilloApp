@@ -80,14 +80,14 @@ public class CredencialPCD extends AppCompatActivity {
         api = Api.getAPIService(getApplicationContext());
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(2);
+        mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
 
         PCDViewModelPOST pcdViewModelPOST = new PCDViewModelPOST();
-        pcdViewModelPOST.setNroCertificado("01145456783");
-        pcdViewModelPOST.setIdUsuario(2);
+        pcdViewModelPOST.setNroCertificado("");
+        pcdViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         api.getPCD(pcdViewModelPOST).enqueue(new Callback<PCDViewModelResponse>() {
             @Override
             public void onResponse(Call<PCDViewModelResponse> call, Response<PCDViewModelResponse> response) {

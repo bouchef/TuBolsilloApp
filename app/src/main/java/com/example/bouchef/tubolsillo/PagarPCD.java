@@ -65,13 +65,14 @@ public class PagarPCD extends AppCompatActivity {
         titulo =  findViewById(R.id.tit_barra);
         titulo.setText(R.string.tit_pagar_pcd);
 
+        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
         ButterKnife.bind(this);
 
         api = Api.getAPIService(getApplicationContext());
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(2);
+        mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 
@@ -102,8 +103,6 @@ public class PagarPCD extends AppCompatActivity {
         mail = (EditText) findViewById(R.id.mailTxt);
         importe = (EditText) findViewById(R.id.importeTxt);
         String item = "PAGAR COMPRA 1 ($"+importe.getText().toString()+")";
-
-        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
         Button btnPCD = (Button) findViewById(R.id.button);
         btnPCD.setOnClickListener(new View.OnClickListener() {

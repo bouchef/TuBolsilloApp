@@ -77,11 +77,6 @@ public class AutorizarTutor extends AppCompatActivity {
 
         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
-        MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(2);
-        mensajeViewModelPOST.setIdCompra(0);
-        mensajeViewModelPOST.setIdTipoEvento(4);
-
         LenguajeListAdapter adapter=new LenguajeListAdapter(this,lenguajeProgramacion,imgid);
         lista=(ListView)findViewById(R.id.mi_lista);
         lista.setAdapter(adapter);

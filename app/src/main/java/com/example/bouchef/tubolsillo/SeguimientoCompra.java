@@ -126,7 +126,7 @@ public class SeguimientoCompra extends AppCompatCustomActivity implements Mensaj
             protected List<ItemBasico> doInBackground(Void... voids) {
                 try {
                     Response<List<MensajeViewModelResponse>> response ;
-                    response = api.getMensajesNuevos(58, 1, 4).execute();
+                    response = api.getMensajesNuevos(applicationGlobal.getCompra().getId(), applicationGlobal.getUsuario().getId(), 4).execute();
                     if(response.isSuccessful()){
                         //convertir la lista a otra lista
                         items = new ArrayList<>();

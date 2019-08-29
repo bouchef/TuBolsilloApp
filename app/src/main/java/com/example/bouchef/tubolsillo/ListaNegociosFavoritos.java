@@ -84,7 +84,7 @@ public class ListaNegociosFavoritos extends AppCompatActivity {
         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(2);
+        mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 

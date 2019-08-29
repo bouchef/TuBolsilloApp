@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.AppCompatCustomActivity;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.generics.Progress;
 import com.example.bouchef.tubolsillo.tests.HistorialMensajesRecyclerViewAdapter;
 import com.example.bouchef.tubolsillo.tests.ItemBasico;
@@ -43,6 +44,8 @@ public class HistorialTutor extends AppCompatCustomActivity implements Historial
     @BindView(R.id.empty_state_container) LinearLayout lista_vacia;
     @BindView(R.id.irHome) ImageView btn_home;
     @BindView(R.id.tit_barra) TextView titulo;
+
+    ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,7 +113,7 @@ public class HistorialTutor extends AppCompatCustomActivity implements Historial
         final Context _this = this;
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(1);
+        mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(0);
         mensajeViewModelPOST.setDescripcion("");

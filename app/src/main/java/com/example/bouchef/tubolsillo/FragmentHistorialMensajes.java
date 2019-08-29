@@ -20,6 +20,7 @@ import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.generics.Progress;
 import com.example.bouchef.tubolsillo.tests.HistorialMensajesRecyclerViewAdapter;
 import com.example.bouchef.tubolsillo.tests.ItemBasico;
@@ -47,6 +48,8 @@ public class FragmentHistorialMensajes extends Fragment  implements HistorialMen
     RecyclerView recyclerListaMensajes;
     HistorialMensajesRecyclerViewAdapter adapter;
     List<ItemBasico> items;
+
+    ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
     boolean fragmentTransaction = false;
     Fragment fragment = null;
@@ -83,7 +86,7 @@ public class FragmentHistorialMensajes extends Fragment  implements HistorialMen
     private void cargarLista(){
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(1);
+        mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(0);
         mensajeViewModelPOST.setDescripcion("");

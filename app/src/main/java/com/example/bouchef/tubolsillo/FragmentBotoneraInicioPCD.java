@@ -197,7 +197,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                     ApplicationGlobal global = ApplicationGlobal.getInstance();
                     Intent intent;
 
-                    api.getCompraVigente(2).enqueue(new Callback<CompraViewModelResponse>() {
+                    api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {
                         @Override
                         public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
                             if(response.isSuccessful()){

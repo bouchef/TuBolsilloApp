@@ -18,6 +18,7 @@ import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 
 import java.util.ArrayList;
 
@@ -59,9 +60,10 @@ public class EvaluadorTutor extends AppCompatActivity {
         ButterKnife.bind(this);
 
         api = Api.getAPIService(getApplicationContext());
+        ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(1);
+        mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 

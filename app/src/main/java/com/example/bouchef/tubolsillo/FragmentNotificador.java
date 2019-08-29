@@ -81,7 +81,7 @@ public class FragmentNotificador extends Fragment {
         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(2);
+        mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 

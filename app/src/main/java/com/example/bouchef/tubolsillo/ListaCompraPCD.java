@@ -17,6 +17,7 @@ import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.model.dashboard;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
 
@@ -52,6 +53,8 @@ public class ListaCompraPCD extends AppCompatActivity {
             R.drawable.cereals
     };
 
+    ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
+
     private ListView lista;
 
 
@@ -65,7 +68,7 @@ public class ListaCompraPCD extends AppCompatActivity {
         api = Api.getAPIService(getApplicationContext());
 
         MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(2);
+        mensajeViewModelPOST.setIdUsuario(applicationGlobal.getUsuario().getId());
         mensajeViewModelPOST.setIdCompra(0);
         mensajeViewModelPOST.setIdTipoEvento(4);
 

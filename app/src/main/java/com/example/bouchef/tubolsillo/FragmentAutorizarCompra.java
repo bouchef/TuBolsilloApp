@@ -104,13 +104,6 @@ public class FragmentAutorizarCompra extends Fragment {
 
         api = Api.getAPIService(getContext());
 
-
-
-        MensajeViewModelPOST mensajeViewModelPOST = new MensajeViewModelPOST();
-        mensajeViewModelPOST.setIdUsuario(2);
-        mensajeViewModelPOST.setIdCompra(0);
-        mensajeViewModelPOST.setIdTipoEvento(4);
-
         ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 // inicio compra vigente
         api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {

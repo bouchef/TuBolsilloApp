@@ -22,6 +22,7 @@ import com.example.bouchef.tubolsillo.adapter.MensajesCompraAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
+import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.generics.GlobalClass;
 import com.example.bouchef.tubolsillo.generics.Progress;
 import com.example.bouchef.tubolsillo.tests.ItemBasico;
@@ -47,6 +48,8 @@ public class FragmentSeguimientoCompra extends Fragment implements MensajesRecyc
     FragmentActivity activity = (FragmentActivity) mContext;
 
     private APIService api;
+
+    ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
     @BindView(R.id.list_mensajes_compra)
     RecyclerView list;
@@ -180,7 +183,7 @@ private void cargarLista(){
         protected List<ItemBasico> doInBackground(Void... voids) {
             try {
                 Response<List<MensajeViewModelResponse>> response ;
-                response = api.getMensajesNuevos(58, 1, 4).execute();
+                response = api.getMensajesNuevos(applicationGlobal.getCompra().getId(), applicationGlobal.getUsuario().getId(), 4).execute();
                 if(response.isSuccessful()){
                     //convertir la lista a otra lista
                     items = new ArrayList<>();
