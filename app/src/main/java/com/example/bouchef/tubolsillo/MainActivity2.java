@@ -20,6 +20,7 @@ import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.UsuarioViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
+import com.example.bouchef.tubolsillo.utiles.Alerts;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -31,6 +32,9 @@ public class MainActivity2 extends AppCompatActivity {
 
     private NavigationView navView;
     private DrawerLayout drawerLayout;
+
+    boolean fragmentTransaction = false;
+    Fragment fragment = null;
 
 
         @Override
@@ -45,6 +49,7 @@ public class MainActivity2 extends AppCompatActivity {
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
+            View barConfig = findViewById(R.id.action_settings);
 
             /*boton flotante*/
             FloatingActionButton fab = findViewById(R.id.fab);
@@ -151,6 +156,8 @@ public class MainActivity2 extends AppCompatActivity {
             });*/
             // FIN ACCION DEL BOTON MENSAJE
 
+
+
             /* abro FragmentBotoneraInicioPCD */
 
             getSupportFragmentManager().beginTransaction()
@@ -158,6 +165,7 @@ public class MainActivity2 extends AppCompatActivity {
                     .addToBackStack(null)
                     .commit();
             /* fin abro FragmentBotoneraInicioPCD*/
+
         }
 
 
@@ -179,7 +187,8 @@ public class MainActivity2 extends AppCompatActivity {
             return true;
         }
 
-        @Override
+    // menu configuraciones
+    @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             // Handle action bar item clicks here. The action bar will
             // automatically handle clicks on the Home/Up button, so long
@@ -188,11 +197,16 @@ public class MainActivity2 extends AppCompatActivity {
 
             //noinspection SimplifiableIfStatement
             if (id == R.id.action_settings) {
+                Alerts.newToastLarge(getApplicationContext(), "Ir a Configuracion");
+                fragment = new Fragment_configuracion_pago();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
                 return true;
             }
 
             return super.onOptionsItemSelected(item);
         }
+    // fin menu configuraciones
 
         public FragmentManager getFM() {
             return getSupportFragmentManager();

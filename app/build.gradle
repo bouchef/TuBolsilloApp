@@ -70,5 +70,11 @@ dependencies {
 
     //mercadopago
     implementation 'com.mercadopago:sdk:3.8.0'
+    implementation 'com.mercadopago.android.px:checkout:4.+'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
+
+
+    annotationProcessor 'androidx.annotation:annotation:1.1.0'
+
 
 }
