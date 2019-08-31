@@ -61,17 +61,13 @@ public class Fragment_configuracion_pago extends Fragment {
             String token = "TEST-2015804469455591-082604-568a3a638e3ebba71a663ee2cc520ffa-80817756";
         }
 
-        vista.findViewById(R.id.startButton)
-                .setOnClickListener(v -> new MercadoPagoCheckout.Builder(keyPublic,
-                        preferenceId)
-                        .setPrivateKey(token).build()
-                        .startPayment(getContext(), REQUEST_CODE));
 
-        /*vista.findViewById(R.id.startButton)
+
+        vista.findViewById(R.id.startButton)
                 .setOnClickListener(v -> new MercadoPagoCheckout.Builder(publicKeyInput.getText().toString(),
                         preferenceIdInput.getText().toString())
                         .setPrivateKey(accessTokenInput.getText().toString()).build()
-                        .startPayment(getContext(), REQUEST_CODE));*/
+                        .startPayment(getContext(), REQUEST_CODE));
 
         return vista;
     }
