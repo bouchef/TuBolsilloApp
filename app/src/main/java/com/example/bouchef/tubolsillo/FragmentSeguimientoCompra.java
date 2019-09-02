@@ -182,20 +182,25 @@ private void cargarLista(){
         @Override
         protected List<ItemBasico> doInBackground(Void... voids) {
             try {
-                Response<List<MensajeViewModelResponse>> response ;
-                response = api.getMensajesNuevos(applicationGlobal.getCompra().getId(), applicationGlobal.getUsuario().getId(), 4).execute();
-                if(response.isSuccessful()){
-                    //convertir la lista a otra lista
-                    items = new ArrayList<>();
-                    for (MensajeViewModelResponse m: response.body() ) {
-                        ItemBasico i = new ItemBasico();
-                        i.setDescripcion(m.getDescripcion());
-                        i.setFecha(FechaUtils.fromStringToVerbose(m.getFechaAlta()));
-                        items.add(i);
-                    }
-                }
-                else
+                if (applicationGlobal.getCompra() == null)
+                {
                     items = null;
+                }
+                else {
+                    Response<List<MensajeViewModelResponse>> response;
+                    response = api.getMensajesNuevos(applicationGlobal.getCompra().getId(), applicationGlobal.getUsuario().getId(), 4).execute();
+                    if (response.isSuccessful()) {
+                        //convertir la lista a otra lista
+                        items = new ArrayList<>();
+                        for (MensajeViewModelResponse m : response.body()) {
+                            ItemBasico i = new ItemBasico();
+                            i.setDescripcion(m.getDescripcion());
+                            i.setFecha(FechaUtils.fromStringToVerbose(m.getFechaAlta()));
+                            items.add(i);
+                        }
+                    } else
+                        items = null;
+                }
             } catch (IOException e) {
                 e.printStackTrace();
                 items = null;
