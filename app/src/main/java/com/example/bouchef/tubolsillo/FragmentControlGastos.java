@@ -59,8 +59,7 @@ public class FragmentControlGastos extends Fragment implements ControlGastosRecy
 
     private APIService api;
 
-    @BindView(R.id.list_gastos_compras)
-    RecyclerView list;
+    @BindView(R.id.list_gastos_compras) RecyclerView list;
     //@BindView(R.id.titulo) TextView titulo;
     @BindView(R.id.empty_state_container)
     LinearLayout lista_vacia;
@@ -97,7 +96,7 @@ public class FragmentControlGastos extends Fragment implements ControlGastosRecy
         lista_vacia = (LinearLayout) vista.findViewById(R.id.empty_state_container);
 
         items=new ArrayList<>();
-        recyclerListaControlGastos = (RecyclerView) vista.findViewById(R.id.list_gastos_compras);
+        recyclerListaControlGastos = (RecyclerView) list;// vista.findViewById(R.id.list_gastos_compras);
         recyclerListaControlGastos.setLayoutManager(new LinearLayoutManager(getContext()));
         total_gastos = (TextView) vista.findViewById(R.id.text_total_gastos);
 
