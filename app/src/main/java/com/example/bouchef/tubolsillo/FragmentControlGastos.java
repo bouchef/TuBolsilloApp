@@ -96,7 +96,8 @@ public class FragmentControlGastos extends Fragment implements ControlGastosRecy
         lista_vacia = (LinearLayout) vista.findViewById(R.id.empty_state_container);
 
         items=new ArrayList<>();
-        recyclerListaControlGastos = (RecyclerView) list;// vista.findViewById(R.id.list_gastos_compras);
+        //recyclerListaControlGastos = (RecyclerView) list;// vista.findViewById(R.id.list_gastos_compras);
+        recyclerListaControlGastos = (RecyclerView) vista.findViewById(R.id.list_gastos_compras);
         recyclerListaControlGastos.setLayoutManager(new LinearLayoutManager(getContext()));
         total_gastos = (TextView) vista.findViewById(R.id.text_total_gastos);
 
