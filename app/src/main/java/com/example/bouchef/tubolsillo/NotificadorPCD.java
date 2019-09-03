@@ -194,7 +194,7 @@ public class NotificadorPCD extends AppCompatActivity {
             //enviar mensaje("Llegando al Comercio")
             Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),3,0).enqueue(new Callback<Boolean>() {
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),3,0, "A").enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){
@@ -227,7 +227,7 @@ public class NotificadorPCD extends AppCompatActivity {
             //enviar mensaje("Cancelando Compra")
             Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0).enqueue(new Callback<Boolean>() {
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0, "A").enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){
@@ -245,7 +245,7 @@ public class NotificadorPCD extends AppCompatActivity {
                 }
             });
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0).enqueue(new Callback<Boolean>() {
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0, "A").enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){

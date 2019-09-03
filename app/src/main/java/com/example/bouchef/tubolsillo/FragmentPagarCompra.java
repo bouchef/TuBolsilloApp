@@ -92,7 +92,7 @@ public class FragmentPagarCompra extends Fragment {
                 //enviar mensaje("Cancelando Compra y Volviendo")
                 Toast.makeText(getContext(), "Cancelando Compra y Volviendo", Toast.LENGTH_SHORT).show();
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0).enqueue(new Callback<Boolean>() {
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0, "A").enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
@@ -110,7 +110,7 @@ public class FragmentPagarCompra extends Fragment {
                     }
                 });
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0).enqueue(new Callback<Boolean>() {
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0, "A").enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
@@ -154,7 +154,7 @@ public class FragmentPagarCompra extends Fragment {
                             // enviar updateCompra()
                             Toast.makeText(getContext(), "ATENCION: PAGANDO COMPRA 1 ($" + importe.getText().toString() + ")", Toast.LENGTH_SHORT).show();
                             //api.actualizarCompra(67, 4, 14).enqueue(new Callback<Boolean>() {
-                            api.actualizarCompra(applicationGlobal.getCompra().getId(), 4, Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
+                            api.actualizarCompra(applicationGlobal.getCompra().getId(), 4, Double.parseDouble(importe.getText().toString()), applicationGlobal.getUsuario().getEmail()).enqueue(new Callback<Boolean>() {
                                 @Override
                                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                                     if (response.isSuccessful()) {

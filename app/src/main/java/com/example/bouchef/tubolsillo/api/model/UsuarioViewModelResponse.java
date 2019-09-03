@@ -41,6 +41,9 @@ public class UsuarioViewModelResponse {
     @SerializedName("movil")
     @Expose
     private String movil;
+    @SerializedName("email")
+    @Expose
+    private String email;
 
     public Integer getId() {
         return id;
@@ -137,4 +140,8 @@ public class UsuarioViewModelResponse {
     public void setMovil(String movil) {
         this.movil = movil;
     }
+
+    public String getEmail() {return email;}
+
+    public void setEmail(String email) {this.email = email;}
 }

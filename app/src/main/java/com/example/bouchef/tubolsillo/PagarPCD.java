@@ -113,7 +113,7 @@ public class PagarPCD extends AppCompatActivity {
                 //enviar mensaje("Cancelando Compra y Volviendo")
                 Toast.makeText(getApplicationContext(), "Cancelando Compra y Volviendo", Toast.LENGTH_SHORT).show();
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0).enqueue(new Callback<Boolean>() {
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0, "A").enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
@@ -131,7 +131,7 @@ public class PagarPCD extends AppCompatActivity {
                     }
                 });
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0).enqueue(new Callback<Boolean>() {
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0, "A").enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
@@ -172,7 +172,7 @@ public class PagarPCD extends AppCompatActivity {
                             // enviar updateCompra()
                             Toast.makeText(getApplicationContext(), "ATENCION: PAGANDO COMPRA 1 ($" + importe.getText().toString() + ")", Toast.LENGTH_SHORT).show();
 
-                            api.actualizarCompra(applicationGlobal.getCompra().getId(), 4, Double.parseDouble(importe.getText().toString())).enqueue(new Callback<Boolean>() {
+                            api.actualizarCompra(applicationGlobal.getCompra().getId(), 4, Double.parseDouble(importe.getText().toString()),applicationGlobal.getUsuario().getEmail()).enqueue(new Callback<Boolean>() {
                                 @Override
                                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                                     if (response.isSuccessful()) {

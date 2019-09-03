@@ -124,7 +124,7 @@ public class FragmentAutorizarCompra extends Fragment {
 
 
                                 if (applicationGlobal.getCompra() != null) {
-                                    api.actualizarCompra(applicationGlobal.getCompra().getId(), 5, Double.parseDouble("10")).enqueue(new Callback<Boolean>() {
+                                    api.actualizarCompra(applicationGlobal.getCompra().getId(), 5, Double.parseDouble("10"), "A").enqueue(new Callback<Boolean>() {
                                         @Override
                                         public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                                             if (response.isSuccessful()) {

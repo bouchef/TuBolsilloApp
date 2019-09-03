@@ -61,6 +61,12 @@ public class CompraViewModelPOST {
         this.tiempoEstimadoRegreso = tiempoEstimadoRegreso;
     }
 
+    public String getEmail() {return email;}
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     private int id;
     private int idUsuario;
     private int idComercio;
@@ -70,4 +76,5 @@ public class CompraViewModelPOST {
     private String tiempoEstimadoDestino = null;
     private String tiempoEstimadoRegreso = null;
     private int idEstado = 0;   //facu
+    private String email = null;
 }

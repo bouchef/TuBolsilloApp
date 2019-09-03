@@ -34,6 +34,9 @@ public class CompraViewModelResponse {
     @SerializedName("tiempoEstimadoRegreso")
     @Expose
     private String tiempoEstimadoRegreso;
+    @SerializedName("email")
+    @Expose
+    private String email;
     @SerializedName("idUsuario")
     @Expose
     private Integer idUsuario;
@@ -119,6 +122,12 @@ public class CompraViewModelResponse {
 
     public void setTiempoEstimadoRegreso(String tiempoEstimadoRegreso) {
         this.tiempoEstimadoRegreso = tiempoEstimadoRegreso;
+    }
+
+    public String getEmail() {return email;}
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Integer getIdUsuario() {

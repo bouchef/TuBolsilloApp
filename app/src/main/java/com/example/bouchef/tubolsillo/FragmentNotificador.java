@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -215,7 +216,7 @@ public class FragmentNotificador extends Fragment {
             //enviar mensaje("Llegando al Comercio")
             Toast.makeText(getContext(), Slecteditem, Toast.LENGTH_SHORT).show();
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),3,0).enqueue(new Callback<Boolean>() {
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),3,0, "A").enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){
@@ -248,7 +249,7 @@ public class FragmentNotificador extends Fragment {
             //enviar mensaje("Cancelando Compra")
             Toast.makeText(getContext(), Slecteditem, Toast.LENGTH_SHORT).show();
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0).enqueue(new Callback<Boolean>() {
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0, "A").enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){
@@ -266,7 +267,7 @@ public class FragmentNotificador extends Fragment {
                 }
             });
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0).enqueue(new Callback<Boolean>() {
+            api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0, "A").enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){

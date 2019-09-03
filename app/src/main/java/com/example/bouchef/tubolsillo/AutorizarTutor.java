@@ -88,7 +88,7 @@ public class AutorizarTutor extends AppCompatActivity {
 
                 ApplicationGlobal applicationGlobal = ApplicationGlobal.getInstance();
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),5,0).enqueue(new Callback<Boolean>() {
+                api.actualizarCompra(applicationGlobal.getCompra().getId(),5,0, "A").enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
