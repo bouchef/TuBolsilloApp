@@ -37,6 +37,15 @@ public class CompraViewModelResponse {
     @SerializedName("email")
     @Expose
     private String email;
+    @SerializedName("mercadoPago_TokenId")
+    @Expose
+    private String mercadoPago_TokenId;
+    @SerializedName("mercadoPago_PublicId")
+    @Expose
+    private String mercadoPago_PublicId;
+    @SerializedName("mercadoPago_PreferenceId")
+    @Expose
+    private String mercadoPago_PreferenceId;
     @SerializedName("idUsuario")
     @Expose
     private Integer idUsuario;
@@ -128,6 +137,24 @@ public class CompraViewModelResponse {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMercadoPago_TokenId() {return mercadoPago_TokenId;}
+
+    public void setMercadoPago_TokenId(String mercadoPago_TokenId) {
+        this.mercadoPago_TokenId = mercadoPago_TokenId;
+    }
+
+    public String getMercadoPago_PublicId() {return mercadoPago_PublicId;}
+
+    public void setMercadoPago_PublicId(String mercadoPago_PublicId) {
+        this.mercadoPago_PublicId = mercadoPago_PublicId;
+    }
+
+    public String getMercadoPago_PreferenceId() {return mercadoPago_PreferenceId;}
+
+    public void setMercadoPago_PreferenceId(String mercadoPago_PreferenceId) {
+        this.mercadoPago_PreferenceId = mercadoPago_PreferenceId;
     }
 
     public Integer getIdUsuario() {

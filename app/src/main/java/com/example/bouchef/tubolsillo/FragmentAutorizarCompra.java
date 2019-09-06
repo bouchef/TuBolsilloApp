@@ -22,6 +22,7 @@ import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
 import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.CompraViewModelResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
@@ -124,7 +125,12 @@ public class FragmentAutorizarCompra extends Fragment {
 
 
                                 if (applicationGlobal.getCompra() != null) {
-                                    api.actualizarCompra(applicationGlobal.getCompra().getId(), 5, Double.parseDouble("10"), "A").enqueue(new Callback<Boolean>() {
+                                    CompraViewModelPOST compraViewModelPOST = new CompraViewModelPOST();
+                                    compraViewModelPOST.setId(applicationGlobal.getCompra().getId());
+                                    compraViewModelPOST.setIdEstado(5);
+                                    compraViewModelPOST.setPrecioTotal(Double.parseDouble("10"));
+
+                                    api.actualizarCompra(compraViewModelPOST).enqueue(new Callback<Boolean>() {
                                         @Override
                                         public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                                             if (response.isSuccessful()) {

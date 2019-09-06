@@ -51,8 +51,8 @@ public interface APIService {
     @POST("mensajes")
     Call<List<MensajeViewModelResponse>> getHistorialMensajes(@Body MensajeViewModelPOST mensajeViewModelPOST);
 
-    @GET("actualizarCompra/{idCompra}/{idEstado}/{monto}/{email}")
-    Call<Boolean> actualizarCompra(@Path("idCompra") int idCompra, @Path("idEstado") int idEstado, @Path("monto") double monto, @Path("email") String email);
+    @POST("actualizarCompra")
+    Call<Boolean> actualizarCompra(@Body CompraViewModelPOST compra);
 
     @GET("marcarMensajeVisto/{id}")
     Call<Boolean> marcarMensajeVisto(@Path("id") int id);

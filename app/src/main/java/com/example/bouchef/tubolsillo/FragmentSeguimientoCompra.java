@@ -94,10 +94,6 @@ public class FragmentSeguimientoCompra extends Fragment implements MensajesRecyc
         //cargarListaMensajesCompra();
         cargarLista();
 
-        MensajesRecyclerViewAdapter adapter = new MensajesRecyclerViewAdapter(getContext(), items);
-
-        recyclerListaMensajesCompra.setAdapter(adapter);
-
         return vista;
     }
 
@@ -217,6 +213,12 @@ private void cargarLista(){
             super.onPostExecute(proyectos);
             if(proyectos!=null) {
                 populateList(_this);
+            }
+            else
+            {
+                //MensajesRecyclerViewAdapter adapter = new MensajesRecyclerViewAdapter(getContext(), items);
+
+                //recyclerListaMensajesCompra.setAdapter(adapter);
             }
         }
 

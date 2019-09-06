@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
@@ -87,12 +88,14 @@ public class FragmentPagarCompra extends Fragment {
         btnPCD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 //enviar mensaje("Cancelando Compra y Volviendo")
                 Toast.makeText(getContext(), "Cancelando Compra y Volviendo", Toast.LENGTH_SHORT).show();
+                CompraViewModelPOST compraViewModelPOST = new CompraViewModelPOST();
+                compraViewModelPOST.setId(applicationGlobal.getCompra().getId());
+                compraViewModelPOST.setIdEstado(8);
+                compraViewModelPOST.setPrecioTotal(0.00);
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0, "A").enqueue(new Callback<Boolean>() {
+                api.actualizarCompra(compraViewModelPOST).enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
@@ -110,7 +113,12 @@ public class FragmentPagarCompra extends Fragment {
                     }
                 });
 
-                api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0, "A").enqueue(new Callback<Boolean>() {
+                compraViewModelPOST = new CompraViewModelPOST();
+                compraViewModelPOST.setId(applicationGlobal.getCompra().getId());
+                compraViewModelPOST.setIdEstado(9);
+                compraViewModelPOST.setPrecioTotal(0.00);
+
+                api.actualizarCompra(compraViewModelPOST).enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful()){
@@ -153,8 +161,13 @@ public class FragmentPagarCompra extends Fragment {
                             // TIENE PERFIL DE AYUDANTE => ES QUIEN PAGA
                             // enviar updateCompra()
                             Toast.makeText(getContext(), "ATENCION: PAGANDO COMPRA 1 ($" + importe.getText().toString() + ")", Toast.LENGTH_SHORT).show();
-                            //api.actualizarCompra(67, 4, 14).enqueue(new Callback<Boolean>() {
-                            api.actualizarCompra(applicationGlobal.getCompra().getId(), 4, Double.parseDouble(importe.getText().toString()), applicationGlobal.getUsuario().getEmail()).enqueue(new Callback<Boolean>() {
+                            CompraViewModelPOST compraViewModelPOST = new CompraViewModelPOST();
+                            compraViewModelPOST.setId(applicationGlobal.getCompra().getId());
+                            compraViewModelPOST.setIdEstado(4);
+                            compraViewModelPOST.setPrecioTotal(Double.parseDouble(importe.getText().toString()));
+                            compraViewModelPOST.setEmail(applicationGlobal.getUsuario().getEmail());
+
+                            api.actualizarCompra(compraViewModelPOST).enqueue(new Callback<Boolean>() {
                                 @Override
                                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                                     if (response.isSuccessful()) {

@@ -18,6 +18,7 @@ import com.example.bouchef.tubolsillo.api.model.PCDViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.PCDViewModelResponse;
 import com.example.bouchef.tubolsillo.generics.ApplicationGlobal;
 import com.example.bouchef.tubolsillo.utiles.Alerts;
+import com.example.bouchef.tubolsillo.utiles.FechaUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -131,8 +132,10 @@ public class FragmentCredencialPCD extends Fragment {
         nroCertificado.setText(pcd.getNroCertificado());
         documento.setText(pcd.getTipoDocumento() + " "+ pcd.getNroDocumento());
         orientacionPrestacional.setText(pcd.getOrientacionPrestacional());
-        fechaNacimiento.setText(pcd.getFechaNacimiento());
-        fechaVencimiento.setText(pcd.getFechaVencimiento());
+        String f1 = FechaUtils.fromStringToVerbose(pcd.getFechaNacimiento());
+        fechaNacimiento.setText(f1);
+        String f2 = FechaUtils.fromStringToVerbose(pcd.getFechaVencimiento());
+        fechaVencimiento.setText(f2);
         diagnosticoFuncional.setText(pcd.getDiagnosticoFuncional());
         //ayudante.setText(pcd.getUsuario());
     }

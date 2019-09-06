@@ -18,6 +18,7 @@ import com.example.bouchef.tubolsillo.adapter.DashboardAdapter;
 import com.example.bouchef.tubolsillo.adapter.LenguajeListAdapter;
 import com.example.bouchef.tubolsillo.api.APIService;
 import com.example.bouchef.tubolsillo.api.Api;
+import com.example.bouchef.tubolsillo.api.model.CompraViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.IdResponse;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelPOST;
 import com.example.bouchef.tubolsillo.api.model.MensajeViewModelResponse;
@@ -193,8 +194,12 @@ public class NotificadorPCD extends AppCompatActivity {
         if(Slecteditem=="Llegando al Comercio"){
             //enviar mensaje("Llegando al Comercio")
             Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+            CompraViewModelPOST compraViewModelPOST = new CompraViewModelPOST();
+            compraViewModelPOST.setId(applicationGlobal.getCompra().getId());
+            compraViewModelPOST.setIdEstado(3);
+            compraViewModelPOST.setPrecioTotal(0.00);
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),3,0, "A").enqueue(new Callback<Boolean>() {
+            api.actualizarCompra(compraViewModelPOST).enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){
@@ -226,8 +231,12 @@ public class NotificadorPCD extends AppCompatActivity {
         if(Slecteditem=="Cancelando Compra"){
             //enviar mensaje("Cancelando Compra")
             Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+            CompraViewModelPOST compraViewModelPOST = new CompraViewModelPOST();
+            compraViewModelPOST.setId(applicationGlobal.getCompra().getId());
+            compraViewModelPOST.setIdEstado(8);
+            compraViewModelPOST.setPrecioTotal(0.00);
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),8,0, "A").enqueue(new Callback<Boolean>() {
+            api.actualizarCompra(compraViewModelPOST).enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){
@@ -245,7 +254,12 @@ public class NotificadorPCD extends AppCompatActivity {
                 }
             });
 
-            api.actualizarCompra(applicationGlobal.getCompra().getId(),9,0, "A").enqueue(new Callback<Boolean>() {
+            compraViewModelPOST = new CompraViewModelPOST();
+            compraViewModelPOST.setId(applicationGlobal.getCompra().getId());
+            compraViewModelPOST.setIdEstado(9);
+            compraViewModelPOST.setPrecioTotal(0.00);
+
+            api.actualizarCompra(compraViewModelPOST).enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                     if(response.isSuccessful()){
