@@ -1,16 +1,27 @@
 package com.example.bouchef.tubolsillo;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
@@ -52,6 +63,8 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
     boolean fragmentTransaction = false;
     Fragment fragment = null;
 
+
+
     public FragmentBotoneraInicioAyudante() {
         // Required empty public constructor
     }
@@ -62,6 +75,8 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_botonera_inicial_ayudante, container, false);
         ButterKnife.bind(this, view);
+
+
 
         /* BOTONERA INICIO PCD */
 
@@ -74,14 +89,14 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
         api.getUsuario(usuarioViewModelPOST).enqueue(new Callback<UsuarioViewModelResponse>() {
             @Override
             public void onResponse(Call<UsuarioViewModelResponse> call, Response<UsuarioViewModelResponse> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     cargarUsuarioGlobal(applicationGlobal, response.body());
 
 
                     api.getCompraVigente(applicationGlobal.getUsuario().getId()).enqueue(new Callback<CompraViewModelResponse>() {
                         @Override
                         public void onResponse(Call<CompraViewModelResponse> call, Response<CompraViewModelResponse> response) {
-                            if(response.isSuccessful()){
+                            if (response.isSuccessful()) {
                                 applicationGlobal.setCompra(response.body());
 
 
@@ -109,12 +124,10 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
                                         Alerts.newToastLarge(getContext(), "ErrErr");
                                     }
                                 });
-                            }else{
+                            } else {
                                 if (response.code() != 404) {
                                     Alerts.newToastLarge(getContext(), "ERR");
-                                }
-                                else
-                                {
+                                } else {
                                     //applicationGlobal.setCompra(null);
                                 }
                             }
@@ -127,7 +140,7 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
 
                         }
                     });
-                }else{
+                } else {
                     Alerts.newToastLarge(getContext(), "ERR");
                 }
             }
@@ -215,22 +228,22 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
 
 
         // ACCION DEL BOTON DE MENSAJE
-        btn_accion =  view.findViewById(R.id.accion);
+        btn_accion = view.findViewById(R.id.accion);
         String imageId = (String) btn_accion.getTag();
 
         btn_accion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
-                    if(imageId.equals("Autorizacion")) {
+                if (applicationGlobal.getUsuario().getIdTipoUsuario().equals(1)) {
+                    if (imageId.equals("Autorizacion")) {
                         //Intent intent = new Intent(v.getContext(), AutorizarTutor.class);
                         //startActivityForResult(intent, 0);
                         fragment = new FragmentAutorizarCompra();
                         ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
                     }
-                    if(imageId.equals("Informacion")) {
+                    if (imageId.equals("Informacion")) {
                         // Marcar mensaje como leido y actualizar
                         Alerts.newToastLarge(getContext(), "Marcar Mensaje como leido");
                     }
@@ -248,11 +261,13 @@ public class FragmentBotoneraInicioAyudante extends Fragment {
         global.setUsuario(usuario);
     }
 
-    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje){
-        if(mensaje != null) {
+    private void cargarUltimoMensaje(MensajeViewModelResponse mensaje) {
+        if (mensaje != null) {
             descripcion.setText(mensaje.getDescripcion());
             fechaAlta.setText(mensaje.getFechaAlta());
         }
 
     }
+
+
 }

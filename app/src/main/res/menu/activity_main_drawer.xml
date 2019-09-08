@@ -25,6 +25,10 @@
             android:icon="@drawable/control_gasto"
             android:title="@string/menu_control_gasto" />
         <item
+            android:id="@+id/nav_estoy_aqui"
+            android:icon="@drawable/location"
+            android:title="@string/menu_estoy_aqui" />
+        <item
             android:id="@+id/nav_inicio_ayudante"
             android:title="@string/menu_inicio_ayudante" />
         <item

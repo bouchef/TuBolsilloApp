@@ -114,6 +114,10 @@ public class MainActivity2 extends AppCompatActivity {
                                     fragment = new FragmentControlGastos();
                                     fragmentTransaction = true;
                                     break;
+                                case R.id.nav_estoy_aqui:
+                                    fragment = new Fragment_aqui_estoy_pcd();
+                                    fragmentTransaction = true;
+                                    break;
                             }
 
                             if(fragmentTransaction) {

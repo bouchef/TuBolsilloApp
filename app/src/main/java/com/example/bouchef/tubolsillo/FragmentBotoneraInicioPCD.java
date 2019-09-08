@@ -2,6 +2,7 @@ package com.example.bouchef.tubolsillo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,6 +52,7 @@ public class FragmentBotoneraInicioPCD extends Fragment {
     /* fin botonera inicio PCD */
     boolean fragmentTransaction = false;
     Fragment fragment = null;
+
 
     public FragmentBotoneraInicioPCD() {
         // Required empty public constructor

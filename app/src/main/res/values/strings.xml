@@ -20,6 +20,7 @@
     <string name="menu_inicio_ayudante">INICIO AYUDANTE</string>
     <string name="menu_inicio_pcd">INICIO PCD</string>
     <string name="menu_credencial">MI CREDENCIAL</string>
+    <string name="menu_estoy_aqui">ESTOY AQUI</string>
 
     <!--TEXT BOTONES-->
     <string name="btn_info">Informacion</string>
