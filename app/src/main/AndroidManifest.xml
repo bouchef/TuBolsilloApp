@@ -54,5 +54,8 @@
         <activity android:name=".MainActivity2" android:configChanges="orientation|screenSize"/>
 
     </application>
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
 
 </manifest>

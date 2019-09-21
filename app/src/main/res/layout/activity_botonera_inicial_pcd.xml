@@ -217,6 +217,31 @@
                     android:ellipsize="middle" />
 
                 <Button
+                    android:id="@+id/aqui_estoy"
+                    android:layout_width="122dp"
+                    android:layout_height="132dp"
+                    android:layout_marginLeft="33.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/location"
+                    android:ellipsize="middle" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/notificador2"
+                    android:layout_width="122dp"
+                    android:layout_height="137dp"
+                    android:layout_marginLeft="33.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/enviar_mensaje"
+                    android:ellipsize="middle" />
+
+                <Button
                     android:id="@+id/control_gastos"
                     android:layout_width="122dp"
                     android:layout_height="132dp"

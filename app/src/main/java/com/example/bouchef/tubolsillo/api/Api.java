@@ -15,6 +15,7 @@ public class Api {
         String url = "";
         //url = context.getResources().getString(R.string.CONFIG_APIURL);
         //url = "https://appdineritoservice201906.azurewebsites.net/api/v1/";
+        //url="http://104.197.165.14/api/v1/"; facu cloud
         url="http://34.66.216.205/api/v1/";
         return RetrofitClient.getClient(url).create(APIService.class);
         /*if(ApplicationGlobal.getInstance().isProd())

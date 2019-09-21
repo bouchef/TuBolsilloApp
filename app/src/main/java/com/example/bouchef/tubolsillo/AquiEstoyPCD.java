@@ -32,7 +32,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.example.bouchef.tubolsillo.R.layout.activity_estoy_aqui_pcd;
+import static com.example.bouchef.tubolsillo.R.layout.activity_aqui_estoy_pcd;
 
 public class AquiEstoyPCD extends AppCompatActivity {
     private Context mContext= AquiEstoyPCD.this;
@@ -63,7 +63,7 @@ public class AquiEstoyPCD extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_estoy_aqui_pcd);
+        setContentView(activity_aqui_estoy_pcd);
 
         ButterKnife.bind(this);
 

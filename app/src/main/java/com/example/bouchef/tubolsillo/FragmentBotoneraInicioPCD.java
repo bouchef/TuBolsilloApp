@@ -245,14 +245,15 @@ public class FragmentBotoneraInicioPCD extends Fragment {
                 }
             });
 
-            /*Button btn7 = (Button) findViewById(R.id.button7);
-        btn7.setOnClickListener(new View.OnClickListener() {
+        Button btn8 = (Button) view.findViewById(R.id.aqui_estoy);
+        btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), LocationActivityAmigable.class);
-                startActivityForResult(intent, 0);
+                fragment = new Fragment_aqui_estoy_pcd();
+                ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             }
-        });*/
+        });
 
 
 
