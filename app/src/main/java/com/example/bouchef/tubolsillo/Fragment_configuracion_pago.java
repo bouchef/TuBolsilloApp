@@ -50,7 +50,7 @@ public class Fragment_configuracion_pago extends Fragment {
         });
 
         if(publicKeyInput.getText().toString().isEmpty()){
-            String keyPublic = "TEST-2a313672-b2b4-4ca2-a578-48b749251105";
+            String keyPublic = "TEST-2a313672-b343b4-4ca2-a578-48b7491105";
         }
 
         if(preferenceIdInput.getText().toString().isEmpty()){
@@ -58,7 +58,7 @@ public class Fragment_configuracion_pago extends Fragment {
         }
 
         if(accessTokenInput.getText().toString().isEmpty()){
-            String token = "TEST-2015804469455591-082604-568a3a638e3ebba71a663ee2cc520ffa-80817756";
+            String token = "TEST-201580446945343435591-082604-568a3a638663ee2cc520ffa-80817756";
         }
 
 
